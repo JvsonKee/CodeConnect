@@ -1,9 +1,15 @@
+import HomePage from "./Homepage"
+import NavBar from "./NavBar"
+import { Container } from "./styles/Container"
+import Normalizer from "./styles/Global"
 function App() {
 
   return (
-    <div>
-      <h1>CodeConnect</h1>
-    </div>
+    <Container>
+      <Normalizer />
+      <NavBar />
+      <HomePage />
+    </Container>
   )
 }
 
