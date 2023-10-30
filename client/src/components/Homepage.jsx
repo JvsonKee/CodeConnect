@@ -20,6 +20,9 @@ function HomePage() {
                     </HeaderContainer>
                     <Feed>
                         <PostBrowsing />
+                        <PostBrowsing />
+                        <PostBrowsing />
+                        <PostBrowsing />
                     </Feed>
                 </ContentContainer>
             </HomePageContainer>

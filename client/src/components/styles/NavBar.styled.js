@@ -2,21 +2,21 @@ import styled from 'styled-components'
 
 export const NavContainer = styled.div`
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 20vw;
     height: 100vh;
-    color: var(--text-white);
+    position: fixed;
+    color: var(--white);
     background-color: var(--light-black);
 `
 
 export const Nav = styled.div`
+    margin: 5vh 0;
     display: flex;
     flex-direction: column;
-    gap: 10%;
+    align-items: center;
+    gap: 15%;
     width: 70%;
-    height: 90%;
-    
 `
 
 export const NavLogo = styled.div`

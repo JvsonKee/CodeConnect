@@ -32,7 +32,7 @@ function PostBrowsing() {
                 <PostAnalytics>
                     <PostLikes>💜 {PostInfo.likes} likes</PostLikes>
                     <PostReactions>{PostInfo.reactions}</PostReactions>
-                    <PostComments>{PostInfo.comments} comments</PostComments>
+                    <PostComments>💬 {PostInfo.comments} comments</PostComments>
                 </PostAnalytics>
             </PostWrapper>
         </PostContainer>

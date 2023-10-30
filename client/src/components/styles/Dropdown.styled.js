@@ -11,12 +11,12 @@ export const Select = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    color: var(--text-grey);
+    color: var(--grey);
     transition: 0.4s ease-in-out;
     cursor: pointer;
 
     &:hover {
-       color: var(--text-white);
+       color: var(--white);
     }
 `
 
@@ -53,10 +53,10 @@ export const Menu = styled.div`
     div {
         width: 180px;
         font-size: 14px;
-        color: var(--text-grey);
+        color: var(--grey);
 
         &:hover {
-            color: var(--text-white);
+            color: var(--white);
         }
     }
 

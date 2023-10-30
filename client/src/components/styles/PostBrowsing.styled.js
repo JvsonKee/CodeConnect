@@ -5,11 +5,10 @@ export const PostContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: var(--light-black);
-    /* border: 4px solid var(--light-black); */
     border-radius: 10px;
     width: 100%;
     height: 300px;
-    color: var(--text-white);
+    color: var(--white);
 `
 
 export const PostWrapper = styled.div`
@@ -30,7 +29,7 @@ export const PostUserInformation = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
-    color: var(--text-grey);
+    color: var(--grey);
 `
 
 export const UserProfilePicture = styled.img`
@@ -54,7 +53,7 @@ export const PostTitle = styled.div`
 
 export const PostDescription = styled.div`
     font-size: 15px;
-    color: var(--text-grey);
+    color: var(--grey);
 `
 
 export const TopicsContainer = styled.div`
@@ -63,7 +62,7 @@ export const TopicsContainer = styled.div`
 
 export const TopicOutline = styled.div`
     border-radius: 50px;
-    background-color: var(--green-low);
+    background-color: var(--purple-low-op);
     height: 30px;
 `
 
@@ -71,12 +70,13 @@ export const PostTopic = styled.div`
     padding: 0 10px;
     font-size: 12px;
     line-height: 30px;
-    color: var(--green); // need to find new colour and font: ;
+    color: var(--lavender);
 `
 
 export const PostAnalytics = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 30%;
     color: var(--text-grey);
 `
