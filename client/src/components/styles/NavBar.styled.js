@@ -7,7 +7,7 @@ export const NavContainer = styled.div`
     width: 20vw;
     height: 100vh;
     color: var(--text-white);
-    background-color: var(--black);
+    background-color: var(--light-black);
 `
 
 export const Nav = styled.div`

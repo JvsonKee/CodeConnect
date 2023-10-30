@@ -7,8 +7,10 @@ const GlobalStyles = createGlobalStyle`
         --text-white: #FFFFFF;
         --text-grey: #A7A7A7;
         --black: #121212;
-        --light-black: #242424;
+        --light-black: #1B1B1B;
         --purple: #5041FF;
+        --green-low: #28284D;
+        --green: #948BFF;
     }
 
     body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a {
