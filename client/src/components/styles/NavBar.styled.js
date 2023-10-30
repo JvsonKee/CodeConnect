@@ -6,8 +6,8 @@ export const NavContainer = styled.div`
     justify-content: center;
     width: 20vw;
     height: 100vh;
-    color: white;
-    background-color: #121212;
+    color: var(--text-white);
+    background-color: var(--black);
 `
 
 export const Nav = styled.div`
@@ -36,7 +36,7 @@ export const NavItems = styled.div`
 `
 
 export const PostButton = styled.div`
-    background-color: #5041FF;
+    background-color: var(--purple);
     border-radius: 10px;
     text-align: center;
     line-height: 50px;

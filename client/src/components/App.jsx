@@ -1,11 +1,11 @@
 import HomePage from "./Homepage"
 import { Container } from "./styles/Container"
-import Normalizer from "./styles/Global"
+import GlobalStyles from "./styles/Global"
 function App() {
 
   return (
     <Container>
-      <Normalizer />
+      <GlobalStyles />
       <HomePage />
     </Container>
   )
