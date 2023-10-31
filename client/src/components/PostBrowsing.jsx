@@ -1,5 +1,6 @@
-import { PostAnalytics, PostComments, PostContainer, PostDescription, PostLikes, PostMainContent, PostReactions, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture } from "./styles/PostBrowsing.styled"
+import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "./styles/PostBrowsing.styled"
 import profilePicture from '../assets/placeholder-profile-pic.png'
+import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 
 const PostInfo = {
     profilePicture: profilePicture,
@@ -30,11 +31,19 @@ function PostBrowsing() {
                     </TopicOutline>
                 </TopicsContainer>
                 <PostAnalytics>
-                    <PostLikes>💜 {PostInfo.likes} likes</PostLikes>
-                    <PostReactions>{PostInfo.reactions}</PostReactions>
-                    <PostComments>💬 {PostInfo.comments} comments</PostComments>
+                    <Analytic>
+                        <AnalyticIcon icon={faHeart}/>
+                        <div>{PostInfo.likes} likes</div>
+                    </Analytic>
+                    <Analytic>
+                        <AnalyticIcon icon={faComment}/>
+                        <div>{PostInfo.comments} comments</div>
+                    </Analytic>
+                    <Analytic>
+                        <div>{PostInfo.reactions}</div>
+                    </Analytic>
                 </PostAnalytics>
-            </PostWrapper>
+            </PostWrapper>  
         </PostContainer>
     )
 }

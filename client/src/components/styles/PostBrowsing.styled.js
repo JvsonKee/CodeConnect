@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export const PostContainer = styled.div`  
     display: flex;
@@ -7,14 +9,17 @@ export const PostContainer = styled.div`
     background-color: var(--light-black);
     border-radius: 10px;
     width: 100%;
-    height: 300px;
+    /* height: 300px;   */
+    height: auto;
     color: var(--white);
+    padding: 30px 0;
 `
 
 export const PostWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
     width: 90%;
     height: 80%;
 `
@@ -78,19 +83,17 @@ export const PostAnalytics = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 30%;
-    color: var(--text-grey);
+    color: var(--grey);
 `
 
-export const PostLikes = styled.div`
-
-`
-
-export const PostReactions = styled.div`
+export const AnalyticIcon = styled(FontAwesomeIcon)`
 
 `
 
-export const PostComments = styled.div`
-
+export const Analytic = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
 `
 
 
