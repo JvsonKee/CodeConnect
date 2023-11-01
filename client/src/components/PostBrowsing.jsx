@@ -1,51 +1,45 @@
 import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "./styles/PostBrowsing.styled"
-import profilePicture from '../assets/placeholder-profile-pic.png'
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
+import propTypes from 'prop-types'
 
-const PostInfo = {
-    profilePicture: profilePicture,
-    userName: "Placeholder-Username",
-    topic: "Web Development",
-    title: "Title",
-    description: "This is a description with lots of information about nothing",
-    likes: "123",
-    reactions: "⭐️",
-    comments: "50"
-}
-
-function PostBrowsing() {
+function PostBrowsing( {user} ) {
     return (
         <PostContainer>
             <PostWrapper>
                 <PostUserInformation>
-                    <UserProfilePicture src={PostInfo.profilePicture}></UserProfilePicture>
-                    <UserName>{PostInfo.userName}</UserName>
+                    <UserProfilePicture src={user.profilePicture}></UserProfilePicture>
+                    <UserName>{user.userName}</UserName>
                 </PostUserInformation>
                 <PostMainContent>
-                    <PostTitle>{PostInfo.title}</PostTitle>
-                    <PostDescription>{PostInfo.description}</PostDescription>
+                    <PostTitle>{user.title}</PostTitle>
+                    <PostDescription>{user.description}</PostDescription>
                 </PostMainContent>
                 <TopicsContainer>
                     <TopicOutline>
-                        <PostTopic>{PostInfo.topic}</PostTopic>
+                        <PostTopic>{user.topic}</PostTopic>
                     </TopicOutline>
                 </TopicsContainer>
                 <PostAnalytics>
                     <Analytic>
                         <AnalyticIcon icon={faHeart}/>
-                        <div>{PostInfo.likes} likes</div>
+                        <div>{user.likes} likes</div>
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{PostInfo.comments} comments</div>
+                        <div>{user.comments} comments</div>
                     </Analytic>
                     <Analytic>
-                        <div>{PostInfo.reactions}</div>
+                        <div>{user.reactions}</div>
                     </Analytic>
                 </PostAnalytics>
             </PostWrapper>  
         </PostContainer>
     )
 }
+
+PostBrowsing.propTypes = {
+    user : propTypes.object
+}
+
 
 export default PostBrowsing
