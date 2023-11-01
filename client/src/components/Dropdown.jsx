@@ -11,7 +11,7 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 function Dropdown( {setStatus} ) {
     const [open, setOpen] = useState(false);
-    const [selected, setSelected] = useState('Recent')
+    const [selected, setSelected] = useState('Sort')
 
     useEffect(() => {
         setStatus(selected)
@@ -24,9 +24,8 @@ function Dropdown( {setStatus} ) {
                 <Caret icon={faCaretDown} className={`${open? 'active' : 'inactive'}`}/>
             </Select>
             <Menu className={`${open? 'active' : 'inactive'}`}>
-                <div onClick={() => {setSelected('Recent')}}>Recent</div>
                 <div onClick={() => {setSelected('Top')}}>Top</div>
-                <div onClick={() => {setSelected('Last 4 Weeks')}}>Last 4 Weeks</div>
+                <div onClick={() => {setSelected('Recent')}}>Recent</div>
             </Menu>
         </DropdownContainer>
     )
