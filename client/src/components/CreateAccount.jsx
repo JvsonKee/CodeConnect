@@ -1,55 +1,70 @@
-import { CreateAccountContainer, InputFields, TitleText } from "./styles/CreateAccount.styled";
+import { CreateAccountContainer, InputFields, TitleText, FormContainer, CustomForm, H1, CustomButton, IconContainer } from "./styles/CreateAccount.styled";
 import { Container } from "./styles/Container";
+
+import 'bootstrap/dist/css/bootstrap.css'; 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+
 
 function CreateAccount() {
     return (  
         <Container>
+
             <CreateAccountContainer>
-                <TitleText>
-                    <h1>Create Account</h1>
-                </TitleText>
+
                 
-                <InputFields>
-                    <p>Email:</p>
-                    <form>
-                        <input type = "text"/>
-                    </form>
-                </InputFields>
+                <IconContainer/>
+                <H1>
+                    CREATE ACCOUNT
+                </H1>
 
-                <InputFields>
-                    <p>Username:</p>
-                    <form>
-                        <input type = "text"/>
-                    </form>
-                </InputFields>
+                <FormContainer>
 
-                <InputFields>
-                    <p>Password:</p>
-                    <form>
-                        <input type = "text"/>
-                    </form>
-                </InputFields>
+                    <CustomForm>
+                        <Form.Group className = "createAcct" controlId = "email">
+                            <Form.Label> Email address </Form.Label>
+                            <br/>
+                            <Form.Control type = "email" placeholder = "Enter email" size = "md" />
+                        </Form.Group>
+                    </CustomForm>
 
-                <InputFields>
-                    <p>Confirm Password:</p>
-                    <form>
-                        <input type = "text"/>
-                    </form>
-                </InputFields>
+                    <CustomForm>
+                        <Form.Group className = "createAcct" controlId = "username">
+                            <Form.Label> Username </Form.Label>
+                            <br/>
+                            <Form.Control type = "text" placeholder = "Enter username" size = "md" />
+                        </Form.Group>
+                    </CustomForm>
 
-                <InputFields>
-                    <label>
-                        <input type = "checkbox"/>
-                        Agree to <a href = "https://youtu.be/dQw4w9WgXcQ?si=R9DEOM_xrrv_0aAM">Terms and Conditions</a>
-                    </label>
-                </InputFields>
+                    <CustomForm>
+                        <Form.Group className = "createAcct" controlId = "password">
+                            <Form.Label> Password </Form.Label>
+                            <br/>
+                            <Form.Control type = "password" placeholder = "Enter password" size = "md" />
+                        </Form.Group>
+                    </CustomForm>
 
-                <InputFields>
-                    <input type = "submit" value = "Create"/>
-                </InputFields>
-                
+                    <CustomForm>
+                        <Form.Group className = "createAcct" controlId = "confirmPassword">
+                            <Form.Label> Confirm Password </Form.Label>
+                            <br/>
+                            <Form.Control type = "password" placeholder = "Confirm password" size = "md" />
+                        </Form.Group>
+                    </CustomForm>
 
+                    <CustomForm>
+                        <Form.Check type = "checkbox" label = "Agree to Terms and Conditions"/>
+                    </CustomForm>
+
+                    <CustomButton variant = "outline-light">
+                        SUBMIT
+                    </CustomButton>
+
+                </FormContainer>
             </CreateAccountContainer>
+
+            
         </Container>
     )
 }
