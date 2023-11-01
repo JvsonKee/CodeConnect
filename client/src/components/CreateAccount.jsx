@@ -7,13 +7,13 @@ import Form from 'react-bootstrap/Form';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
+
 function CreateAccount() {
     return (  
         <Container>
-
+            
             <CreateAccountContainer>
-
-                
+            
                 <IconContainer/>
                 <H1>
                     CREATE ACCOUNT
