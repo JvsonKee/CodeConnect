@@ -29,7 +29,7 @@ const user2 = {
 
 
 function HomePage() {
-    const [status, setStatus] =  useState('Recents')
+    const [status, setStatus] =  useState('Recent')
 
     return (  
         <Container>
