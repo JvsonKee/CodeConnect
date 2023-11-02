@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-
+//import { Modal } from "react-bootstrap/Modal";
 
 
 function CreateAccount() {
