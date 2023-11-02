@@ -2,7 +2,7 @@ import { Container } from "./styles/Container";
 import NavBar from "./NavBar";
 import { ExploreResultsContainer, CustomCard } from "./styles/ExploreResultsContainer.styled";
 import { Card } from "react-bootstrap";
-
+import SearchBar from "./SearchBar"
 
 
 
@@ -12,6 +12,7 @@ function CreateAccount() {
             <NavBar/>
             <ExploreResultsContainer>
 
+                <SearchBar/>
                 <CustomCard>
                     <Card.Header as = "h5"> Featured </Card.Header>
                     <Card.Body>

@@ -5,17 +5,23 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-//import { Modal } from "react-bootstrap/Modal";
+//import { Modal } from 'react-bootstrap/Modal';
+import { useState } from 'react';
+
 
 
 function CreateAccount() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (  
         <Container>
             
             <CreateAccountContainer>
             
-                <IconContainer/>
                 <H1>
+                    <IconContainer/>
                     CREATE ACCOUNT
                 </H1>
 
@@ -54,7 +60,7 @@ function CreateAccount() {
                     </CustomForm>
 
                     <CustomForm>
-                        <Form.Check type = "checkbox" label = "Agree to Terms and Conditions"/>
+                        <Form.Check type = "checkbox" label = "Agree to Terms and Conditions" onClick = {handleShow}/>
                     </CustomForm>
 
                     <CustomButton variant = "outline-light">

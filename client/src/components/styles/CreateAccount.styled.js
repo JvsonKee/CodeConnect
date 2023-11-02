@@ -55,5 +55,8 @@ export const CustomButton = styled(Button)`
 
 export const IconContainer = styled(ArrowBackIosNewIcon)`
     color: white;
+    margin-left: -10vw;
+    margin-top: 1vh;
+    position: absolute;
     
 `
