@@ -6,7 +6,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 export const CreateAccountContainer = styled.div`
     width: 100vw;
     height: 100vh;  
-    background-color: #242424;
+    background-color: var(--black);
 `
 
 export const TitleText = styled.div`
@@ -35,9 +35,10 @@ export const CustomForm = styled(Form)`
         color: white;
     }
 
-    #termsConditions {
-        padding-left: 50vw;
+    p {
+        color: white;
     }
+
 `
 
 export const H1 = styled.h1`
