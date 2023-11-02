@@ -1,4 +1,4 @@
-import UserPage from "../pages/UserPage"
+import UserPage from "./pages/UserPage"
 import HomePage from "./Homepage"
 import { Container } from "./styles/Container"
 import Normalizer from "./styles/Global"
