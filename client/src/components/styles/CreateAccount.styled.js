@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { Form, FormLabel } from 'react-bootstrap';
 import { Button } from "react-bootstrap";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import Modal from 'react-bootstrap';
 
 export const CreateAccountContainer = styled.div`
     width: 100vw;
