@@ -4,13 +4,14 @@ import { Container } from "./styles/Container"
 import GlobalStyles from "./styles/Global"
 function App() {
 
-  return (
-    <Container>
-      <GlobalStyles />
-      {/* <HomePage /> */}
-      <ExplorePage />
-    </Container>
-  )
+	return (
+		<Container>
+			<GlobalStyles />
+			{/* <HomePage /> */}
+			<ExplorePage />
+		</Container>
+	)
+	
 }
 
 export default App

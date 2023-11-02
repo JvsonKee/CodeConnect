@@ -22,7 +22,7 @@ function ExplorePage() {
                     <TopicsSection>
                         <TopicsHeaderContainer>
                             <PageHeader>
-                                <div> <FireIcon icon={faFire}/> Trending Topics</div>
+                                <div> <FireIcon icon={faFire}/> Trending</div>
                             </PageHeader>
                             <CheckboxContainer>
                                 <CheckboxLabel>Select</CheckboxLabel>
@@ -36,6 +36,9 @@ function ExplorePage() {
                             <TopicBubble topicName={"Dynamic Programming"}/>
                             <TopicBubble topicName={"JavaScript"}/>
                             <TopicBubble topicName={"Full-Stack Development"}/>
+                            <TopicBubble topicName={"Data Structures"}/>
+                            <TopicBubble topicName={"Networks"}/>
+                            <TopicBubble topicName={"Game Development"}/>
                         </TopicsContainer>
                     </TopicsSection>
                 </ContentContainer>
