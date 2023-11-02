@@ -1,6 +1,6 @@
 import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect, NavItem } from "./NavBar.styled";
 import { useState } from 'react';
-import GeneratePostForm from "./GeneratePostForm";
+import GeneratePostForm from "../PostCards/GeneratePostForm";
 
 
 function NavBar() {
