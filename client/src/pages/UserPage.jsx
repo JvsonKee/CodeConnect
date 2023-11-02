@@ -1,6 +1,6 @@
-import { Container } from "../styles/Container";
-import { UserPageContainer } from "../styles/UserPage.styled";
-import NavBar from "../NavBar";
+import { Container } from "../components/styles/Container";
+import { UserPageContainer } from "../components/styles/UserPage.styled";
+import NavBar from "../components/NavBar";
 import React from "react";
 
 function UserPage(){
