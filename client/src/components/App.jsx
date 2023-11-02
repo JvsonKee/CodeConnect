@@ -3,6 +3,9 @@ import HomePage from "./Homepage"
 import ExploreResults from "./ExploreResults"
 import { Container } from "./styles/Container"
 import Normalizer from "./styles/Global"
+import NavBar from "./NavBar"
+
+
 function App() {
 
   return (
