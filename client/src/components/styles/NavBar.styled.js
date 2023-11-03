@@ -48,13 +48,9 @@ export const NavItems = styled.div`
     }
 `
 
-export const ActiveItem = styled.div`
-    color: var(--white);
-`
-
 export const PostButton = styled.div`
     background-color: var(--blue);
-    border-radius: 10px;
+    border-radius: 50px;
     text-align: center;
     line-height: 50px;
     height: 50px;
