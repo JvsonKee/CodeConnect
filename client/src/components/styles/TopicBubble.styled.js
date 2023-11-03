@@ -4,10 +4,11 @@ export const Topic = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    width: 32%;
-    height: 175px;
-    background-color: var(--light-black);
+    border-radius: 50px;
+    height: 30px;
+    padding: 0 15px;
+    background-color: var(--blue-low);
     color: var(--white);
-    font-size: 20px;
+    font-size: 14px;
+    box-shadow: 0 10px 10px var(--shadow);
 `

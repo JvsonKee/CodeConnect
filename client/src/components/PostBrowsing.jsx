@@ -1,4 +1,4 @@
-import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted } from "./styles/PostBrowsing.styled"
+import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted, PostInformationWrapper, PostReaction } from "./styles/PostBrowsing.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import propTypes from 'prop-types'
 
@@ -6,15 +6,17 @@ function PostBrowsing( {user} ) {
     return (
         <PostContainer>
             <PostWrapper>
-                <PostUserInformation>
-                    <UserProfilePicture src={user.profilePicture}></UserProfilePicture>
-                    <UserName>{user.userName}</UserName>
-                    <TimePosted>{user.time}</TimePosted>
-                </PostUserInformation>
+                <PostInformationWrapper>
+                    <PostUserInformation>
+                        <UserProfilePicture src={user.profilePicture}></UserProfilePicture>
+                        <UserName>{user.userName}</UserName>
+                        <TimePosted>{user.time}</TimePosted>
+                    </PostUserInformation>
+                    <PostReaction>{user.reaction}</PostReaction>
+                </PostInformationWrapper>
                 <PostMainContent>
                     <PostTitle>{user.title}</PostTitle>
                     <PostDescription>{user.description}</PostDescription>
-                    <TimePosted>{user.time}</TimePosted>
                 </PostMainContent>
                 <TopicsContainer>
                     <TopicOutline>
