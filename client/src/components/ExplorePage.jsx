@@ -2,7 +2,7 @@ import Dropdown from "./Dropdown"
 import NavBar from "./NavBar"
 import SearchBar from "./SearchBar"
 import { Container } from "./styles/Container"
-import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav } from "./styles/ExplorePage.styled"
+import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav, TopicsContainer } from "./styles/ExplorePage.styled"
 import { useState } from "react"
 import { PageHeader } from "./styles/PageHeader"
 import TopicBubble from "./TopicBubble"
@@ -40,7 +40,7 @@ function ExplorePage() {
                                 </CarouselSlide>
                                 <CarouselSlide id="slide-3"> 
                                     <CarouselImage src={programmingPicture}/>
-                                    <CarouselLabel>Java</CarouselLabel>
+                                    <CarouselLabel>Python</CarouselLabel>
                                 </CarouselSlide>      
                                 <CarouselNav>
                                     <a href="#slide-1"></a>
@@ -48,8 +48,25 @@ function ExplorePage() {
                                     <a href="#slide-3"></a>
                                 </CarouselNav>            
                             </Carousel>  
-
                         </CarouselContainer>
+                        <TopicsHeaderContainer>
+                            <PageHeader>Topics</PageHeader>
+                        </TopicsHeaderContainer>
+                        <TopicsContainer>
+                            <TopicBubble topicName={"Web Development"}/>
+                            <TopicBubble topicName={"React"}/>
+                            <TopicBubble topicName={"Python"}/>
+                            <TopicBubble topicName={"Dynamic Programming"}/>
+                            <TopicBubble topicName={"JavaScript"}/>
+                            <TopicBubble topicName={"Full-Stack Development"}/>
+                            <TopicBubble topicName={"Data Structures"}/>
+                            <TopicBubble topicName={"Networks"}/>
+                            <TopicBubble topicName={"Game Development"}/>
+                            <TopicBubble topicName={"Cybersecurity"}/>
+                            <TopicBubble topicName={"HTML"}/>
+                            <TopicBubble topicName={"CSS"}/>
+                            <TopicBubble topicName={"Data Science"}/>
+                        </TopicsContainer>
                     </TopicsSection>
                 </ContentContainer>
             </ExplorePageContainer>
