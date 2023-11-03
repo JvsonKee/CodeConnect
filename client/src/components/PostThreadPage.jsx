@@ -38,7 +38,7 @@ function PostThreadPage() {
             <HomePageContainer>
                 <ContentContainer>
                     <HeaderContainer>
-                        <PageHeader>Thread</PageHeader>
+                        <PageHeader></PageHeader>
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <Feed>
