@@ -8,7 +8,6 @@ import PostBrowsing from "./PostBrowsing";
 import profilePicture1 from '../assets/placeholder-profile-pic.png'
 import profilePicture2 from '../assets/profile2.jpg'
 
-
 const user1 = {
     profilePicture: profilePicture1,
     userName: "JasonSucksAtCoding69",
@@ -30,7 +29,6 @@ const user2 = {
     likes: "203",
     comments: "122"
 }
-
 
 function HomePage() {
     const [status, setStatus] =  useState('Recent')
