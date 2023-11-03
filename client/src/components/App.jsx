@@ -7,8 +7,8 @@ function App() {
 	return (
 		<Container>
 			<GlobalStyles />
-			{/* <HomePage /> */}
-			<ExplorePage />
+			<HomePage />
+			{/* <ExplorePage /> */}
 		</Container>
 	)
 	

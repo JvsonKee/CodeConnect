@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const NavContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 20vw;
     height: 100vh;
     position: fixed;
@@ -16,8 +17,10 @@ export const Nav = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15%;
+    gap: 10%;
     width: 70%;
+    height: 80%;
+    /* background-color: green; */
 `
 
 export const NavLogo = styled.div`
