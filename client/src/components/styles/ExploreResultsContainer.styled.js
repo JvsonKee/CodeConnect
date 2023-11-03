@@ -58,6 +58,10 @@ export const ContentContainer = styled.div`
     padding-right: 10vw;
     gap: 40px;
     padding-top: 10vh;
+
+    #results {
+        color: var(--grey);
+    }
 `
 
 export const CustomCardText = styled(Card.Text)`

@@ -59,7 +59,9 @@ function CreateAccount() {
             <ExploreResultsContainer>
                 
                 <SearchBar/>    {/*Search Bar from Explore Page*/}
+                
                 <ContentContainer>
+                    <span id = 'results'>3 results</span>
                     <Feed>
                         <PostBrowsing user={user1}/>
                         <PostBrowsing user={user2}/>
