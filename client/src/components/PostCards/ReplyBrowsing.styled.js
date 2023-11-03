@@ -34,7 +34,6 @@ export const ReplyLevel = styled.div`
 `;
 
 export const ReplyForm = styled.div`
-    margin-left: 5%;
     background-color: var(--light-black) !important;
     border-radius: 10px;
     gap: 20px;
@@ -55,7 +54,6 @@ export const CustomAccordionButton = styled.button`
 `;
 
 export const CustomAccordionContent = styled.div`
-      margin-left: 5%
 `;
 
 export const ReplyIcon = styled(FontAwesomeIcon)`
