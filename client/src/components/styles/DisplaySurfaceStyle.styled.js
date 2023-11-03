@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const UserNameSurfaceStyle = styled.div`
+const DisplaySurfaceStyle = styled.div`
     display: flex;
     width: 420px;
     padding: 10px;
@@ -9,4 +9,4 @@ const UserNameSurfaceStyle = styled.div`
     gap: 10px;
 `;
 
-export default UserNameSurfaceStyle;
+export default DisplaySurfaceStyle;
