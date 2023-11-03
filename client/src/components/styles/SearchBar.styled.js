@@ -3,10 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const SearchBarContainer = styled.div`
     display: flex;
-    /* justify-content: space-between; */
     gap: 20px;
     align-items: center;
-    /* background-color: green; */
 `
 
 export const Search = styled.input`
@@ -17,17 +15,17 @@ export const Search = styled.input`
     outline: none;
     font-size: 20px;
     padding: 0 30px;
-    background-color: var(--light-brown);
-    color: var(--off-white);
-    box-shadow: 0 10px 10px var(--shadow);
+    background-color: var(--light-black);
+    color: var(--white);
+    box-shadow: 0 5px 10px var(--shadow);
 
     &::placeholder {
-        color: var(--tan);
+        color: var(--grey);
     }
 `
 
 export const SearchIcon = styled(FontAwesomeIcon)`
-    color: var(--off-white);
+    color: var(--white);
 `
 
 export const SearchButton = styled.button`
@@ -35,10 +33,10 @@ export const SearchButton = styled.button`
     height: 50px;
     border-radius: 100px;
     border: 0px;
-    background-color: var(--green);
+    background-color: var(--blue);
 `
 
 export const ArrowIcon = styled(FontAwesomeIcon)`
     font-size: 17px;
-    color: var(--off-white);
+    color: var(--white);
 `
