@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
 export const OpenMessageContainer = styled.div`
+    margin-left: 20vw;
     display: flex;
     width: 80vw;
+    height: 100vh;
     background-color: #A7A7A7;
     
 `

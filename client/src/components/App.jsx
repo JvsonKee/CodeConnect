@@ -12,7 +12,8 @@ function App() {
 		<Container>
 			<GlobalStyles />
 			{/* <HomePage /> */}
-			<OpenedMessagePage />
+			{/* <OpenedMessagePage /> */}
+			<DMPage />
 		</Container>
 	)
 	
