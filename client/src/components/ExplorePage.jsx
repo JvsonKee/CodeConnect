@@ -2,7 +2,7 @@ import Dropdown from "./Dropdown"
 import NavBar from "./NavBar"
 import SearchBar from "./SearchBar"
 import { Container } from "./styles/Container"
-import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav, TopicsContainer } from "./styles/ExplorePage.styled"
+import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav, TopicsContainer, SelectContainer, CheckBox } from "./styles/ExplorePage.styled"
 import { useState } from "react"
 import { PageHeader } from "./styles/PageHeader"
 import TopicBubble from "./TopicBubble"
@@ -51,6 +51,10 @@ function ExplorePage() {
                         </CarouselContainer>
                         <TopicsHeaderContainer>
                             <PageHeader>Topics</PageHeader>
+                            <SelectContainer>
+                                <div>Select</div>
+                                <CheckBox type="checkbox"/>
+                            </SelectContainer>
                         </TopicsHeaderContainer>
                         <TopicsContainer>
                             <TopicBubble topicName={"Web Development"}/>
