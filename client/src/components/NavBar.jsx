@@ -1,4 +1,4 @@
-import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect } from "./styles/NavBar.styled";
+import { NavContainer, Nav, NavItems, ActiveItem, NavLogo, PostButton, NavLogoCode, NavLogoConnect } from "./styles/NavBar.styled";
 
 function NavBar() {
     return (
@@ -9,7 +9,7 @@ function NavBar() {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <div>Home</div>
+                    <ActiveItem>Home</ActiveItem>
                     <div>Explore</div>
                     <div>Direct Messages</div>
                     <div>Profile</div>

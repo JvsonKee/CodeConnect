@@ -6,12 +6,11 @@ export const PostContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-brown);
+    background-color: var(--light-black);
     border-radius: 10px;
     width: 100%;
-    /* height: 300px;   */
     height: auto;
-    color: var(--off-white);
+    color: var(--white);
     padding: 30px 0;
     box-shadow: 0 10px 20px var(--shadow);
 `
@@ -35,16 +34,22 @@ export const PostUserInformation = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
-    color: var(--tan);
+    color: var(--grey);
 `
 
 export const UserProfilePicture = styled.img`
     width: 60px;
-    border-radius: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
 `
 
 export const UserName = styled.div`
 
+`
+
+export const TimePosted = styled.div`
+    font-size: 12px;
 `
 
 export const PostMainContent = styled.div`
@@ -59,7 +64,8 @@ export const PostTitle = styled.div`
 
 export const PostDescription = styled.div`
     font-size: 15px;
-    color: var(--tan);
+    line-height: 20px;
+    color: var(--grey);
 `
 
 export const TopicsContainer = styled.div`
@@ -68,7 +74,7 @@ export const TopicsContainer = styled.div`
 
 export const TopicOutline = styled.div`
     border-radius: 50px;
-    background-color: var(--green-low);
+    background-color: var(--blue-low);
     height: 30px;
 `
 
@@ -76,7 +82,7 @@ export const PostTopic = styled.div`
     padding: 0 10px;
     font-size: 12px;
     line-height: 30px;
-    color: var(--green);
+    color: var(--light-blue);
 `
 
 export const PostAnalytics = styled.div`
