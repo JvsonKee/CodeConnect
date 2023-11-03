@@ -6,6 +6,8 @@ import Dropdown from "./Dropdown";
 import { useState } from "react";
 import PostFullView from "./PostFullView";
 import ReplyBrowsing from "./ReplyBrowsing";
+import ReplyBrowsingFirstLevel from "./ReplyBrowsingFirstLevel";
+import ReplyPersonalView from "./ReplyPersonalView";
 import profilePicture from '../assets/placeholder-profile-pic.png'
 import { ReplyContainer, ReplyLevel, ReplyLine } from "./styles/ReplyBrowsing.styled";
 
@@ -43,15 +45,13 @@ function PostThreadPage() {
                     </HeaderContainer>
                     <Feed>
                         <PostFullView user={user1}/>
-                            <ReplyBrowsing user={user2}/>
-                            <ReplyBrowsing user={user2}/>
-                            <ReplyLevel> 
-                                <ReplyBrowsing user={user2}/>
+                            <ReplyBrowsingFirstLevel user={user2}/>
+                            <ReplyBrowsingFirstLevel user={user2}/>
+                                <ReplyPersonalView user={user2}/>
                                 <ReplyLevel> 
                                     <ReplyBrowsing user={user2}/>
                                 </ReplyLevel>
-                            </ReplyLevel>
-                            <ReplyBrowsing user={user2}/>
+                            <ReplyBrowsingFirstLevel user={user2}/>
 
                         {/* <PostBrowsing />
                         <PostBrowsing /> */}

@@ -70,4 +70,40 @@ export const ReplyButton = styled.div`
     padding: 7px;
     height: 40px;
     width: 100px;
-`;
+`
+
+export const EditButton = styled.div`
+    width: 30px;
+    height: 30px;
+    float: right;
+    flex: 0;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--blue);
+`
+
+export const EditIcon = styled(FontAwesomeIcon)`
+
+`
+
+export const ReplyUserInformation = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: var(--grey);
+`
+
+export const ReplyUserProfilePicture = styled.img`
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+`
+
+export const ReplyUserName = styled.div`
+    flex: 1;
+`
