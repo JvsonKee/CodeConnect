@@ -26,7 +26,7 @@ export const HeaderContainer = styled.div`
 export const Feed = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 0px;
     width: 100%;
     height: 100%;
 `
