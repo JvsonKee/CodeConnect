@@ -12,7 +12,7 @@ function App() {
   return (
     <Container>
       <Normalizer />
-      <CreateAccount />
+      <ExploreResults />
     </Container>
   )
 }
