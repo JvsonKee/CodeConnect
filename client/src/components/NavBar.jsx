@@ -1,10 +1,13 @@
-import { NavContainer, Nav, NavItems, NavLogo, PostButton } from "./styles/NavBar.styled";
+import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect } from "./styles/NavBar.styled";
 
 function NavBar() {
     return (
         <NavContainer>
             <Nav>
-                <NavLogo>CodeConnect</NavLogo>
+                <NavLogo>
+                    <NavLogoCode>Code</NavLogoCode>
+                    <NavLogoConnect>Connect</NavLogoConnect>
+                </NavLogo>  
                 <NavItems>
                     <div>Home</div>
                     <div>Explore</div>
