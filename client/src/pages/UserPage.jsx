@@ -13,14 +13,12 @@ function UserPage(){
         <Container>
             <NavBar />  
             <UserPageContainer>
-                <EditProfileContainer/>
                     <CentralColumn>
                         <ProfileSurface/>
                         <HeaderRow>
                             <Headline text={"Posts"}/>
                         </HeaderRow>
                     </CentralColumn>
-                <EditProfileContainer/>
             </UserPageContainer>
         </Container>
     )
