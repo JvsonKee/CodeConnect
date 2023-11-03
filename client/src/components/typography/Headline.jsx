@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const headlineStyle = {
   fontSize: '17px',
