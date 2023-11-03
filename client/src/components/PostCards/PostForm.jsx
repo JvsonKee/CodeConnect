@@ -1,11 +1,11 @@
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
+import { GeneratePostModal, CustomPostForm, CustomPostInputField } from './PostForm.styled';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { Upload, UploadIcon } from "./PostForm.styled"
 import { faFileCode } from "@fortawesome/free-regular-svg-icons"
 
 function CharLimitProgressBar(charWritten) {
@@ -14,11 +14,10 @@ function CharLimitProgressBar(charWritten) {
   return <ProgressBar now={progress} label={`${charWritten}/5000`} visuallyHidden />;
 }
 
-function GeneratePostForm({ showForm, closeForm }) {
+const GeneratePostForm = (showForm, closeForm) => {
   return (
-    <>
-      <Modal centered size="lg" show={showForm} onHide={closeForm}>
-        <Modal.Header closeButton>
+    <GeneratePostModal centered size="lg" show = {showForm} onHide = {closeForm} animation = {true} scrollable>
+          <Modal.Header closeButton>
           <Modal.Title>Create a New Post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -27,7 +26,8 @@ function GeneratePostForm({ showForm, closeForm }) {
               <Col xs={9}>
                 <Form.Group className="mb-3" controlId="postForm.title">
                   <Form.Label>Title</Form.Label>
-                  <Form.Control type="textarea" placeholder="So I've been thinking..." />
+                  <br></br>
+                  <CustomPostInputField type="textarea" placeholder="So I've been thinking..." />
                 </Form.Group>
               </Col>
               <Col xs={3}>
@@ -43,7 +43,7 @@ function GeneratePostForm({ showForm, closeForm }) {
             </Row>
             <Form.Group className="mb-3" controlId="postForm.desc">
               <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" rows={5} />
+              <CustomPostInputField as="textarea" rows={5} />
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -64,9 +64,18 @@ function GeneratePostForm({ showForm, closeForm }) {
             </Col>
           </Row>
         </Modal.Footer>
-      </Modal>
-    </>
+    </GeneratePostModal>
   );
-}
+};
+
+// function GeneratePostForm({ showForm, closeForm }) {
+//   return (
+//     <>
+//       <Modal centered size="lg" show={showForm} onHide={closeForm}>
+
+//       </Modal>
+//     </>
+//   );
+// }
 
 export default GeneratePostForm;
