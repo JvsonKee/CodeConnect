@@ -6,8 +6,8 @@ export const NavContainer = styled.div`
     width: 20vw;
     height: 100vh;
     position: fixed;
-    color: var(--off-white);
-    background-color: var(--brown);
+    color: var(--grey);
+    background-color: var(--black);
     box-shadow: 1px 0 15px 2px var(--shadow);
 `
 
@@ -24,12 +24,13 @@ export const NavLogo = styled.div`
     font-size: 35px;
     font-weight: 600;
 `
-export const NavLogoCode = styled.div`
 
+export const NavLogoCode = styled.div`
+    color: var(--white);
 `
 
 export const NavLogoConnect = styled.div`
-    color: var(--green);
+    color: var(--blue);
     padding-left: 25px;
 `   
 
@@ -44,10 +45,15 @@ export const NavItems = styled.div`
     }
 `
 
+export const ActiveItem = styled.div`
+    color: var(--white);
+`
+
 export const PostButton = styled.div`
-    background-color: var(--green);
+    background-color: var(--blue);
     border-radius: 10px;
     text-align: center;
     line-height: 50px;
     height: 50px;
+    color: var(--white);
 `

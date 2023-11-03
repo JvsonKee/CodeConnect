@@ -13,14 +13,14 @@ export const Select = styled.div`
     align-items: center;
     margin-bottom: 10px;
     padding: 5px 0;
-    color: var(--tan);
+    color: var(--grey);
     border-radius: 50px;
     transition: 0.4s ease-in-out;
     cursor: pointer;
 
     &:hover {
-        color: var(--off-white);
-        background-color: var(--light-brown);
+        color: var(--white);
+        background-color: var(--light-black);
         box-shadow: 0 5px 10px var(--shadow);
     }
 `
@@ -34,7 +34,7 @@ export const Caret = styled(FontAwesomeIcon)`
     transition: 0.4s;
 
     &:hover {
-        color: var(--green);
+        color: var(--blue);
     }
 
     &.active {
@@ -43,7 +43,7 @@ export const Caret = styled(FontAwesomeIcon)`
 `
 
 export const Menu = styled.div`
-    background-color: var(--light-brown); 
+    background-color: var(--light-black); 
     position: absolute;
     opacity: 0;
     display: none;
@@ -59,10 +59,10 @@ export const Menu = styled.div`
     div {
         width: 100px;
         font-size: 14px;
-        color: var(--tan);
+        color: var(--grey);
 
         &:hover {
-            color: var(--off-white);
+            color: var(--white);
         }
     }
 

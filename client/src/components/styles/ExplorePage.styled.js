@@ -8,7 +8,7 @@ export const ExplorePageContainer = styled.div`
     margin-left: 20vw;
     width: 80vw;
     height: 100vh;
-    background-color: var(--brown);
+    background-color: var(--black);
 `
 
 export const ContentContainer = styled.div`
@@ -64,7 +64,7 @@ export const CarouselSlide = styled.div`
     width: 100%;
     position: relative;
     text-align: center;
-    color: var(--off-white);
+    color: var(--white);
 `
 
 export const CarouselImage = styled.img`

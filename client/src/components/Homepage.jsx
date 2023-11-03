@@ -5,26 +5,30 @@ import { Container } from "./styles/Container";
 import Dropdown from "./Dropdown";
 import { useState } from "react";
 import PostBrowsing from "./PostBrowsing";
-import profilePicture from '../assets/placeholder-profile-pic.png'
+import profilePicture1 from '../assets/placeholder-profile-pic.png'
+import profilePicture2 from '../assets/profile2.jpg'
+
 
 const user1 = {
-    profilePicture: profilePicture,
-    userName: "Placeholder-Username",
-    topic: "Web Development",
-    title: "Title",
-    description: "This is a description with lots of information about nothing",
-    likes: "123",
-    comments: "50"
+    profilePicture: profilePicture1,
+    userName: "JasonSucksAtCoding69",
+    title: "Learning React",
+    time: "19 minutes ago",
+    description: "I need to learn React for a project for one of my courses, what are the best resources to learn from?",
+    topic: "React",
+    likes: "43",
+    comments: "59"
 }
 
 const user2 = {
-    profilePicture: profilePicture,
-    userName: "Other-Placeholder-Username",
-    topic: "React",
-    title: "Title",
-    description: "This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing This is a description with lots of information about nothing ",
-    likes: "123",
-    comments: "50"
+    profilePicture: profilePicture2,
+    userName: "RealEyesRealizeRealLies",
+    title: "Growtopia - My new game!",
+    time: "1hr ago",
+    description: "I've been developing a farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!",
+    topic: "Game Development",
+    likes: "203",
+    comments: "122"
 }
 
 
