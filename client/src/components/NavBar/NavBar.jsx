@@ -1,7 +1,6 @@
 import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect, NavItem } from "./NavBar.styled";
 import { useState } from 'react';
-import GeneratePostForm from "../PostCards/GeneratePostForm";
-
+import GeneratePostForm from "../PostCards/PostForm";
 
 function NavBar() {
     const [showPostForm, setShowPostForm] = useState(false);
@@ -26,7 +25,7 @@ function NavBar() {
                     <NavItem to="/explore">Explore</NavItem>
                     <NavItem>Direct Messages</NavItem>
                     <NavItem to="/account">Profile</NavItem>
-                    <PostButton onClick={openPostForm}>Post</PostButton>
+                    <PostButton className="stretched-link" onClick={openPostForm}>Post</PostButton>
                     <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} />
                 </NavItems>
             </Nav>
