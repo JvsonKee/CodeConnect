@@ -13,6 +13,7 @@ function ReplyBrowsing( {user} ) {
                         <UserProfilePicture src={user.profilePicture}></UserProfilePicture>
                         <UserName>{user.userName}</UserName>
                     </PostUserInformation>
+                    <br></br>
                     <PostMainContent>
                         <PostDescription>{user.description}</PostDescription>
                     </PostMainContent>
