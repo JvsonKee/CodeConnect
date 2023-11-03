@@ -35,6 +35,7 @@ function PostBrowsing( {user} ) {
                     <Analytic>
                         <div>{user.reactions}</div>
                     </Analytic>
+                    <Analytic>. . .</Analytic>
                 </PostAnalytics>
             </PostWrapper>  
         </PostContainer>

@@ -110,6 +110,7 @@ export const Analytic = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--grey);
 `
 
 
