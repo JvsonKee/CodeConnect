@@ -26,7 +26,7 @@ function GeneratePostForm({ showForm, closeForm }) {
             <Row>
               <Col xs={9}>
                 <Form.Group className="mb-3" controlId="postForm.title">
-                  <Form.Label>Post Title</Form.Label>
+                  <Form.Label>Title</Form.Label>
                   <Form.Control type="textarea" placeholder="So I've been thinking..." />
                 </Form.Group>
               </Col>
@@ -34,29 +34,23 @@ function GeneratePostForm({ showForm, closeForm }) {
                 <Form.Group className="mb-3" controlId="postForm.topic">
                   <Form.Label>Topic</Form.Label>
                   <Form.Select aria-label="Topic">
-                    <option>Default Topic?</option>
-                    <option value="Web Development">One</option>
-                    <option value="Embedded Development">Two</option>
-                    <option value="Career Advice">Three</option>
+                    <option value="Web Dev">Web Development</option>
+                    <option value="Game">Embedded Development</option>
+                    <option value="Career">Career</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
             </Row>
             <Form.Group className="mb-3" controlId="postForm.desc">
-              <Form.Label>Post Description</Form.Label>
+              <Form.Label>Description</Form.Label>
               <Form.Control as="textarea" rows={5} />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Row>
-            <Col xs={6}>
+            <Col xs={8}>
               <input className="form-control form-control" id="formFile" type="file"></input>
-            </Col>
-            <Col>
-              <Upload>
-                <UploadIcon icon={faFileCode} size = "xl"/>
-              </Upload>
             </Col>
             <Col>
               <Button variant="secondary" onClick={closeForm}>
