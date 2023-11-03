@@ -73,10 +73,6 @@ export const CustomModal = styled(Modal)`
         background-color: var(--light-black);
         color: var(--white);
     }
-
-    &::Modal.Title {
-        color: var(--light-grey);
-    }
     
 `
 

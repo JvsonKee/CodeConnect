@@ -10,7 +10,7 @@ function App() {
 		<Container>
 			<GlobalStyles />
 			{/* <HomePage /> */}
-			<CreateAccount/>
+			<ExploreResults/>
 		</Container>
 	)
 }
