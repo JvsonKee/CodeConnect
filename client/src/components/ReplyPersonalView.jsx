@@ -1,8 +1,8 @@
 import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "./styles/PostBrowsing.styled"
-import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyUserInformation, ReplyUserName, ReplyUserProfilePicture } from "./styles/ReplyBrowsing.styled"
+import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyLevel, ReplyUserInformation, ReplyUserName, ReplyUserProfilePicture, EditButton, EditIcon } from "./styles/ReplyBrowsing.styled"
 import {faPen} from "@fortawesome/free-solid-svg-icons"
 
-function ReplyBrowsing( {user} ) {
+function ReplyPersonalView ( {user} ) {
     return (
         <>
             <ReplyContainer>
@@ -12,6 +12,9 @@ function ReplyBrowsing( {user} ) {
                     <ReplyUserInformation>
                         <ReplyUserProfilePicture src={user.profilePicture}></ReplyUserProfilePicture>
                         <ReplyUserName>{user.userName}</ReplyUserName>
+                        <EditButton>
+                            <EditIcon icon={faPen}/>
+                        </EditButton>
                     </ReplyUserInformation>
                     <br></br>
                     <PostMainContent>
@@ -30,4 +33,4 @@ function ReplyBrowsing( {user} ) {
 // }
 
 
-export default ReplyBrowsing;
+export default ReplyPersonalView;
