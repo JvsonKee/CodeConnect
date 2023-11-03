@@ -17,16 +17,17 @@ export const Search = styled.input`
     outline: none;
     font-size: 20px;
     padding: 0 30px;
-    background-color: var(--light-black);
-    color: var(--white);
+    background-color: var(--light-brown);
+    color: var(--off-white);
+    box-shadow: 0 10px 10px var(--shadow);
 
     &::placeholder {
-        color: var(--grey);
+        color: var(--tan);
     }
 `
 
 export const SearchIcon = styled(FontAwesomeIcon)`
-    color: white;
+    color: var(--off-white);
 `
 
 export const SearchButton = styled.button`
@@ -34,10 +35,10 @@ export const SearchButton = styled.button`
     height: 50px;
     border-radius: 100px;
     border: 0px;
-    background-color: var(--purple);
+    background-color: var(--green);
 `
 
 export const ArrowIcon = styled(FontAwesomeIcon)`
     font-size: 17px;
-    color: var(--white);
+    color: var(--off-white);
 `

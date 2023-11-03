@@ -6,7 +6,7 @@ export const HomePageContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 80vw;
-    background-color: var(--black);
+    background-color: var(--brown);
 `
 
 export const ContentContainer = styled.div`

@@ -5,19 +5,20 @@ const GlobalStyles = createGlobalStyle`
 
     :root {
         --white: #FFFFFF;
-        --grey: #A7A7A7;
-        --black: #121212;
-        --light-black: #1B1B1B;
-        --purple: #5041FF;
-        --purple-low-op: #28284D;
-        --lavender: #948BFF;
+        --off-white: #FFE9CE;
+        --tan: #AF997F;
+        --green: #2DA062;
+        --green-low: rgba(47, 91, 81, 0.5);
+        --brown: #282521;
+        --light-brown: #2B2824;
+        --shadow: rgba(0, 0, 0, 0.25);
     }
 
     body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a {
         margin: 0;
         padding: 0;
         font-family: 'Inter';
-        background-color: var(--black);
+        background-color: var(--brown);
     }
 `
 

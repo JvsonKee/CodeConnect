@@ -6,13 +6,14 @@ export const PostContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-black);
+    background-color: var(--light-brown);
     border-radius: 10px;
     width: 100%;
     /* height: 300px;   */
     height: auto;
-    color: var(--white);
+    color: var(--off-white);
     padding: 30px 0;
+    box-shadow: 0 10px 20px var(--shadow);
 `
 
 export const PostWrapper = styled.div`
@@ -34,7 +35,7 @@ export const PostUserInformation = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
-    color: var(--grey);
+    color: var(--tan);
 `
 
 export const UserProfilePicture = styled.img`
@@ -58,7 +59,7 @@ export const PostTitle = styled.div`
 
 export const PostDescription = styled.div`
     font-size: 15px;
-    color: var(--grey);
+    color: var(--tan);
 `
 
 export const TopicsContainer = styled.div`
@@ -67,7 +68,7 @@ export const TopicsContainer = styled.div`
 
 export const TopicOutline = styled.div`
     border-radius: 50px;
-    background-color: var(--purple-low-op);
+    background-color: var(--green-low);
     height: 30px;
 `
 
@@ -75,7 +76,7 @@ export const PostTopic = styled.div`
     padding: 0 10px;
     font-size: 12px;
     line-height: 30px;
-    color: var(--lavender);
+    color: var(--green);
 `
 
 export const PostAnalytics = styled.div`
@@ -83,7 +84,7 @@ export const PostAnalytics = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 30%;
-    color: var(--grey);
+    color: var(--tan);
 `
 
 export const AnalyticIcon = styled(FontAwesomeIcon)`
