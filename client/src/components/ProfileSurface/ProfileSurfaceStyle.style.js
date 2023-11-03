@@ -5,7 +5,7 @@ const ProfileSurfaceStyle = styled.div`
     padding: 16px;
     flex-direction: column;
     align-items: center;
-    background-color: #1b1b1b;
+    background-color: #121212;
     gap: 10px;
 `;
 
