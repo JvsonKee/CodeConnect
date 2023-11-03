@@ -1,7 +1,7 @@
 import ExplorePage from "./ExplorePage"
 import HomePage from "./Homepage"
-import WelcomePage from "./WelcomePage"
 import DMPage from "./DMPage"
+import WelcomePage from "./WelcomePage"
 import OpenedMessagePage from "./OpenedMessagePage"
 import NewDMPage from "./NewDMPage"
 import { Container } from "./styles/Container"
@@ -12,8 +12,7 @@ function App() {
 		<Container>
 			<GlobalStyles />
 			{/* <HomePage /> */}
-			{/* <OpenedMessagePage /> */}
-			<DMPage />
+			<NewDMPage/>
 		</Container>
 	)
 	

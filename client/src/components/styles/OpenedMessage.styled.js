@@ -5,7 +5,7 @@ export const OpenMessageContainer = styled.div`
     display: flex;
     width: 80vw;
     height: 100vh;
-    background-color: #A7A7A7;
+    background-color: var(--black) ;
     
 `
 export const ChatWrapper = styled.div`
@@ -21,7 +21,8 @@ export const ChatContainer = styled.div`
     width: 90%;
     height: 95%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    border: 0.5px solid black;
+    box-shadow: 0 10px 20px var(--shadow);
 `
 export const MessageBarHeaderContainer =styled.div`
     display: flex;
@@ -35,14 +36,14 @@ export const ContactsBar = styled.div`
     flex-direction: column;
     width: 17%;
     height: 100%;
-    background-color: black;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background-color: var(--black);
+    box-shadow: 0 10px 20px var(--shadow);
 `
 export const MessageHeaderContainer = styled.div`
     display: flex;
     gap: 20px;
     align-items: center; 
-    background-color: black;
+    background-color: var(--black);
     padding: 0 10px;
     height: 13%;
     border-radius: 10px 10px 0 0;
@@ -55,20 +56,20 @@ export const MessageHeaderContainer = styled.div`
 export const ChatBox = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: grey;
+    background-color: var(--light-black);
     height: 77%;
     overflow-y: scroll;
 `
 export const TextBoxContainer = styled.div`
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: var(--light-black);
     height: 10%;
     justify-content: space-around;
     border-radius: 0 0 10px 10px;
 `
 export const SendButton = styled.button`
-    background-color: #007bff; 
+    background-color: var(--blue-low); 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -79,6 +80,9 @@ export const SendButton = styled.button`
     cursor: pointer;
 `
 export const TextBox = styled.textarea`
-   width: 80%;   
+    color: white;
+    border: 1px solid black;
+    background-color: var(--black);
+    width: 80%;   
 `
 

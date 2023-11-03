@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
 export const DMPageContainer = styled.div`
+
     margin-left: 20vw;
     display: flex;
     justify-content: center;
     width: 80vw;
     height: 100vh;
-    background-color: #A7A7A7;
 `
 
 export const ContentContainer = styled.div`

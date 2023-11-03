@@ -4,7 +4,7 @@ export const CreateAccountButton = styled.div`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--green); 
+  background-color: var(--blue); 
   color: white;
   padding: 10px 20px;
   border: none;

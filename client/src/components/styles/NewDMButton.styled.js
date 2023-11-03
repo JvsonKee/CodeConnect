@@ -4,7 +4,7 @@ export const AddButton = styled.div`
   position: fixed;
   bottom: 20px;
   right: 50px;
-  background-color: #007bff; 
+  background-color: #558FFF; 
   color: white;
   padding: 10px 20px;
   border: none;

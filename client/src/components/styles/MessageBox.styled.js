@@ -4,8 +4,8 @@ export const MessageBoxContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1B1B1B;
-    border: 0.5px solid grey;
+    background-color: var(--light-black);
+    border: 1px solid black;
     height: 150px;
     transition: 0.1s ease-in-out;
     &:hover{

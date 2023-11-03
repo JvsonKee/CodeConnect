@@ -4,11 +4,11 @@ export const MessageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-black);
+    background-color: var(--black);
     border-radius: 10px;
     width: 90%;
     height: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 20px var(--shadow);
     transition: 0.2s ease-in-out;
     &:hover{
         background-color: black;
@@ -38,7 +38,7 @@ export const DMUserProfilePicture = styled.img`
 
 export const DMUserName = styled.div`
     font-size: 25px;
-
+    color: var(--white);
 `
 export const MessageMainContent = styled.div`
     display: flex;
