@@ -8,6 +8,6 @@ export const CreateAccountButton = styled.div`
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
 `

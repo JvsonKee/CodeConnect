@@ -11,8 +11,9 @@ function App() {
 	return (
 		<Container>
 			<GlobalStyles />
-			<HomePage />
+			<NewDMPage />
 			{/* <ExplorePage /> */}
+			
 		</Container>
 	)
 	

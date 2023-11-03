@@ -69,7 +69,7 @@ export const SearchButton = styled.button`
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     &:hover{
         background-color: var(--light-blue);
     }
@@ -102,7 +102,7 @@ export const SendButton = styled.button`
     color: white;
     padding: 7px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     align-items: center; 
     &:hover{
         background-color: var(--light-blue);

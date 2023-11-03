@@ -8,7 +8,7 @@ export const AddButton = styled.div`
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   transition: 0.2s ease-in-out;
     &:hover{
         background-color: blue;

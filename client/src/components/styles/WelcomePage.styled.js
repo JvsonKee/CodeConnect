@@ -45,11 +45,11 @@ cursor: pointer;
 `;
 
 export const ContinueButton = styled.div`
-margin-left: 15vw;
-font-size: 12px;
+margin-left: 15.2vw;
+font-size: 11px;
 width: 50%;
 padding: 10px;
-color: #fff;
+color: var(--grey);
 border: none;
 border-radius: 3px;
 align-items: center;
