@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const NavContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 20vw;
     height: 100vh;
     position: fixed;
@@ -16,8 +17,10 @@ export const Nav = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15%;
+    gap: 10%;
     width: 70%;
+    height: 80%;
+    /* background-color: green; */
 `
 
 export const NavLogo = styled.div`
@@ -45,13 +48,9 @@ export const NavItems = styled.div`
     }
 `
 
-export const ActiveItem = styled.div`
-    color: var(--white);
-`
-
 export const PostButton = styled.div`
     background-color: var(--blue);
-    border-radius: 10px;
+    border-radius: 50px;
     text-align: center;
     line-height: 50px;
     height: 50px;

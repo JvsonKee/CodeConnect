@@ -49,6 +49,7 @@ export const CarouselContainer = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    margin-bottom: 5%;
 `
 
 export const Carousel = styled.div`
@@ -97,7 +98,7 @@ export const CarouselNav = styled.div`
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: var(--off-white);
+        background-color: var(--white);
         opacity: 0.75;
         transition: opacity ease 250ms;
 
@@ -105,4 +106,13 @@ export const CarouselNav = styled.div`
             opacity: 100%;
         }
     }
+`
+
+export const TopicsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 950px;
+    margin: 0 auto;
+    padding-bottom: 10%;
 `

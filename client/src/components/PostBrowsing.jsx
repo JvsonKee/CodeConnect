@@ -14,7 +14,6 @@ function PostBrowsing( {user} ) {
                 <PostMainContent>
                     <PostTitle>{user.title}</PostTitle>
                     <PostDescription>{user.description}</PostDescription>
-                    <TimePosted>{user.time}</TimePosted>
                 </PostMainContent>
                 <TopicsContainer>
                     <TopicOutline>
