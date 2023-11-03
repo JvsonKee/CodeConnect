@@ -39,6 +39,16 @@ export const CustomForm = styled(Form)`
         color: white;
     }
 
+    .spanLabel {
+        display: inline-block;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+
+    .spanCheckbox {
+        display: inline-block;
+    }
+
 `
 
 export const H1 = styled.h1`
