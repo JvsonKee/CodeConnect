@@ -1,5 +1,5 @@
 import React from "react";
-import UserNameSurfaceStyle from "./UsernameSurfaceStyle.styled";
+import UserNameSurfaceStyle from "./TwoColumnSurfaceStyle.styled";
 import Headline from "../typography/Headline";
 
 function UserNameSurface(){
