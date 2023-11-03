@@ -15,8 +15,8 @@ function WelcomePage(){
                     <label for="password">Password:</label>
                     <InputField type="password" placeholder="Password" />
                     <LogInButton type="submit">Login</LogInButton>
+                    <ContinueButton>Continue As Guest</ContinueButton>
                 </LoginForm>
-                <ContinueButton>Continue As Guest</ContinueButton>
             </PageContainer>
             <CreateAccountButton>Create Account</CreateAccountButton>
         </Container>

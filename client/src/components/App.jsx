@@ -12,7 +12,7 @@ function App() {
 		<Container>
 			<GlobalStyles />
 			{/* <HomePage /> */}
-			<WelcomePage />
+			<OpenedMessagePage />
 		</Container>
 	)
 	
