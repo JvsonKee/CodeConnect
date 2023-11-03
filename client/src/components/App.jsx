@@ -1,4 +1,5 @@
 import ExplorePage from "./ExplorePage"
+import ExploreResults from './ExploreResults'
 import HomePage from "./Homepage"
 import CreateAccount from './CreateAccount'
 import { Container } from "./styles/Container"
@@ -9,7 +10,7 @@ function App() {
 		<Container>
 			<GlobalStyles />
 			{/* <HomePage /> */}
-			<CreateAccount />
+			<CreateAccount/>
 		</Container>
 	)
 	

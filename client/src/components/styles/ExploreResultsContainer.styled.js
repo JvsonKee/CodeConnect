@@ -5,7 +5,8 @@ import { Card } from "react-bootstrap";
 export const ExploreResultsContainer = styled.div`
     width: 80vw;
     height: 100vh;  
-    background-color: #242424;
+    margin-left: 20vw;
+    background-color: var(--black);
 `
 
 export const CustomCard = styled(Card)`
@@ -44,6 +45,19 @@ export const CustomCardBody = styled(Card.Body)`
         width: 10px;
     }
 
+    #generalPic {
+        padding-left: 15vw;
+    }
+
+`
+
+export const ContentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    gap: 40px;
+    padding-top: 10vh;
 `
 
 export const CustomCardText = styled(Card.Text)`
@@ -54,11 +68,7 @@ export const CustomCardText = styled(Card.Text)`
 
 export const InteractButtons = styled.div`
     color: white;
-
-    .icons {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+    padding-top: 10px;
     
 
 `

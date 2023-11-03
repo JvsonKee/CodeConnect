@@ -5,6 +5,9 @@ export const SearchBarContainer = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+    padding-top: 20vh;
+    padding-left: 10vw;
+    padding-right: 7vw;
 `
 
 export const Search = styled.input`

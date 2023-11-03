@@ -1,4 +1,4 @@
-import { CreateAccountContainer, InputFields, TitleText, FormContainer, CustomForm, H1, CustomButton, IconContainer } from "./styles/CreateAccount.styled";
+import { CreateAccountContainer, FormContainer, CustomForm, H1, CustomButton, IconContainer, CustomModal, CustomFormControl } from "./styles/CreateAccount.styled";
 import { Container } from "./styles/Container";
 
 import 'bootstrap/dist/css/bootstrap.css'; 
@@ -23,7 +23,7 @@ function CreateAccount() {
             
                 <H1>
                     <a href = "./components/HomePage"><IconContainer/></a>
-                    CREATE ACCOUNT
+                    Create Account
                 </H1>
 
                 <FormContainer>
@@ -32,23 +32,23 @@ function CreateAccount() {
                         <Form.Group className = "createAcct" controlId = "email">
                             <Form.Label> Email address </Form.Label>
                             <br/>
-                            <Form.Control type = "email" placeholder = "Enter email" size = "md" />
+                            <CustomFormControl type = "email" placeholder = "Enter email" size = "md" />
                         </Form.Group>
                     </CustomForm>
 
-                    <CustomForm>
+                    <CustomForm class>
                         <Form.Group className = "createAcct" controlId = "username">
                             <Form.Label> Username </Form.Label>
                             <br/>
-                            <Form.Control type = "text" placeholder = "Enter username" size = "md" />
+                            <CustomFormControl type = "text" placeholder = "Enter username" size = "md" />
                         </Form.Group>
                     </CustomForm>
 
-                    <CustomForm>
+                    <CustomForm class>
                         <Form.Group className = "createAcct" controlId = "password">
                             <Form.Label> Password </Form.Label>
                             <br/>
-                            <Form.Control type = "password" placeholder = "Enter password" size = "md" />
+                            <CustomFormControl type = "password" placeholder = "Enter password" size = "md" />
                         </Form.Group>
                     </CustomForm>
 
@@ -56,7 +56,7 @@ function CreateAccount() {
                         <Form.Group className = "createAcct" controlId = "confirmPassword">
                             <Form.Label> Confirm Password </Form.Label>
                             <br/>
-                            <Form.Control type = "password" placeholder = "Confirm password" size = "md" />
+                            <CustomFormControl type = "password" placeholder = "Confirm password" size = "md" />
                         </Form.Group>
                     </CustomForm>
 
@@ -70,7 +70,7 @@ function CreateAccount() {
                     </CustomForm>
                     
 
-                    <Modal show = {show} onHide = {handleClose} animation = {false} scrollable>
+                    <CustomModal show = {show} onHide = {handleClose} animation = {false} scrollable>
                         <Modal.Header closeButton>
                             <Modal.Title>Terms and Conditions</Modal.Title>
                         </Modal.Header>
@@ -134,10 +134,10 @@ function CreateAccount() {
                             <br/>
                             B. No Joint Venture, No Derogation of Rights. You agree that no joint venture, partnership, employment, or agency relationship exists between you and us as a result of these Terms and Conditions or your use of the Site. Our performance of these Terms and Conditions is subject to existing laws and legal process, and nothing contained herein is in derogation of our right to comply with governmental, court and law enforcement requests or requirements relating to your use of the Site or information provided to or gathered by us with respect to such use.
                         </Modal.Body>
-                    </Modal>
+                    </CustomModal>
 
                     <CustomButton variant = "outline-light">
-                        SUBMIT
+                        Create
                     </CustomButton>
 
                 </FormContainer>
