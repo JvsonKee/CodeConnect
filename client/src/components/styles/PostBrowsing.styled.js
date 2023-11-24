@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 export const PostContainer = styled.div`  
     display: flex;
     justify-content: center;

@@ -25,7 +25,7 @@ function ExplorePage() {
                     <TopicsSection>
                         <TopicsHeaderContainer>
                             <PageHeader>
-                                <div> <FireIcon icon={faFire}/> Trending</div>
+                                <div><FireIcon icon={faFire}/> Trending</div>
                             </PageHeader>
                         </TopicsHeaderContainer>
                         <CarouselContainer>
