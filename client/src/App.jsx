@@ -8,8 +8,8 @@ function App() {
 		<Container>
 			<GlobalStyles />
 			{/* <HomePage /> */}
-      <UserPage/>
-			{/* <ExplorePage /> */}
+      {/* <UserPage/> */}
+			<ExplorePage />
 		</Container>
 	)
 }
