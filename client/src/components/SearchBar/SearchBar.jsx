@@ -1,5 +1,5 @@
-import Dropdown from "./Dropdown"
-import { ArrowIcon, Search, SearchBarContainer, SearchButton, SearchIcon } from "./styles/SearchBar.styled"
+import Dropdown from "../Dropdown/Dropdown"
+import { ArrowIcon, Search, SearchBarContainer, SearchButton, SearchIcon } from "./SearchBar.styled"
 import { faArrowRight, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react";
 

@@ -1,13 +1,13 @@
 import React from "react";
 import ProfileSurfaceStyle from "./ProfileSurfaceStyle.style";
 import CircularImage from "../CircularImage/CircularImage";
-import ProfilePic from "../../assets/profile-pic.jpg";
-import DisplaySurfaceStyle from "../styles/DisplaySurfaceStyle.styled";
+import ProfilePic from "../../../assets/profile-pic.jpg"
+import DisplaySurfaceStyle from "../DisplaySurfaceStyle.styled";
 import Headline from "../typography/Headline";
-import { TagStyle, TagText } from "../styles/TagStyle";
-import { BioStyle } from "../styles/BioStyle.styled";
+import { TagStyle, TagText } from "../TagStyle";
+import { BioStyle } from "../BioStyle.styled";
 import Body from "../typography/Body";
-import { HeaderRow } from "../styles/HeaderRow";
+import { HeaderRow } from "../HeaderRow";
 
 function ProfileSurface(){
     return <ProfileSurfaceStyle>

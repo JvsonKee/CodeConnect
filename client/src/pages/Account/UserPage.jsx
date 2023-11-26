@@ -1,12 +1,12 @@
-import { Container } from "../components/styles/Container";
-import { UserPageContainer } from "../components/styles/UserPage.styled";
-import NavBar from "../components/NavBar";
+import { Container } from "../../styles/Container";
+import { UserPageContainer } from "./UserPage.styled";
+import NavBar from "../../components/NavBar/NavBar";
 import React from "react";
-import { EditProfileContainer } from "../components/styles/EditProfileContainer.styled";
-import ProfileSurface from "../components/ProfileSurface/ProfileSurface";
-import { CentralColumn } from "../components/styles/CentralColumn";
-import { HeaderRow } from "../components/styles/HeaderRow";
-import Headline from "../components/typography/Headline";
+import { EditProfileContainer } from "./EditProfileContainer.styled";
+import ProfileSurface from "./ProfileSurface/ProfileSurface";
+import { CentralColumn } from "./CentralColumn";
+import { HeaderRow } from "./HeaderRow";
+import Headline from "./typography/Headline";
 
 function UserPage(){
     return (  

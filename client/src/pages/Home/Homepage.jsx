@@ -1,13 +1,13 @@
-import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from "./styles/HomePage.styled";
-import { PageHeader } from "./styles/PageHeader";
-import NavBar from "./NavBar";
-import { Container } from "./styles/Container";
-import Dropdown from "./Dropdown";
-import { useState } from "react";
-import PostBrowsing from "./PostBrowsing";
-import profilePicture1 from '../assets/placeholder-profile-pic.png'
-import profilePicture2 from '../assets/profile2.jpg'
-import profilePicture3 from '../assets/profile3.jpg'
+import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from './HomePage.styled';
+import { PageHeader } from "../../styles/PageHeader"
+import NavBar from "../../components/NavBar/NavBar"
+import { Container } from "../../styles/Container"
+import Dropdown from "../../components/Dropdown/Dropdown"
+import { useState } from "react"
+import PostBrowsing from '../../components/PostCards/PostBrowsing'
+import profilePicture1 from '../../assets/placeholder-profile-pic.png'
+import profilePicture2 from '../../assets/profile2.jpg'
+import profilePicture3 from '../../assets/profile3.jpg'
 
 
 const user1 = {

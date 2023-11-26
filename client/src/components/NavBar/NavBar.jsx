@@ -1,4 +1,4 @@
-import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect } from "./styles/NavBar.styled";
+import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect } from "./NavBar.styled";
 
 function NavBar() {
     return (

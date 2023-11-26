@@ -1,4 +1,4 @@
-import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted, PostInformationWrapper, PostReaction } from "./styles/PostBrowsing.styled"
+import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted, PostInformationWrapper, PostReaction } from "./PostBrowsing.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import propTypes from 'prop-types'
 

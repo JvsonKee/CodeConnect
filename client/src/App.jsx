@@ -1,15 +1,15 @@
-import UserPage from "../pages/UserPage"
-import ExplorePage from "./ExplorePage"
-import HomePage from "./Homepage"
+import UserPage from "./pages/Account/UserPage"
+import ExplorePage from "./pages/Explore/ExplorePage"
+import HomePage from "./pages/Home/Homepage"
 import { Container } from "./styles/Container"
 import GlobalStyles from "./styles/Global"
 function App() {
 	return (
 		<Container>
 			<GlobalStyles />
-			<HomePage />
+			{/* <HomePage /> */}
       {/* <UserPage/> */}
-			{/* <ExplorePage /> */}
+			<ExplorePage />
 		</Container>
 	)
 }
