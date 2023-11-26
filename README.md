@@ -2,7 +2,7 @@
 
 ## Instructions
 
-- Ensure you are in the `client` directory the run the following commands:
+- Ensure you are in the `client` directory then run the following commands:
 
 ```bash
 npm install
