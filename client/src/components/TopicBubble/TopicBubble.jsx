@@ -1,4 +1,4 @@
-import { Topic } from "./styles/TopicBubble.styled"
+import { Topic } from "./TopicBubble.styled"
 import propTypes from 'prop-types'
 
 function TopicBubble( {topicName} ) {

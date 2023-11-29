@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom';
 
 export const NavContainer = styled.div`
     display: flex;
@@ -45,6 +46,19 @@ export const NavItems = styled.div`
     
     div {
         height: 50px;
+    }
+
+    & a.active {
+        color: var(--white);
+    }
+`
+
+export const NavItem = styled(NavLink)`
+    color: var(--grey);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--white);
     }
 `
 

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 export const PostContainer = styled.div`  
     display: flex;
     justify-content: center;
@@ -30,11 +29,20 @@ export const PostMatrix = styled.div`
     gap: 20px;
 `
 
+export const PostInformationWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
 export const PostUserInformation = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
     color: var(--grey);
+`
+
+export const PostReaction = styled.div`
+    font-size: 30px;
 `
 
 export const UserProfilePicture = styled.img`
@@ -101,6 +109,7 @@ export const Analytic = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--grey);
 `
 
 

@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
         --blue: #558FFF;
         --light-blue: #94B8FF;
         --blue-low: rgba(85, 143, 255, 0.4);
-        --shadow: #0C0C0C; 
+        --shadow: rgba(0, 0, 0, 0.25);
     }
 
     body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a {

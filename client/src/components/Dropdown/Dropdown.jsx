@@ -5,7 +5,7 @@ import {
     Selected, 
     Caret,
     Menu
-} from "./styles/Dropdown.styled"
+} from "./Dropdown.styled"
 import propTypes from 'prop-types'
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 

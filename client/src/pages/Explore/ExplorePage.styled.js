@@ -41,6 +41,19 @@ export const TopicsHeaderContainer = styled.div`
     margin: 0 auto;
 `
 
+export const SelectContainer = styled.div`
+    display: flex;
+    gap: 10px;
+    
+    div {
+        color: var(--grey);
+    }
+`
+
+export const CheckBox = styled.input`
+
+`
+
 export const FireIcon = styled(FontAwesomeIcon)`
 
 `
