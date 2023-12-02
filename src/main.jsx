@@ -8,7 +8,7 @@ import HomePage from './pages/Home/Homepage';
 
 const router = createBrowserRouter([
 	{
-		path: '/CodeConnect/home',
+		path: '/CodeConnect/',
 		element: <HomePage />
 	},
 	{
