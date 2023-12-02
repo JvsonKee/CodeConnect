@@ -9,7 +9,7 @@ function NavBar() {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <NavItem to="https://jvsonkee.github.io/CodeConnect/">Home</NavItem>
+                    <NavItem to="/">Home</NavItem>
                     <NavItem to="/explore">Explore</NavItem>
                     <NavItem>Direct Messages</NavItem>
                     <NavItem to="/account">Profile</NavItem>
