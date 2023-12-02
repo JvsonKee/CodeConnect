@@ -1,11 +1,11 @@
 import ReactDOM from 'react-dom/client'
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App'
 import ExplorePage from './pages/Explore/ExplorePage';
 import UserPage from './pages/Account/UserPage';
 import GlobalStyles from './styles/Global';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />
