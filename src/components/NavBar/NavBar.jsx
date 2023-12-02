@@ -9,10 +9,10 @@ function NavBar() {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <NavItem to="/">Home</NavItem>
-                    <NavItem to="/explore">Explore</NavItem>
-                    <NavItem to="/direct-messages">Direct Messages</NavItem>
-                    <NavItem to="/account">Profile</NavItem>
+                    <NavItem to="/CodeConnect/">Home</NavItem>
+                    <NavItem to="/CodeConnect/explore">Explore</NavItem>
+                    <NavItem>Direct Messages</NavItem>
+                    <NavItem to="/CodeConnect/account">Profile</NavItem>
                     <PostButton>Post</PostButton>
                 </NavItems>
             </Nav>
