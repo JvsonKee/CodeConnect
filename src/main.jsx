@@ -4,11 +4,12 @@ import App from './App'
 import ExplorePage from './pages/Explore/ExplorePage';
 import UserPage from './pages/Account/UserPage';
 import GlobalStyles from './styles/Global';
+import HomePage from './pages/Home/Homepage';
 
 const router = createBrowserRouter([
 	{
-		path: '/CodeConnect/',
-		element: <App />
+		path: '/CodeConnect/home',
+		element: <HomePage />
 	},
 	{
 		path: '/CodeConnect/explore',
@@ -18,7 +19,6 @@ const router = createBrowserRouter([
 		path: '/CodeConnect/account',
 		element: <UserPage />
 	}
-
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -9,7 +9,7 @@ function NavBar() {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <NavItem to="/CodeConnect/">Home</NavItem>
+                    <NavItem to="/CodeConnect/home">Home</NavItem>
                     <NavItem to="/CodeConnect/explore">Explore</NavItem>
                     <NavItem>Direct Messages</NavItem>
                     <NavItem to="/CodeConnect/account">Profile</NavItem>
