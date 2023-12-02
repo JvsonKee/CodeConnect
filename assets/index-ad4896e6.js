@@ -149,7 +149,7 @@ Error generating stack: `+a.message+`
     line-height: 50px;
     height: 50px;
     color: var(--white);
-`;function of(){return C.jsx(Vx,{children:C.jsxs(Yx,{children:[C.jsxs(Qx,{children:[C.jsx(Kx,{children:"Code"}),C.jsx(Gx,{children:"Connect"})]}),C.jsxs(Xx,{children:[C.jsx(Ja,{to:"/CodeConnect/",children:"Home"}),C.jsx(Ja,{to:"/CodeConnect/explore",children:"Explore"}),C.jsx(Ja,{children:"Direct Messages"}),C.jsx(Ja,{to:"/CodeConnect/account",children:"Profile"}),C.jsx(Jx,{children:"Post"})]})]})})}const lf=A.div`
+`;function of(){return C.jsx(Vx,{children:C.jsxs(Yx,{children:[C.jsxs(Qx,{children:[C.jsx(Kx,{children:"Code"}),C.jsx(Gx,{children:"Connect"})]}),C.jsxs(Xx,{children:[C.jsx(Ja,{to:"/CodeConnect/home",children:"Home"}),C.jsx(Ja,{to:"/CodeConnect/explore",children:"Explore"}),C.jsx(Ja,{children:"Direct Messages"}),C.jsx(Ja,{to:"/CodeConnect/account",children:"Profile"}),C.jsx(Jx,{children:"Post"})]})]})})}const lf=A.div`
     display: flex;
 `;function gp(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(i){return Object.getOwnPropertyDescriptor(e,i).enumerable})),n.push.apply(n,r)}return n}function j(e){for(var t=1;t<arguments.length;t++){var n=arguments[t]!=null?arguments[t]:{};t%2?gp(Object(n),!0).forEach(function(r){Le(e,r,n[r])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):gp(Object(n)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(n,r))})}return e}function rl(e){"@babel/helpers - typeof";return rl=typeof Symbol=="function"&&typeof Symbol.iterator=="symbol"?function(t){return typeof t}:function(t){return t&&typeof Symbol=="function"&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},rl(e)}function Zx(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function yp(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function qx(e,t,n){return t&&yp(e.prototype,t),n&&yp(e,n),Object.defineProperty(e,"prototype",{writable:!1}),e}function Le(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function sf(e,t){return t2(e)||r2(e,t)||Kv(e,t)||a2()}function _a(e){return e2(e)||n2(e)||Kv(e)||i2()}function e2(e){if(Array.isArray(e))return Mu(e)}function t2(e){if(Array.isArray(e))return e}function n2(e){if(typeof Symbol<"u"&&e[Symbol.iterator]!=null||e["@@iterator"]!=null)return Array.from(e)}function r2(e,t){var n=e==null?null:typeof Symbol<"u"&&e[Symbol.iterator]||e["@@iterator"];if(n!=null){var r=[],i=!0,a=!1,o,l;try{for(n=n.call(e);!(i=(o=n.next()).done)&&(r.push(o.value),!(t&&r.length===t));i=!0);}catch(s){a=!0,l=s}finally{try{!i&&n.return!=null&&n.return()}finally{if(a)throw l}}return r}}function Kv(e,t){if(e){if(typeof e=="string")return Mu(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);if(n==="Object"&&e.constructor&&(n=e.constructor.name),n==="Map"||n==="Set")return Array.from(e);if(n==="Arguments"||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return Mu(e,t)}}function Mu(e,t){(t==null||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function i2(){throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`)}function a2(){throw new TypeError(`Invalid attempt to destructure non-iterable instance.
@@ -1051,11 +1051,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     align-items: center;
     gap: 10px;
     color: var(--grey);
-`;var yk={prefix:"far",iconName:"heart",icon:[512,512,[128153,128154,128155,128156,128420,129293,129294,129505,9829,10084,61578],"f004","M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"]},wk={prefix:"far",iconName:"comment",icon:[512,512,[128489,61669],"f075","M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9c.1-.2 .2-.3 .3-.5z"]};function _o({user:e}){return C.jsx(rk,{children:C.jsxs(ik,{children:[C.jsxs(ak,{children:[C.jsxs(ok,{children:[C.jsx(sk,{src:e.profilePicture}),C.jsx(uk,{children:e.userName}),C.jsx(ck,{children:e.time})]}),C.jsx(lk,{children:e.reaction})]}),C.jsxs(fk,{children:[C.jsx(dk,{children:e.title}),C.jsx(pk,{children:e.description})]}),C.jsx(hk,{children:C.jsx(mk,{children:C.jsx(vk,{children:e.topic})})}),C.jsxs(gk,{children:[C.jsxs(lo,{children:[C.jsx(Hp,{icon:yk}),C.jsxs("div",{children:[e.likes," likes"]})]}),C.jsxs(lo,{children:[C.jsx(Hp,{icon:wk}),C.jsxs("div",{children:[e.comments," comments"]})]}),C.jsx(lo,{children:C.jsx("div",{children:e.reactions})}),C.jsx(lo,{children:". . ."})]})]})})}_o.propTypes={user:V.object};const xk="/CodeConnect/assets/placeholder-profile-pic-f5f126af.png",Sk="/CodeConnect/assets/profile2-8c27ae59.jpg",kk="/CodeConnect/assets/profile3-65bbbce1.jpg",Ek={profilePicture:xk,userName:"JasonSucksAtCoding69",title:"Learning React",time:"19 minutes ago",reaction:"🔥",description:"I am learning React for a school project, what are the best resources to learn from?",topic:"React",likes:"43",comments:"59"},Ck={profilePicture:Sk,userName:"RealEyesRealizeRealLies",title:"Growtopia - My new game!",time:"1 hour ago",reaction:"🌟",description:"I've been developing my farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!",topic:"Game Development",likes:"203",comments:"122"},Pk={profilePicture:kk,userName:"I<3Coding",title:"Internship Help",time:"4 hours ago",reaction:"",description:"I'm in my third year of university and I'm want to start applying to internships. I've never had an interview before and I was wondering what the process is normally like?",topic:"Career",likes:"94",comments:"73"};function bk(){const[e,t]=R.useState("Recent");return C.jsxs(lf,{children:[C.jsx(of,{}),C.jsx(Ux,{children:C.jsxs(Bx,{children:[C.jsxs(Wx,{children:[C.jsx(Du,{children:"Home"}),C.jsx(Sf,{setStatus:t})]}),C.jsxs(Hx,{children:[C.jsx(_o,{user:Ek}),C.jsx(_o,{user:Ck}),C.jsx(_o,{user:Pk})]})]})})]})}function _k(){return C.jsx(bk,{})}const Rk=A.div`
+`;var yk={prefix:"far",iconName:"heart",icon:[512,512,[128153,128154,128155,128156,128420,129293,129294,129505,9829,10084,61578],"f004","M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"]},wk={prefix:"far",iconName:"comment",icon:[512,512,[128489,61669],"f075","M123.6 391.3c12.9-9.4 29.6-11.8 44.6-6.4c26.5 9.6 56.2 15.1 87.8 15.1c124.7 0 208-80.5 208-160s-83.3-160-208-160S48 160.5 48 240c0 32 12.4 62.8 35.7 89.2c8.6 9.7 12.8 22.5 11.8 35.5c-1.4 18.1-5.7 34.7-11.3 49.4c17-7.9 31.1-16.7 39.4-22.7zM21.2 431.9c1.8-2.7 3.5-5.4 5.1-8.1c10-16.6 19.5-38.4 21.4-62.9C17.7 326.8 0 285.1 0 240C0 125.1 114.6 32 256 32s256 93.1 256 208s-114.6 208-256 208c-37.1 0-72.3-6.4-104.1-17.9c-11.9 8.7-31.3 20.6-54.3 30.6c-15.1 6.6-32.3 12.6-50.1 16.1c-.8 .2-1.6 .3-2.4 .5c-4.4 .8-8.7 1.5-13.2 1.9c-.2 0-.5 .1-.7 .1c-5.1 .5-10.2 .8-15.3 .8c-6.5 0-12.3-3.9-14.8-9.9c-2.5-6-1.1-12.8 3.4-17.4c4.1-4.2 7.8-8.7 11.3-13.5c1.7-2.3 3.3-4.6 4.8-6.9c.1-.2 .2-.3 .3-.5z"]};function _o({user:e}){return C.jsx(rk,{children:C.jsxs(ik,{children:[C.jsxs(ak,{children:[C.jsxs(ok,{children:[C.jsx(sk,{src:e.profilePicture}),C.jsx(uk,{children:e.userName}),C.jsx(ck,{children:e.time})]}),C.jsx(lk,{children:e.reaction})]}),C.jsxs(fk,{children:[C.jsx(dk,{children:e.title}),C.jsx(pk,{children:e.description})]}),C.jsx(hk,{children:C.jsx(mk,{children:C.jsx(vk,{children:e.topic})})}),C.jsxs(gk,{children:[C.jsxs(lo,{children:[C.jsx(Hp,{icon:yk}),C.jsxs("div",{children:[e.likes," likes"]})]}),C.jsxs(lo,{children:[C.jsx(Hp,{icon:wk}),C.jsxs("div",{children:[e.comments," comments"]})]}),C.jsx(lo,{children:C.jsx("div",{children:e.reactions})}),C.jsx(lo,{children:". . ."})]})]})})}_o.propTypes={user:V.object};const xk="/CodeConnect/assets/placeholder-profile-pic-f5f126af.png",Sk="/CodeConnect/assets/profile2-8c27ae59.jpg",kk="/CodeConnect/assets/profile3-65bbbce1.jpg",Ek={profilePicture:xk,userName:"JasonSucksAtCoding69",title:"Learning React",time:"19 minutes ago",reaction:"🔥",description:"I am learning React for a school project, what are the best resources to learn from?",topic:"React",likes:"43",comments:"59"},Ck={profilePicture:Sk,userName:"RealEyesRealizeRealLies",title:"Growtopia - My new game!",time:"1 hour ago",reaction:"🌟",description:"I've been developing my farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!",topic:"Game Development",likes:"203",comments:"122"},Pk={profilePicture:kk,userName:"I<3Coding",title:"Internship Help",time:"4 hours ago",reaction:"",description:"I'm in my third year of university and I'm want to start applying to internships. I've never had an interview before and I was wondering what the process is normally like?",topic:"Career",likes:"94",comments:"73"};function bk(){const[e,t]=R.useState("Recent");return C.jsxs(lf,{children:[C.jsx(of,{}),C.jsx(Ux,{children:C.jsxs(Bx,{children:[C.jsxs(Wx,{children:[C.jsx(Du,{children:"Home"}),C.jsx(Sf,{setStatus:t})]}),C.jsxs(Hx,{children:[C.jsx(_o,{user:Ek}),C.jsx(_o,{user:Ck}),C.jsx(_o,{user:Pk})]})]})})]})}const _k=A.div`
     display: flex;
     gap: 20px;
     align-items: center;
-`,Tk=A.input`
+`,Rk=A.input`
     width: 75%;
     height: 70px;
     border-radius: 50px; 
@@ -1072,16 +1072,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     }
 `;A(fn)`
     color: var(--white);
-`;const Nk=A.button`
+`;const Tk=A.button`
     width: 50px;
     height: 50px;
     border-radius: 100px;
     border: 0px;
     background-color: var(--blue);
-`,Ok=A(fn)`
+`,Nk=A(fn)`
     font-size: 17px;
     color: var(--white);
-`;function Lk(){const[e,t]=R.useState("Recents");return C.jsxs(Rk,{children:[C.jsx(Sf,{setStatus:t}),C.jsx(Tk,{input:"text",placeholder:"Search"}),C.jsx(Nk,{children:C.jsx(Ok,{icon:tk})})]})}const Ak=A.div`
+`;function Ok(){const[e,t]=R.useState("Recents");return C.jsxs(_k,{children:[C.jsx(Sf,{setStatus:t}),C.jsx(Rk,{input:"text",placeholder:"Search"}),C.jsx(Tk,{children:C.jsx(Nk,{icon:tk})})]})}const Lk=A.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1089,7 +1089,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 80vw;
     height: 100vh;
     background-color: var(--black);
-`,jk=A.div`
+`,Ak=A.div`
     display: flex;
     flex-direction: column;
     gap: 100px;
@@ -1100,7 +1100,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     width: 88%;
     display: flex;
     justify-content: flex-end;
-`;const Ik=A.div`
+`;const jk=A.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -1111,23 +1111,23 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-`,Dk=A.div`
+`,Ik=A.div`
     display: flex;
     gap: 10px;
     
     div {
         color: var(--grey);
     }
-`,Mk=A.input`
+`,Dk=A.input`
 
-`,zk=A(fn)`
+`,Mk=A(fn)`
 
-`,Fk=A.div`
+`,zk=A.div`
     position: relative;
     width: 100%;
     height: 100%;
     margin-bottom: 5%;
-`,$k=A.div`
+`,Fk=A.div`
     display: flex;
     margin: 0 auto;
     overflow-x: auto;
@@ -1152,7 +1152,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     transform: translate(-50%, -50%);
     font-size: 50px;
     font-weight: 600;
-`,Uk=A.div`
+`,$k=A.div`
     display: flex;
     gap: 10px;
     position: absolute;
@@ -1173,14 +1173,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             opacity: 100%;
         }
     }
-`,Bk=A.div`
+`,Uk=A.div`
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     width: 950px;
     margin: 0 auto;
     padding-bottom: 10%;
-`,Wk=A.div`
+`,Bk=A.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1191,7 +1191,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     color: var(--white);
     font-size: 14px;
     box-shadow: 0 10px 10px var(--shadow);
-`;function nt({topicName:e}){return C.jsx(Wk,{children:e})}nt.propTypes={topicName:V.string};const Hk="/CodeConnect/assets/web-dev-0661792e.png",Vk="/CodeConnect/assets/game-dev-bd8da6b7.png",Yk="/CodeConnect/assets/programming-d8860b21.png";function Qk(){return R.useState("Recent"),C.jsxs(lf,{children:[C.jsx(of,{}),C.jsx(Ak,{children:C.jsxs(jk,{children:[C.jsx(Lk,{}),C.jsxs(Ik,{children:[C.jsx(Vp,{children:C.jsx(Du,{children:C.jsxs("div",{children:[C.jsx(zk,{icon:ek})," Trending"]})})}),C.jsx(Fk,{children:C.jsxs($k,{children:[C.jsxs(Ps,{id:"slide-1",children:[C.jsx(bs,{src:Hk}),C.jsx(_s,{children:"Web Development"})]}),C.jsxs(Ps,{id:"slide-2",children:[C.jsx(bs,{src:Vk}),C.jsx(_s,{children:"Game Development"})]}),C.jsxs(Ps,{id:"slide-3",children:[C.jsx(bs,{src:Yk}),C.jsx(_s,{children:"Python"})]}),C.jsxs(Uk,{children:[C.jsx("a",{href:"#slide-1"}),C.jsx("a",{href:"#slide-2"}),C.jsx("a",{href:"#slide-3"})]})]})}),C.jsxs(Vp,{children:[C.jsx(Du,{children:"Topics"}),C.jsxs(Dk,{children:[C.jsx("div",{children:"Select"}),C.jsx(Mk,{type:"checkbox"})]})]}),C.jsxs(Bk,{children:[C.jsx(nt,{topicName:"Web Development"}),C.jsx(nt,{topicName:"React"}),C.jsx(nt,{topicName:"Python"}),C.jsx(nt,{topicName:"Dynamic Programming"}),C.jsx(nt,{topicName:"JavaScript"}),C.jsx(nt,{topicName:"Full-Stack Development"}),C.jsx(nt,{topicName:"Data Structures"}),C.jsx(nt,{topicName:"Networks"}),C.jsx(nt,{topicName:"Game Development"}),C.jsx(nt,{topicName:"Cybersecurity"}),C.jsx(nt,{topicName:"HTML"}),C.jsx(nt,{topicName:"CSS"}),C.jsx(nt,{topicName:"Data Science"})]})]})]})})]})}const Kk=A.div`
+`;function nt({topicName:e}){return C.jsx(Bk,{children:e})}nt.propTypes={topicName:V.string};const Wk="/CodeConnect/assets/web-dev-0661792e.png",Hk="/CodeConnect/assets/game-dev-bd8da6b7.png",Vk="/CodeConnect/assets/programming-d8860b21.png";function Yk(){return R.useState("Recent"),C.jsxs(lf,{children:[C.jsx(of,{}),C.jsx(Lk,{children:C.jsxs(Ak,{children:[C.jsx(Ok,{}),C.jsxs(jk,{children:[C.jsx(Vp,{children:C.jsx(Du,{children:C.jsxs("div",{children:[C.jsx(Mk,{icon:ek})," Trending"]})})}),C.jsx(zk,{children:C.jsxs(Fk,{children:[C.jsxs(Ps,{id:"slide-1",children:[C.jsx(bs,{src:Wk}),C.jsx(_s,{children:"Web Development"})]}),C.jsxs(Ps,{id:"slide-2",children:[C.jsx(bs,{src:Hk}),C.jsx(_s,{children:"Game Development"})]}),C.jsxs(Ps,{id:"slide-3",children:[C.jsx(bs,{src:Vk}),C.jsx(_s,{children:"Python"})]}),C.jsxs($k,{children:[C.jsx("a",{href:"#slide-1"}),C.jsx("a",{href:"#slide-2"}),C.jsx("a",{href:"#slide-3"})]})]})}),C.jsxs(Vp,{children:[C.jsx(Du,{children:"Topics"}),C.jsxs(Ik,{children:[C.jsx("div",{children:"Select"}),C.jsx(Dk,{type:"checkbox"})]})]}),C.jsxs(Uk,{children:[C.jsx(nt,{topicName:"Web Development"}),C.jsx(nt,{topicName:"React"}),C.jsx(nt,{topicName:"Python"}),C.jsx(nt,{topicName:"Dynamic Programming"}),C.jsx(nt,{topicName:"JavaScript"}),C.jsx(nt,{topicName:"Full-Stack Development"}),C.jsx(nt,{topicName:"Data Structures"}),C.jsx(nt,{topicName:"Networks"}),C.jsx(nt,{topicName:"Game Development"}),C.jsx(nt,{topicName:"Cybersecurity"}),C.jsx(nt,{topicName:"HTML"}),C.jsx(nt,{topicName:"CSS"}),C.jsx(nt,{topicName:"Data Science"})]})]})]})})]})}const Qk=A.div`
     width: 80vw;
     height: 100vh;  
     margin-left: 20vw;
@@ -1207,7 +1207,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
-`,Gk=A.div`
+`,Kk=A.div`
     display: flex;
     padding: 16px;
     align-self: stretch;
@@ -1215,19 +1215,19 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     align-items: center;
     background-color: #121212;
     gap: 10px;
-`,Xk=A.div`
+`,Gk=A.div`
     width: 20vw;
     height: 20vw;
     border-radius: 50%;
     overflow: hidden;
-`;function Jk({src:e,alt:t}){return C.jsx(Xk,{children:C.jsx("img",{src:e,alt:t,style:{flex:1,width:"100%",height:"100%",resizeMode:"contain"}})})}const Zk="/CodeConnect/assets/profile-pic-fc3f250c.jpg",Qp=A.div`
+`;function Xk({src:e,alt:t}){return C.jsx(Gk,{children:C.jsx("img",{src:e,alt:t,style:{flex:1,width:"100%",height:"100%",resizeMode:"contain"}})})}const Jk="/CodeConnect/assets/profile-pic-fc3f250c.jpg",Qp=A.div`
     display: flex;
     width: 420px;
     padding: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-`,qk={fontSize:"17px",color:"white",textAlign:"center",fontWeight:"600",letterSpacing:"1.25px",lineHeigt:"normal"};function Ju({text:e}){return C.jsx("p",{style:qk,children:e})}const Kp=A.div`
+`,Zk={fontSize:"17px",color:"white",textAlign:"center",fontWeight:"600",letterSpacing:"1.25px",lineHeigt:"normal"};function Ju({text:e}){return C.jsx("p",{style:Zk,children:e})}const Kp=A.div`
     background-color: #9190A2;
     border-radius: 6px;
     display: inline-flex;
@@ -1237,9 +1237,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     gap: 10px;
 `,Gp=A.div`
     color: white;
-`,eE=A.div`
+`,qk=A.div`
 align-self: stretch;
-`,tE={fontSize:"16px",color:"white",textAlign:"center",fontWeight:"400",letterSpacing:"1.25px",lineHeigt:"normal"};function nE({text:e}){return C.jsx("p",{style:tE,children:e})}const rE=A.div`
+`,eE={fontSize:"16px",color:"white",textAlign:"center",fontWeight:"400",letterSpacing:"1.25px",lineHeigt:"normal"};function tE({text:e}){return C.jsx("p",{style:eE,children:e})}const nE=A.div`
     display: flex;
     padding: 14px 0px 14px 16px;
     align-items: center;
@@ -1247,14 +1247,14 @@ align-self: stretch;
     align-self: stretch;
     border-bottom: 0.25px solid #FFF;
     background: #121212;
-`;function iE(){return C.jsxs(Gk,{children:[C.jsx(Jk,{src:Zk,alt:"User Profile Picture"}),C.jsxs(Qp,{children:[C.jsx(Ju,{text:"PixelPioneer"}),C.jsx(Ju,{text:"(She/Her)"})]}),C.jsxs(Qp,{children:[C.jsx(Kp,{children:C.jsx(Gp,{children:"Teacher"})}),C.jsx(Kp,{children:C.jsx(Gp,{children:"Web Development, Full-Stack, +1 More"})})]}),C.jsx(eE,{children:C.jsx(nE,{text:"Oh wow this is my bio!!!"})})]})}const aE=A.div`
+`;function rE(){return C.jsxs(Kk,{children:[C.jsx(Xk,{src:Jk,alt:"User Profile Picture"}),C.jsxs(Qp,{children:[C.jsx(Ju,{text:"PixelPioneer"}),C.jsx(Ju,{text:"(She/Her)"})]}),C.jsxs(Qp,{children:[C.jsx(Kp,{children:C.jsx(Gp,{children:"Teacher"})}),C.jsx(Kp,{children:C.jsx(Gp,{children:"Web Development, Full-Stack, +1 More"})})]}),C.jsx(qk,{children:C.jsx(tE,{text:"Oh wow this is my bio!!!"})})]})}const iE=A.div`
     display: flex;
     width: 40vw;
     flex-direction: column;
     align-items: center;
     align-self: stretch;
     background: #363636;
-`;function oE(){return C.jsxs(lf,{children:[C.jsx(of,{}),C.jsxs(Kk,{children:[C.jsx(Yp,{}),C.jsxs(aE,{children:[C.jsx(iE,{}),C.jsx(rE,{children:C.jsx(Ju,{text:"Posts"})})]}),C.jsx(Yp,{})]})]})}const lE=$x`
+`;function aE(){return C.jsxs(lf,{children:[C.jsx(of,{}),C.jsxs(Qk,{children:[C.jsx(Yp,{}),C.jsxs(iE,{children:[C.jsx(rE,{}),C.jsx(nE,{children:C.jsx(Ju,{text:"Posts"})})]}),C.jsx(Yp,{})]})]})}const oE=$x`
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Reggae+One&display=swap');
 
     :root {
@@ -1285,4 +1285,4 @@ align-self: stretch;
         font-family: 'Inter', sans-serif;
         background-color: var(--black);
     }
-`,sE=kw([{path:"/CodeConnect/",element:C.jsx(_k,{})},{path:"/CodeConnect/explore",element:C.jsx(Qk,{})},{path:"/CodeConnect/account",element:C.jsx(oE,{})}]),uE=Rs.createRoot(document.getElementById("root"));uE.render(C.jsxs("div",{children:[C.jsx(lE,{}),C.jsx(Nw,{router:sE})]}));
+`,lE=kw([{path:"/CodeConnect/home",element:C.jsx(bk,{})},{path:"/CodeConnect/explore",element:C.jsx(Yk,{})},{path:"/CodeConnect/account",element:C.jsx(aE,{})}]),sE=Rs.createRoot(document.getElementById("root"));sE.render(C.jsxs("div",{children:[C.jsx(oE,{}),C.jsx(Nw,{router:lE})]}));
