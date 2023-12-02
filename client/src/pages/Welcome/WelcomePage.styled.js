@@ -15,7 +15,7 @@ export const LoginForm = styled.form`
 display: flex;
 flex-direction: column;
 justify-content: center;
-//align-items: center;
+align-items: center;
 background-color: var(--blue-);
 padding: 20px;
 border-radius: 5px;
@@ -36,7 +36,7 @@ background-color:var(--light-black);
 `;
 
 export const LogInButton = styled.button`
-margin-left: 11vw;
+//margin-left: 11vw;
 font-size: 15px;
 width: 22%;
 height: 17%;
@@ -78,3 +78,10 @@ export const LogoConnect = styled.div`
     font-size: 100px;
   color: var(--blue);
 `; 
+
+export const UsernameText = styled.label`
+    margin-right: 5;
+    font-weight: 30;
+    font-size: 30px;
+    color: var(--white);
+`

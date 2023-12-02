@@ -1,4 +1,4 @@
-import {PageContainer, LoginForm, InputField, LogInButton, ContinueLink, LogoText, LogoCode, LogoConnect} from "./WelcomePage.styled"
+import {PageContainer, LoginForm, InputField, LogInButton, ContinueLink, LogoText, LogoCode, LogoConnect, UsernameText} from "./WelcomePage.styled"
 import{ CreateAccountButton } from "./CreateAccountButton.styled"
 import { Container } from "../../styles/Container"
 import React, { useState } from 'react';

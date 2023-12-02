@@ -10,8 +10,8 @@ function GuestNavBar({ handleItemClick }) {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <NavItem to="/">Home</NavItem>
-                    <NavItem to="/explore">Explore</NavItem>
+                    <NavItem to="/guest-home">Home</NavItem>
+                    <NavItem to="/guest-explore">Explore</NavItem>
                     <NavItem onClick={() => handleItemClick('Direct Messages')}>Direct Messages</NavItem>
                     <NavItem onClick={() => handleItemClick('Profile')}>Profile</NavItem>
                     <PostButton onClick={() => handleItemClick('Post')}>Post</PostButton>

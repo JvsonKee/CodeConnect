@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App'
 import HomePage from './pages/Home/Homepage';
 import GuestHomePage from './pages/GuestHome/GuestHomepage';
+import GuestExplorePage from './pages/GuestExplore/GuestExplorePage';
 import ExplorePage from './pages/Explore/ExplorePage';
 import DMPage from './pages/DirectMessages/DMPage';
 import UserPage from './pages/Account/UserPage';
@@ -17,6 +18,11 @@ const router = createBrowserRouter([
 	{
 		path: '/guest-home',
 		element: <GuestHomePage />
+	},
+
+	{
+		path: '/guest-explore',
+		element: <GuestExplorePage />
 	},
 
 	{

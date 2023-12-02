@@ -1,6 +1,6 @@
 import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed } from './GuestHomePage.styled';
 import { PageHeader } from "../../styles/PageHeader"
-import GuestNavBar from "./GuestNavBar"
+import GuestNavBar from "../../components/GuestNavBar/GuestNavBar"
 import { Container } from "../../styles/Container"
 import Dropdown from "../../components/Dropdown/Dropdown"
 import { useState } from "react"
