@@ -20,7 +20,7 @@ function WelcomePage(){
           console.log('Login successful:', response.user);
   
           // Redirect to the Home page
-          navigate('/home');
+          navigate('/CodeConnect/home');
         } else {
           // Display an error message for unsuccessful login
           setError(response.error);
@@ -55,7 +55,7 @@ function WelcomePage(){
                         onChange={(e) => setPassword(e.target.value)} />
                     <LogInButton type="button" onClick={handleLogin} >Login</LogInButton>
                     {error && <div style={{ color: 'red' }}>{error}</div>}
-                    <ContinueLink to="/guest-home">Continue As Guest</ContinueLink>
+                    <ContinueLink to="/CodeConnect/guest-home">Continue As Guest</ContinueLink>
                 </LoginForm>
                 <CreateAccountButton>Create Account</CreateAccountButton>
             </PageContainer>

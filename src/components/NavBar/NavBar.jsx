@@ -11,7 +11,7 @@ function NavBar() {
                 <NavItems>
                     <NavItem to="/CodeConnect/">Home</NavItem>
                     <NavItem to="/CodeConnect/explore">Explore</NavItem>
-                    <NavItem>Direct Messages</NavItem>
+                    <NavItem to='/CodeConnect/direct-messages'>Direct Messages</NavItem>
                     <NavItem to="/CodeConnect/account">Profile</NavItem>
                     <PostButton>Post</PostButton>
                 </NavItems>
