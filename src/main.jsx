@@ -7,15 +7,15 @@ import GlobalStyles from './styles/Global';
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: '/CodeConnect/',
 		element: <App />
 	},
 	{
-		path: 'explore',
+		path: '/CodeConnect/explore',
 		element: <ExplorePage />
 	},
 	{
-		path: 'account',
+		path: '/CodeConnect/account',
 		element: <UserPage />
 	}
 
