@@ -1,11 +1,11 @@
-import {MessageHeaderContainer, OpenMessageContainer, ChatWrapper, ChatContainer, ChatBox, ContactsBar, TextBox, TextBoxContainer, SendButton, MessageBarHeaderContainer} from "./styles/OpenedMessage.styled"
-import {UsersNameHeader, UserProfilePicture} from "./styles/OpenMessageHeader"
+import {MessageHeaderContainer, OpenMessageContainer, ChatWrapper, ChatContainer, ChatBox, ContactsBar, TextBox, TextBoxContainer, SendButton, MessageBarHeaderContainer} from "./OpenedMessage.styled"
+import {UsersNameHeader, UserProfilePicture} from "./OpenMessageHeader"
 import NavBar from "./NavBar";
-import { AddButton } from "./styles/NewDMButton.styled";
-import { MessageBarHeader } from "./styles/MessageBarHeader";
+import { AddButton } from "../../../components/NewDMButton/NewDMButton.styled";
+import { MessageBarHeader } from "../MessageBarHeader";
 import { Container } from "./styles/Container";
-import MessageBox from "./MessageBox";
-import MessageBar from "./MessageBar"
+import MessageBox from "../MessageBox";
+import MessageBar from "./messageBar"
 import profilePic1 from "../assets/userPfp.png"
 import profilePic2 from "../assets/userPfp2.png"
 import profilePic3 from "../assets/userPfp3.png"

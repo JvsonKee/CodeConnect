@@ -1,9 +1,9 @@
 import { Container } from "./styles/Container";
 import NavBar from "./NavBar";
 import {NewDMPageContainer, NewDMWrapper, NewDMContainer, ContactsBar, ContactsBarHeaderContainer, SearchContainer, MessageBoxContainer, SearchButton, SearchBox, BottomContainer, SendButton, MessageBox, HeaderContainer} from "./styles/NewDMPage.styled"
-import MessageBar from "./MessageBar"
+import MessageBar from "../../components/MessageBar"
 import { NewDMHeader } from "./styles/NewDMHeader";
-import { MessageBarHeader } from "./styles/MessageBarHeader";
+import { MessageBarHeader } from "../../components/styles/MessageBarHeader";
 import profilePic1 from "../assets/userPfp.png"
 import profilePic2 from "../assets/userPfp2.png"
 import profilePic3 from "../assets/userPfp3.png"

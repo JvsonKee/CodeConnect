@@ -1,24 +1,26 @@
-import {ContentContainer, DMHeaderContainer, DMPageContainer, Messages} from "./styles/DMPage.styled";
+import {ContentContainer, DMHeaderContainer, DMPageContainer, Messages} from "./DMPage.styled";
 import MessageList from "./MessageList"
-import NavBar from "./NavBar";
-import { Container } from "./styles/Container";
-import { DMHeader } from "./styles/DMHeader";
-import { AddButton } from "./styles/NewDMButton.styled";
-import Dropdown from "./Dropdown";
+import NavBar from "../../components/NavBar/NavBar"
+import { Container } from "../../styles/Container"
+import { DMHeader } from "./DMHeader";
+import { AddButton } from "../../components/NewDMButton/NewDMButton.styled";
+import Dropdown from  "../../components/Dropdown/Dropdown"
 import { useState } from "react";
-import profilePic1 from "../assets/userPfp.png"
-import profilePic2 from "../assets/userPfp2.png"
-import profilePic3 from "../assets/userPfp3.png"
+import profilePic1 from "../../assets/userPfp.png"
+import profilePic2 from "../../assets/userPfp2.png"
+import profilePic3 from "../../assets/userPfp3.png"
 
+//Making user list alphabetical
 const user1 ={
-    userName: "Kirby",
-    text: "Words words words words. Words words words.",
-    profilePic: profilePic1
-}
-const user2 ={
     userName: "Boo",
     text: "HAAHAHAHHAHHAHAHAHAHHAHHAHHAHHAHHAHA",
     profilePic: profilePic2
+}
+
+const user2 ={
+    userName: "Kirby",
+    text: "Words words words words. Words words words.",
+    profilePic: profilePic1
 }
 
 const user3 ={

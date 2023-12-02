@@ -11,7 +11,7 @@ function NavBar() {
                 <NavItems>
                     <NavItem to="/">Home</NavItem>
                     <NavItem to="/explore">Explore</NavItem>
-                    <NavItem>Direct Messages</NavItem>
+                    <NavItem to="/direct-messages">Direct Messages</NavItem>
                     <NavItem to="/account">Profile</NavItem>
                     <PostButton>Post</PostButton>
                 </NavItems>

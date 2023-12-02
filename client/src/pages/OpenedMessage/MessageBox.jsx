@@ -1,4 +1,4 @@
-import {MessageBoxContainer, MessageBoxWrapper, UserInformation, UserProfilePicture, UserName, MessageContent, MessageText} from "./styles/MessageBox.styled"
+import {MessageBoxContainer, MessageBoxWrapper, UserInformation, UserProfilePicture, UserName, MessageContent, MessageText} from "./MessageBox.styled"
 
 function MessageBox({user, text}) {
     return (

@@ -1,4 +1,4 @@
-import { ContactHeader, MBarContainer , ContactListItem, ContactProfilePicture, ContactUserName} from "./styles/messageBar.styled";
+import { ContactHeader, MBarContainer , ContactListItem, ContactProfilePicture, ContactUserName} from "../messageBar.styled";
 
 function MessageBar({user}) {
     return (

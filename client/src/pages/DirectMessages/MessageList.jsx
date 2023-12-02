@@ -1,4 +1,4 @@
-import {MessageContainer, MessageWrapper, DMUserInformation, DMUserProfilePicture, DMUserName, MessageText, MessageMainContent} from "./styles/MessageList.styled"
+import {MessageContainer, MessageWrapper, DMUserInformation, DMUserProfilePicture, DMUserName, MessageText, MessageMainContent} from "./MessageList.styled"
 
 function MessageList({user}){
  return(
