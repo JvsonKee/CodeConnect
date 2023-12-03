@@ -21,10 +21,10 @@ function NavBar() {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <NavItem to="/">Home</NavItem>
-                    <NavItem to="/explore">Explore</NavItem>
-                    <NavItem>Direct Messages</NavItem>
-                    <NavItem to="/account">Profile</NavItem>
+                    <NavItem to="/CodeConnect/home">Home</NavItem>
+                    <NavItem to="/CodeConnect/explore">Explore</NavItem>
+                    <NavItem to='/CodeConnect/direct-messages'>Direct Messages</NavItem>
+                    <NavItem to="/CodeConnect/account">Profile</NavItem>
                     <PostButton onClick={openPostForm}>Post</PostButton>
                     <GeneratePostForm showForm={showPostForm} closeForm={closePostForm}/>
                 </NavItems>
