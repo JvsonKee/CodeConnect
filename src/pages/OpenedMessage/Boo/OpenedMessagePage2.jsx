@@ -57,7 +57,8 @@ function OpenedMessage2() {
                             <MessageBox user={user2}/>
                             <MessageBox user={mainUser}/>
                             <MessageBox user={user2}/> 
-                            <MessageBox user={mainUser}/>        
+                            <MessageBox user={mainUser}/> 
+                            <MessageBox user={user2}/>       
                         </ChatBox>
                         <TextBoxContainer>
                             <TextBox rows="2" cols="20"></TextBox>

@@ -12,12 +12,11 @@ export const MBarContainer = styled.div`
    justify-content: center;
    background-color: var(--black);
    border-radius: 10px;
-   //border: 0.5px solid grey;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
    height: 73px;
    transition: 0.1s ease-in-out;
    &:hover{
-       background-color: grey;
+       background-color: var(--shadow);
    }
    cursor: pointer;
 `

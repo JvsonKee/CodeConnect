@@ -8,9 +8,6 @@ export const MessageBoxContainer = styled.div`
     border: 1px solid black;
     height: 150px;
     transition: 0.1s ease-in-out;
-    &:hover{
-        background-color: grey;
-    }
 `
 export const MessageBoxWrapper = styled.div`
     display: flex;
@@ -30,7 +27,7 @@ export const UserProfilePicture = styled.img`
     border-radius: 100px;
 `
 export const UserName = styled.div`
-    font-size: 25px;
+    font-size: 22px;
     color: var(--white);
 `
 export const MessageContent = styled.div`
@@ -39,6 +36,6 @@ export const MessageContent = styled.div`
     gap: 10px;
 `
 export const MessageText = styled.div`
-    font-size: 23px;
+    font-size: 17px;
     color: var(--white);
 `

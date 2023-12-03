@@ -49,10 +49,7 @@ export const MessageHeaderContainer = styled.div`
     height: 13%;
     border-radius: 10px 10px 0 0;
     transition: 0.2s ease-in-out;
-    &:hover{
-        background-color: #1B1B1B;
-    }
-    cursor: pointer;
+
 `
 export const ChatBox = styled.div`
     display: flex;
