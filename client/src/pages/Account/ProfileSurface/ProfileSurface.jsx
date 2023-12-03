@@ -7,7 +7,6 @@ import Headline from "../typography/Headline";
 import { TagStyle, TagText } from "../TagStyle";
 import { BioStyle } from "../BioStyle.styled";
 import Body from "../typography/Body";
-import { HeaderRow } from "../HeaderRow";
 
 function ProfileSurface(){
     return <ProfileSurfaceStyle>

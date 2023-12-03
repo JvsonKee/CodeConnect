@@ -9,3 +9,4 @@ export const EditProfileContainer = styled.div`
     flex: 1 0 0;
     align-self: stretch;
 `
+export default EditProfileContainer;
