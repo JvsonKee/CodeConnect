@@ -14,6 +14,10 @@ class Post {
         this.likes++;
     }
 
+    unlike() {
+        this.likes--;
+    }
+
     addComment(comment) {
         this.comments.push(comment);
     }
