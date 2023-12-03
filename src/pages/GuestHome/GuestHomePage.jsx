@@ -1,4 +1,4 @@
-import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed } from './GuestHomePage.styled';
+import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed, PopupContainer, PopupContent, CreateAccountText, CreateAccountButton, CloseButton  } from './GuestHomePage.styled';
 import { PageHeader } from "../../styles/PageHeader"
 import GuestNavBar from "../../components/GuestNavBar/GuestNavBar"
 import { Container } from "../../styles/Container"
@@ -10,7 +10,7 @@ import { postDatabase } from '../../database/db';
 function GuestHomePage() {
 
     const [status, setStatus] = useState('Recent');
-    const [popupVisible, setPopupVisible] = useState(false);
+    const [isPopupVisible, setPopupVisible] = useState(false);
   
     const handleItemClick = (itemName) => {
       if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
@@ -40,6 +40,19 @@ function GuestHomePage() {
                         </Feed>
                     </ContentContainer>
                 </GuestHomePageContainer>
+      {/* Popup */}
+      {isPopupVisible && (
+        <PopupContainer>
+          <PopupContent>
+            <CreateAccountText>Please create an account to access this feature </CreateAccountText>
+            <div></div>
+            <div></div>
+            <CreateAccountButton>Create Account</CreateAccountButton>
+            <CloseButton  onClick={handleClosePopup}>Close</CloseButton >
+          </PopupContent>
+        </PopupContainer>
+      )}
+
       </Container>
     );
   }
