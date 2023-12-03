@@ -1,15 +1,16 @@
-import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from "./styles/HomePage.styled";
-import { PageHeader } from "./styles/PageHeader";
-import NavBar from "./NavBar";
-import { Container } from "./styles/Container";
-import Dropdown from "./Dropdown";
+import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from "../Home/HomePage.styled";
+import { PageHeader } from "../../styles/PageHeader";
+import NavBar from "../../components/NavBar/NavBar";
+import PostBrowsing from "../../components/PostCards/PostBrowsing";
+import { Container } from "../../styles/Container";
+import Dropdown from "../../components/Dropdown/Dropdown";
 import { useState } from "react";
 import PostFullView from "./PostFullView";
 import ReplyBrowsing from "./ReplyBrowsing";
 import ReplyBrowsingFirstLevel from "./ReplyBrowsingFirstLevel";
 import ReplyPersonalView from "./ReplyPersonalView";
-import profilePicture from '../assets/placeholder-profile-pic.png'
-import { ReplyContainer, ReplyLevel, ReplyLine } from "./styles/ReplyBrowsing.styled";
+import profilePicture from '../../assets/placeholder-profile-pic.png'
+import { ReplyContainer, ReplyLevel, ReplyLine } from "./ReplyBrowsing.styled";
 
 const user1 = {
     profilePicture: profilePicture,
@@ -47,12 +48,13 @@ function PostThreadPage() {
                         <PostFullView user={user1}/>
                             <ReplyBrowsingFirstLevel user={user2}/>
                             <ReplyBrowsingFirstLevel user={user2}/>
-                                <ReplyPersonalView user={user2}/>
+                                <ReplyLevel>
+                                    <ReplyPersonalView user={user2}/>
+                                </ReplyLevel>
                                 <ReplyLevel> 
                                     <ReplyBrowsing user={user2}/>
                                 </ReplyLevel>
                             <ReplyBrowsingFirstLevel user={user2}/>
-
                         {/* <PostBrowsing />
                         <PostBrowsing /> */}
                     </Feed>

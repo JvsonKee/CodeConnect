@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion'
-import { CustomAccordion, CustomAccordionContent, CustomAccordionButton, CustomAccordionItem, ReplyButton, ReplyIcon} from "./styles/ReplyBrowsing.styled";
+import { CustomAccordion, CustomAccordionContent, CustomAccordionButton, CustomAccordionItem, ReplyButton, ReplyIcon} from "./ReplyBrowsing.styled";
 import { faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons"
 import Form from "react-bootstrap/Form"
 import Col from 'react-bootstrap/Col';

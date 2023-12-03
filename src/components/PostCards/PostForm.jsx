@@ -41,7 +41,7 @@ function GeneratePostForm({ showForm, closeForm}) {
           <Modal.Title>Create a New Post</Modal.Title>
           <button type="button" className="btn-close btn-close-white" aria-label="Close" onClick={closeForm}></button>
         </GeneratePostModalHeader>
-        <Form>
+        <Form onSubmit={handleSubmitPost()}>
           <Modal.Body>
             <Row>
               <Col xs={8}>
@@ -97,7 +97,7 @@ function GeneratePostForm({ showForm, closeForm}) {
                   </Button>
                 </Col>
                 <Col xs={2}>
-                  <Button type="submit" variant="primary" onClick={handleSubmitPost}>
+                  <Button type="submit" variant="primary">
                     Post
                   </Button>
                 </Col>

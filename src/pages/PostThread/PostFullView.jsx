@@ -1,4 +1,4 @@
-import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "./styles/PostBrowsing.styled"
+import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "../../components/PostCards/PostBrowsing.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import GenerateReplyForm from "./ReplyForm";
 import propTypes from 'prop-types'
@@ -33,7 +33,7 @@ function PostFullView( {user} ) {
                         <div>{user.reactions}</div>
                     </Analytic>
                 </PostAnalytics>
-                <GenerateReplyForm /> 
+                {/* <GenerateReplyForm />  */}
             </PostWrapper>  
         </PostContainer>
     )
