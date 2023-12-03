@@ -4,9 +4,9 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { GeneratePostModal, CustomPostForm, CustomPostInputField } from './PostForm.styled';
+import { GeneratePostModal, GeneratePostModalHeader, CustomPostInputField, ArrowIcon } from './PostForm.styled';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { faFileCode } from "@fortawesome/free-regular-svg-icons"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 function CharLimitProgressBar(charWritten) {
   // TODO
@@ -14,23 +14,24 @@ function CharLimitProgressBar(charWritten) {
   return <ProgressBar now={progress} label={`${charWritten}/5000`} visuallyHidden />;
 }
 
-const GeneratePostForm = (showForm, closeForm) => {
+function GeneratePostForm({ showForm, closeForm }) {
   return (
-    <GeneratePostModal centered size="lg" show = {showForm} onHide = {closeForm} animation = {true} scrollable>
-          <Modal.Header closeButton>
+    <GeneratePostModal centered size="lg" show = {showForm} animation = {true} scrollable>
+        <GeneratePostModalHeader>
           <Modal.Title>Create a New Post</Modal.Title>
-        </Modal.Header>
+          <button type="button" class="btn-close btn-close-white" aria-label="Close" onClick={closeForm}></button>
+        </GeneratePostModalHeader>
         <Modal.Body>
           <Form>
             <Row>
-              <Col xs={9}>
+              <Col xs={8}>
                 <Form.Group className="mb-3" controlId="postForm.title">
                   <Form.Label>Title</Form.Label>
                   <br></br>
                   <CustomPostInputField type="textarea" placeholder="So I've been thinking..." />
                 </Form.Group>
               </Col>
-              <Col xs={3}>
+              <Col xs={4}>
                 <Form.Group className="mb-3" controlId="postForm.topic">
                   <Form.Label>Topic</Form.Label>
                   <Form.Select aria-label="Topic">
@@ -49,15 +50,15 @@ const GeneratePostForm = (showForm, closeForm) => {
         </Modal.Body>
         <Modal.Footer>
           <Row>
-            <Col xs={8}>
+            <Col xs={6}>
               <input className="form-control form-control" id="formFile" type="file"></input>
             </Col>
-            <Col>
+            <Col xs={4}>
               <Button variant="secondary" onClick={closeForm}>
-                Save
+                Save Entered Text
               </Button>
             </Col>
-            <Col>
+            <Col xs={2}>
               <Button variant="primary" onClick={closeForm}>
                 Post
               </Button>
@@ -67,15 +68,5 @@ const GeneratePostForm = (showForm, closeForm) => {
     </GeneratePostModal>
   );
 };
-
-// function GeneratePostForm({ showForm, closeForm }) {
-//   return (
-//     <>
-//       <Modal centered size="lg" show={showForm} onHide={closeForm}>
-
-//       </Modal>
-//     </>
-//   );
-// }
 
 export default GeneratePostForm;

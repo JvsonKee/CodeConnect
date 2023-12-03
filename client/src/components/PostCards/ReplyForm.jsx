@@ -36,7 +36,7 @@ function GenerateReplyForm({ showForm, closeForm }) {
               </Row>
               <br></br>
               <Row>
-                <Button variant="secondary" className="btn-sm" onClick={closeForm}>
+                <Button variant="secondary" className="btn-sm" onClick={handleClose()}>
                   Reply  <ReplyIcon icon={faArrowRight} size = "xl"/>
                 </Button>
               </Row>

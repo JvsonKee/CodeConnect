@@ -25,8 +25,8 @@ function NavBar() {
                     <NavItem to="/explore">Explore</NavItem>
                     <NavItem>Direct Messages</NavItem>
                     <NavItem to="/account">Profile</NavItem>
-                    <PostButton className="stretched-link" onClick={openPostForm}>Post</PostButton>
-                    <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} />
+                    <PostButton onClick={openPostForm}>Post</PostButton>
+                    <GeneratePostForm showForm={showPostForm} closeForm={closePostForm}/>
                 </NavItems>
             </Nav>
         </NavContainer>
