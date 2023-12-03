@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 export const OpenMessageContainer = styled.div`
     margin-left: 20vw;
@@ -84,4 +85,17 @@ export const TextBox = styled.textarea`
     border: 1px solid black;
     background-color: var(--black);
     width: 80%;   
+`
+export const ExitButton = styled(Link)`
+
+    margin-left: 40.15vw;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: grey;
+    &:hover{
+        color: var(--white);
+    }
 `

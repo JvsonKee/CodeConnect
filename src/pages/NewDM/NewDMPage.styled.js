@@ -113,8 +113,7 @@ export const SendButton = styled.button`
 `
 
 export const ExitButton = styled(Link)`
-    //position: absolute;
-        //top: 10px;
+
     margin-left: 35vw;
     text-decoration: none;
     cursor: pointer;
