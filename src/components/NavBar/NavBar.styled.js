@@ -56,7 +56,8 @@ export const NavItems = styled.div`
 export const NavItem = styled(NavLink)`
     color: var(--grey);
     text-decoration: none;
-
+    transition: 0.3s ease-in-out;
+    
     &:hover {
         color: var(--white);
     }

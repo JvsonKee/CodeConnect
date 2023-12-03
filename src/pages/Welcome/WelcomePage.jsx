@@ -1,9 +1,10 @@
-import {PageContainer, LoginForm, InputField, LogInButton, ContinueLink, LogoText, LogoCode, LogoConnect, UsernameText} from "./WelcomePage.styled"
+import {PageContainer, LoginForm, InputField, LogInButton, ContinueLink, LogoText, LogoCode, LogoConnect, LoginText} from "./WelcomePage.styled"
 import{ CreateAccountButton } from "./CreateAccountButton.styled"
 import { Container } from "../../styles/Container"
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Authorization from './Authorization';
+
 function WelcomePage(){
 
     const navigate = useNavigate();
@@ -39,14 +40,14 @@ function WelcomePage(){
                     <LogoCode>Code</LogoCode><LogoConnect>Connect</LogoConnect>
                 </LogoText>
                 <LoginForm>
-                    <label htmlFor="username">Username:</label>
+                   <LoginText>Username:</LoginText>
                     <InputField 
                         type="text"
                         id="username"
                         placeholder="Username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)} />
-                    <label htmlFor="password">Password:</label>
+                    <LoginText>Password:</LoginText>
                     <InputField 
                         type="password"
                         id="password"
@@ -59,7 +60,6 @@ function WelcomePage(){
                 </LoginForm>
                 <CreateAccountButton>Create Account</CreateAccountButton>
             </PageContainer>
-          
         </Container>
     )
 }

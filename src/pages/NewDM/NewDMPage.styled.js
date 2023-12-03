@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
+
 
 export const NewDMPageContainer = styled.div`
     margin-left: 20vw;
@@ -18,6 +20,7 @@ export const NewDMWrapper = styled.div`
 export const NewDMContainer = styled.div`
     display: flex;
     flex-direction: column;
+    //background-color: grey;
     width: 90%;
     height: 50%;
     border-radius: 10px;
@@ -59,7 +62,6 @@ export const HeaderContainer = styled.div`
 export const MessageBoxContainer = styled.div`
     display: flex;
     align-items: center; 
-
     height: 77%;
     overflow-y: scroll;
     justify-content: center;
@@ -109,3 +111,20 @@ export const SendButton = styled.button`
     }
     cursor: pointer;
 `
+
+export const ExitButton = styled(Link)`
+    //position: absolute;
+        //top: 10px;
+    margin-left: 35vw;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: grey;
+    &:hover{
+        color: var(--white);
+    }
+`
+
+  

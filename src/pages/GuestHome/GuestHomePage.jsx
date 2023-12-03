@@ -1,6 +1,6 @@
 import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed } from './GuestHomePage.styled';
 import { PageHeader } from "../../styles/PageHeader"
-import GuestNavBar from "../../components/GuestNavBar/GuestNavBar"
+import NavBar from "../../components/NavBar/NavBar"
 import { Container } from "../../styles/Container"
 import Dropdown from "../../components/Dropdown/Dropdown"
 import { useState } from "react"
@@ -51,21 +51,10 @@ const user3 = {
 function GuestHomePage() {
 
     const [status, setStatus] = useState('Recent');
-    const [popupVisible, setPopupVisible] = useState(false);
-  
-    const handleItemClick = (itemName) => {
-      if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
-        setPopupVisible(true);
-      }
-    };
-  
-    const handleClosePopup = () => {
-      setPopupVisible(false);
-    };
 
     return (  
         <Container>
-            <GuestNavBar handleItemClick={handleItemClick} />  
+            <NavBar /> 
                 <GuestHomePageContainer>
                     <ContentContainer>
                         <HeaderContainer>
@@ -79,12 +68,6 @@ function GuestHomePage() {
                         </Feed>
                     </ContentContainer>
                 </GuestHomePageContainer>
-            {popupVisible && (
-            <div className="popup">
-                <p>Please create an account to access this feature.</p>
-                <button onClick={handleClosePopup}>Close</button>
-            </div>
-            )}
       </Container>
     );
   }
