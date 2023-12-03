@@ -4,6 +4,7 @@ import { Container } from "../../styles/Container"
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Authorization from './Authorization';
+
 function WelcomePage(){
 
     const navigate = useNavigate();
