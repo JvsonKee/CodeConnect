@@ -12,6 +12,9 @@ export const PostContainer = styled.div`
     color: var(--white);
     padding: 30px 0;
     box-shadow: 0 10px 20px var(--shadow);
+    &:hover{
+        background-color: black;
+    }
 `
 
 export const PostWrapper = styled.div`
@@ -21,6 +24,7 @@ export const PostWrapper = styled.div`
     gap: 20px;
     width: 90%;
     height: 80%;
+    cursor: pointer;
 `
 
 export const PostMatrix = styled.div`

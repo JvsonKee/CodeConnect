@@ -9,7 +9,9 @@ import WelcomePage from "./pages/Welcome/WelcomePage"
 import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
 import DMPage from "./pages/DirectMessages/DMPage"
-import PostThreadPage from "./pages/PostThread/PostThreadPage"
+import PostThreadPage1 from "./pages/OpenedThread/PostThreadPage1"
+import PostThreadPage2 from "./pages/OpenedThread/PostThreadPage2"
+import PostThreadPage3 from "./pages/OpenedThread/PostThreadPage3"
 import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
 import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
 import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
@@ -23,6 +25,21 @@ const router = createBrowserRouter([
 	{
 		path: '/CodeConnect/home',
 		element: <HomePage />
+	},
+
+	{
+		path: '/CodeConnect/PixelPioneer/0',
+		element: <PostThreadPage1 />
+	},
+
+	{
+		path: '/CodeConnect/madscientist/1',
+		element: <PostThreadPage2 />
+	},
+
+	{
+		path: '/CodeConnect/supasonic/2',
+		element: <PostThreadPage3 />
 	},
 
 	{
@@ -65,11 +82,6 @@ const router = createBrowserRouter([
 		element: <GuestHome />
 	},
 	
-	{
-		path: '/CodeConnect/thread',
-		element: <PostThreadPage />
-	}
-
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

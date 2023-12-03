@@ -40,5 +40,3 @@ const user3Post = new Post(user3, "Internship Help", "I'm in my third year of un
 postDatabase.push(user3Post);
 user3.addPost(user3Post);
 user3Post.likes = 18;
-
-export default pushPostToDatabase;

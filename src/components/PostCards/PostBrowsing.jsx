@@ -2,12 +2,20 @@ import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainConten
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import propTypes from 'prop-types'
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom';
 
 function PostBrowsing( {information} ) {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        let posturl = information.getPostURL().url;
+        navigate(posturl);
+    };
+
     const [likeCount, setLikeCount] = useState(information.likes);
     return (
         <PostContainer>
-            <PostWrapper>
+            <PostWrapper onClick={handleClick}>
                 <PostInformationWrapper>
                     <PostUserInformation>
                         <UserProfilePicture src={information.author.getProfilePicture()}></UserProfilePicture>

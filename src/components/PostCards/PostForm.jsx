@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { GeneratePostModal, GeneratePostModalHeader, CustomPostInputField, ArrowIcon } from './PostForm.styled';
-import pushPostToDatabase from '../../database/db'
+// import pushPostToDatabase from '../../database/db'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
@@ -32,7 +32,7 @@ function GeneratePostForm({ showForm, closeForm}) {
 
   const handleSubmitPost = () => {
     const {post_title, post_topic, post_desc} = formData;
-    pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
+    // pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
   };
 
   return (

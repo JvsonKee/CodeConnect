@@ -1,46 +1,47 @@
-import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "../../components/PostCards/PostBrowsing.styled"
+import { PostAnalytics, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "../../components/PostCards/PostBrowsing.styled"
+import { PostThreadContainer, PostThreadWrapper} from "./PostFullView.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import GenerateReplyForm from "./ReplyForm";
 import propTypes from 'prop-types'
 
-function PostFullView( {user} ) {
+function PostFullView( {post} ) {
     return (
-        <PostContainer>
-            <PostWrapper>
+        <PostThreadContainer>
+            <PostThreadWrapper>
                 <PostUserInformation>
-                    <UserProfilePicture src={user.profilePicture}></UserProfilePicture>
-                    <UserName>{user.userName}</UserName> 
+                    <UserProfilePicture src={post.author.getProfilePicture()}></UserProfilePicture>
+                    <UserName>{post.author.getUsername()}</UserName> 
                 </PostUserInformation>
                 <PostMainContent>
-                    <PostTitle>{user.title}</PostTitle>
-                    <PostDescription>{user.description}</PostDescription>
+                    <PostTitle>{post.title}</PostTitle>
+                    <PostDescription>{post.content}</PostDescription>
                 </PostMainContent>
                 <TopicsContainer>
                     <TopicOutline>
-                        <PostTopic>{user.topic}</PostTopic>
+                        <PostTopic>{post.topic}</PostTopic>
                     </TopicOutline>
                 </TopicsContainer>
                 <PostAnalytics>
                     <Analytic>
                         <AnalyticIcon icon={faHeart}/>
-                        <div>{user.likes} likes</div>
+                        <div>{post.likes} likes</div>
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{user.comments} comments</div>
+                        <div>{post.comments} comments</div>
                     </Analytic>
                     <Analytic>
-                        <div>{user.reactions}</div>
+                        <div>{post.reactions}</div>
                     </Analytic>
                 </PostAnalytics>
                 {/* <GenerateReplyForm />  */}
-            </PostWrapper>  
-        </PostContainer>
+            </PostThreadWrapper>  
+        </PostThreadContainer>
     )
 }
 
 PostFullView.propTypes = {
-    user : propTypes.object
+    post : propTypes.object
 }
 
 
