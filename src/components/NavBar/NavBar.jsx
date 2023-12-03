@@ -13,6 +13,10 @@ function NavBar() {
     setShowPostForm(false);
     };
 
+    // const handleSubmitPost = () => {
+    //     console.log('post form read: ', formData);
+    // };
+
     return (
         <NavContainer>
             <Nav>
@@ -26,7 +30,7 @@ function NavBar() {
                     <NavItem to='/CodeConnect/direct-messages'>Direct Messages</NavItem>
                     <NavItem to="/CodeConnect/account">Profile</NavItem>
                     <PostButton onClick={openPostForm}>Post</PostButton>
-                    <GeneratePostForm showForm={showPostForm} closeForm={closePostForm}/>
+                    <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} />
                 </NavItems>
             </Nav>
         </NavContainer>

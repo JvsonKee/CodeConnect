@@ -14,27 +14,57 @@ function CharLimitProgressBar(charWritten) {
   return <ProgressBar now={progress} label={`${charWritten}/5000`} visuallyHidden />;
 }
 
-function GeneratePostForm({ showForm, closeForm }) {
+function GeneratePostForm({ showForm, closeForm}) {
+  const [formData, setFormData] = useState({
+    post_title: '',
+    post_topic: '',
+    post_desc: ''
+  });
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  const handleSubmitPost = () => {
+        console.log('post form read: ', formData);
+  };
+
   return (
     <GeneratePostModal centered size="lg" show = {showForm} animation = {true} scrollable>
         <GeneratePostModalHeader>
           <Modal.Title>Create a New Post</Modal.Title>
-          <button type="button" class="btn-close btn-close-white" aria-label="Close" onClick={closeForm}></button>
+          <button type="button" className="btn-close btn-close-white" aria-label="Close" onClick={closeForm}></button>
         </GeneratePostModalHeader>
-        <Modal.Body>
-          <Form>
+        <Form onSubmit={handleSubmitPost}>
+          <Modal.Body>
             <Row>
               <Col xs={8}>
                 <Form.Group className="mb-3" controlId="postForm.title">
                   <Form.Label>Title</Form.Label>
                   <br></br>
-                  <CustomPostInputField type="textarea" placeholder="So I've been thinking..." />
+                  <CustomPostInputField
+                    type="textarea"
+                    placeholder="So I've been thinking..."
+                    id="post_title"
+                    name="post_title"
+                    value={formData.post_title}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
               </Col>
               <Col xs={4}>
                 <Form.Group className="mb-3" controlId="postForm.topic">
                   <Form.Label>Topic</Form.Label>
-                  <Form.Select aria-label="Topic">
+                  <Form.Select
+                    id="post_topic"
+                    name="post_topic"
+                    value={formData.post_topic}
+                    onChange={handleChange}
+                  >
                     <option value="Web Dev">Web Development</option>
                     <option value="Game">Embedded Development</option>
                     <option value="Career">Career</option>
@@ -44,27 +74,34 @@ function GeneratePostForm({ showForm, closeForm }) {
             </Row>
             <Form.Group className="mb-3" controlId="postForm.desc">
               <Form.Label>Description</Form.Label>
-              <CustomPostInputField as="textarea" rows={5} />
+              <CustomPostInputField
+                as="textarea"
+                rows={5}
+                id="post_desc"
+                name="post_desc"
+                value={formData.post_desc} 
+                onChange={handleChange}
+              />
             </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Row>
-            <Col xs={6}>
-              <input className="form-control form-control" id="formFile" type="file"></input>
-            </Col>
-            <Col xs={4}>
-              <Button variant="secondary" onClick={closeForm}>
-                Save Entered Text
-              </Button>
-            </Col>
-            <Col xs={2}>
-              <Button variant="primary" onClick={closeForm}>
-                Post
-              </Button>
-            </Col>
-          </Row>
-        </Modal.Footer>
+          </Modal.Body>
+          <Modal.Footer>
+              <Row>
+                <Col xs={6}>
+                  <input className="form-control form-control" id="formFile" type="file"></input>
+                </Col>
+                <Col xs={4}>
+                  <Button variant="secondary" onClick={closeForm}>
+                    Save Entered Text
+                  </Button>
+                </Col>
+                <Col xs={2}>
+                  <Button type="submit" variant="primary">
+                    Post
+                  </Button>
+                </Col>
+              </Row>
+          </Modal.Footer>
+        </Form>
     </GeneratePostModal>
   );
 };
