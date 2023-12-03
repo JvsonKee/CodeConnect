@@ -8,7 +8,7 @@ import PostBrowsing from '../../components/PostCards/PostBrowsing'
 import profilePicture1 from '../../assets/placeholder-profile-pic.png'
 import profilePicture2 from '../../assets/profile2.jpg'
 import profilePicture3 from '../../assets/profile3.jpg'
-
+import { postDatabase } from '../../database/db'
 
 const user1 = {
     profilePicture: profilePicture1,
@@ -60,6 +60,9 @@ function HomePage() {
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <Feed>
+                        {postDatabase.map((item, index) => (
+                            <PostBrowsing key={index} user={item}/>
+                        ))}
                         <PostBrowsing user={user1}/>
                         <PostBrowsing user={user2}/>
                         <PostBrowsing user={user3}/>

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { GeneratePostModal, GeneratePostModalHeader, CustomPostInputField, ArrowIcon } from './PostForm.styled';
+import pushPostToDatabase from '../../database/db'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
@@ -30,7 +31,8 @@ function GeneratePostForm({ showForm, closeForm}) {
   }
 
   const handleSubmitPost = () => {
-        console.log('post form read: ', formData);
+    const {post_title, post_topic, post_desc} = formData;
+    pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
   };
 
   return (
@@ -39,7 +41,7 @@ function GeneratePostForm({ showForm, closeForm}) {
           <Modal.Title>Create a New Post</Modal.Title>
           <button type="button" className="btn-close btn-close-white" aria-label="Close" onClick={closeForm}></button>
         </GeneratePostModalHeader>
-        <Form onSubmit={handleSubmitPost}>
+        <Form>
           <Modal.Body>
             <Row>
               <Col xs={8}>
@@ -95,7 +97,7 @@ function GeneratePostForm({ showForm, closeForm}) {
                   </Button>
                 </Col>
                 <Col xs={2}>
-                  <Button type="submit" variant="primary">
+                  <Button type="submit" variant="primary" onClick={handleSubmitPost}>
                     Post
                   </Button>
                 </Col>
