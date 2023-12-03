@@ -66,13 +66,13 @@ export const TextBoxContainer = styled.div`
     border-radius: 0 0 10px 10px;
 `
 export const SendButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
     &:hover{
-        background-color: blue;
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `
