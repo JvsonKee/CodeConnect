@@ -2,6 +2,7 @@ class User {
     constructor(username, password) {
         this.username = username;
         this.password = password;
+        this.profilePicture = null;
         this.posts = [];
     }
 
@@ -19,6 +20,10 @@ class User {
 
     getPassword() {
         return this.password;
+    }
+
+    setProfilePicture(picture) {
+        this.profilePicture = picture;
     }
 
     addPost(post) {
