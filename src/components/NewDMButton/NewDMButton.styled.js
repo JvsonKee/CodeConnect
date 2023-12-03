@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
-export const AddButton = styled.div`
+export const AddButton = styled(Link)`
   position: fixed;
+  text-decoration: none;
   bottom: 20px;
   right: 50px;
   background-color: #558FFF; 
