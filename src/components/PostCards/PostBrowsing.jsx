@@ -1,39 +1,43 @@
 import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted, PostInformationWrapper, PostReaction } from "./PostBrowsing.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import propTypes from 'prop-types'
+import { useState } from "react"
 
-function PostBrowsing( {user} ) {
+function PostBrowsing( {information} ) {
+    const [likeCount, setLikeCount] = useState(information.likes);
     return (
         <PostContainer>
             <PostWrapper>
                 <PostInformationWrapper>
                     <PostUserInformation>
-                        <UserProfilePicture src={user.profilePicture}></UserProfilePicture>
-                        <UserName>{user.userName}</UserName>
-                        <TimePosted>{user.time}</TimePosted>
+                        <UserProfilePicture src={information.author.getProfilePicture()}></UserProfilePicture>
+                        <UserName>{information.author.getUsername()}</UserName>
+                        <TimePosted>{information.timestamp}</TimePosted>
                     </PostUserInformation>
-                    <PostReaction>{user.reaction}</PostReaction>
+                    <PostReaction>{information.reaction}</PostReaction>
                 </PostInformationWrapper>
                 <PostMainContent>
-                    <PostTitle>{user.title}</PostTitle>
-                    <PostDescription>{user.description}</PostDescription>
+                    <PostTitle>{information.title}</PostTitle>
+                    <PostDescription>{information.content}</PostDescription>
                 </PostMainContent>
                 <TopicsContainer>
                     <TopicOutline>
-                        <PostTopic>{user.topic}</PostTopic>
+                        <PostTopic>{information.topic}</PostTopic>
                     </TopicOutline>
                 </TopicsContainer>
                 <PostAnalytics>
                     <Analytic>
-                        <AnalyticIcon icon={faHeart}/>
-                        <div>{user.likes} likes</div>
+                        <div onClick={() => {
+                            information.like();
+                            setLikeCount(information.likes);
+                        }}>
+                            <AnalyticIcon icon={faHeart}/>
+                        </div>
+                        <div>{likeCount} likes</div>
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{user.comments} comments</div>
-                    </Analytic>
-                    <Analytic>
-                        <div>{user.reactions}</div>
+                        <div>{information.comments.length} comments</div>
                     </Analytic>
                     <Analytic>. . .</Analytic>
                 </PostAnalytics>
@@ -43,7 +47,7 @@ function PostBrowsing( {user} ) {
 }
 
 PostBrowsing.propTypes = {
-    user : propTypes.object
+    information : propTypes.object
 }
 
 
