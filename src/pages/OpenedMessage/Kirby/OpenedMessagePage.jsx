@@ -1,4 +1,4 @@
-import {MessageHeaderContainer, OpenMessageContainer, ChatWrapper, ChatContainer, ChatBox, ContactsBar, TextBox, TextBoxContainer, SendButton, MessageBarHeaderContainer} from "./OpenedMessage.styled"
+import {MessageHeaderContainer, OpenMessageContainer, ChatWrapper, ChatContainer, ChatBox, ContactsBar, TextBox, TextBoxContainer, SendButton, MessageBarHeaderContainer, ExitButton} from "./OpenedMessage.styled"
 import {UsersNameHeader, UserProfilePicture} from "../../../components/OpenedMessageHeader/OpenMessageHeader"
 import NavBar from "../../../components/NavBar/NavBar"
 import { AddButton } from "../../../components/NewDMButton/NewDMButton.styled";
@@ -52,6 +52,7 @@ function OpenedMessagePage() {
                         <MessageHeaderContainer>
                             <UserProfilePicture src={profilePic1}></UserProfilePicture>
                             <UsersNameHeader>Kirby</UsersNameHeader>
+                            <ExitButton to='/CodeConnect/direct-messages'>X</ExitButton>
                         </MessageHeaderContainer>
                         <ChatBox>
                             <MessageBox user={user1}/>

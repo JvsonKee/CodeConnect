@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 export const MessageContainer = styled.div`  
     display: flex;
@@ -36,9 +37,16 @@ export const DMUserProfilePicture = styled.img`
     border-radius: 100px;
 `
 
-export const DMUserName = styled.div`
+export const DMUserName = styled(Link)`
     font-size: 25px;
     color: var(--white);
+    text-decoration: none;
+    background-color: transparent; 
+
+    &:hover {
+        text-decoration: underline; 
+        text-decoration-thickness: 2px;
+    }
 `
 export const MessageMainContent = styled.div`
     display: flex;
