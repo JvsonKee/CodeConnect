@@ -1,4 +1,4 @@
-import {MessageHeaderContainer, OpenMessageContainer, ChatWrapper, ChatContainer, ChatBox, ContactsBar, TextBox, TextBoxContainer, SendButton, MessageBarHeaderContainer} from "./OpenedMessage.styled"
+import {MessageHeaderContainer, OpenMessageContainer, ChatWrapper, ChatContainer, ChatBox, ContactsBar, TextBox, TextBoxContainer, SendButton, MessageBarHeaderContainer} from "./OpenedMessagePage2.styled"
 import {UsersNameHeader, UserProfilePicture} from "../../../components/OpenedMessageHeader/OpenMessageHeader"
 import NavBar from "../../../components/NavBar/NavBar"
 import { AddButton } from "../../../components/NewDMButton/NewDMButton.styled";
@@ -18,13 +18,12 @@ const mainUser ={
     userName: "PixelPioneer",
     profilePic: profilePic
 }
-
 const user1 ={
-    message: "Words words words words. Words words words.",
     userName: "Kirby",
     profilePic: profilePic1
 }
 const user2 ={
+    message: "HAHAHHAHAHAH.",
     userName: "Boo",
     profilePic: profilePic2
 }
@@ -34,7 +33,7 @@ const user3 ={
     profilePic: profilePic3
 }
 
-function OpenedMessagePage() {
+function OpenedMessage2() {
     
     const navigate = useNavigate();
 
@@ -50,14 +49,14 @@ function OpenedMessagePage() {
                 <ChatWrapper>
                     <ChatContainer>
                         <MessageHeaderContainer>
-                            <UserProfilePicture src={profilePic1}></UserProfilePicture>
-                            <UsersNameHeader>Kirby</UsersNameHeader>
+                            <UserProfilePicture src={profilePic2}></UserProfilePicture>
+                            <UsersNameHeader>Boo</UsersNameHeader>
                         </MessageHeaderContainer>
                         <ChatBox>
-                            <MessageBox user={user1}/>
+                            <MessageBox user={user2}/>
                             <MessageBox user={mainUser}/>
-                            <MessageBox user={user1}/> 
-                            <MessageBox user={mainUser}/>       
+                            <MessageBox user={user2}/> 
+                            <MessageBox user={mainUser}/>        
                         </ChatBox>
                         <TextBoxContainer>
                             <TextBox rows="2" cols="20"></TextBox>
@@ -80,4 +79,4 @@ function OpenedMessagePage() {
     
 }
 
-export default OpenedMessagePage;
+export default OpenedMessage2;

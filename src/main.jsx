@@ -6,8 +6,12 @@ import UserPage from './pages/Account/UserPage';
 import GlobalStyles from './styles/Global';
 import HomePage from './pages/Home/Homepage';
 import WelcomePage from "./pages/Welcome/WelcomePage"
+import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
 import DMPage from "./pages/DirectMessages/DMPage"
+import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
+import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
+import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +35,26 @@ const router = createBrowserRouter([
 	},
 
 	{
+		path: '/CodeConnect/dm-kirby',
+		element: <OpenedMessage />
+	},
+
+	{
+		path: '/CodeConnect/dm-boo',
+		element: <OpenedMessage2 />
+	},
+
+	{
+		path: '/CodeConnect/dm-sonic',
+		element: <OpenedMessage3 />
+	},
+
+	{
+		path: '/CodeConnect/new-direct-message',
+		element: <NewDMPage />
+	},
+
+	{
 		path: '/CodeConnect/account',
 		element: <UserPage />
 	},
@@ -39,6 +63,8 @@ const router = createBrowserRouter([
 		path: '/CodeConnect/guest-home',
 		element: <GuestHome />
 	}
+
+
 
 
 ])

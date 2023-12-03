@@ -5,8 +5,8 @@ class User {
         this.posts = [];
     }
 
-    setUsername(newUserName) {
-        this.username = newUserName;
+    setUsername(newUsername) {
+        this.username = newUsername;
     }
 
     getUsername() {

@@ -9,6 +9,7 @@ import { useState } from "react";
 import profilePic1 from "../../assets/userPfp.png"
 import profilePic2 from "../../assets/userPfp2.png"
 import profilePic3 from "../../assets/userPfp3.png"
+import { useNavigate } from 'react-router-dom';
 
 //Making user list alphabetical
 const user1 ={
@@ -30,6 +31,11 @@ const user3 ={
 }
 
 function DMPage() {
+    const navigate = useNavigate();  
+
+    const user1TargetUrl = '/CodeConnect/dm-boo';
+    const user2TargetUrl = '/CodeConnect/dm-kirby';
+    const user3TargetUrl = '/CodeConnect/dm-sonic';
 
     const [status, setStatus] =  useState('Recents')
 
@@ -43,12 +49,12 @@ function DMPage() {
                         <Dropdown setStatus={setStatus}/>
                     </DMHeaderContainer>
                     <Messages>
-                        <MessageList user={user1}/>
-                        <MessageList user={user2}/>
-                        <MessageList user={user3}/>
+                        <MessageList user={user1} targetUrl={user1TargetUrl}/>
+                        <MessageList user={user2} targetUrl={user2TargetUrl}/>
+                        <MessageList user={user3} targetUrl={user3TargetUrl}/>
                     </Messages>
                 </ContentContainer>
-                <AddButton>New +</AddButton>
+                <AddButton  to="/CodeConnect/new-direct-message">New +</AddButton>
             </DMPageContainer>   
         </Container>
     )

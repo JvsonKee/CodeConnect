@@ -1,11 +1,13 @@
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
 
+
 export const PageContainer = styled.div`
 margin-left: 29vw;
 display: flex;
 flex-direction: column;
 justify-content: center;
+//background-color: red;
 align-items: center;
 height: 100vh;
 gap: 10px;
@@ -36,7 +38,6 @@ background-color:var(--light-black);
 `;
 
 export const LogInButton = styled.button`
-//margin-left: 11vw;
 font-size: 15px;
 width: 22%;
 height: 17%;
@@ -50,16 +51,13 @@ cursor: pointer;
 `;
 
 export const ContinueLink = styled(Link)`
-margin-left: 10.7vw;
 font-size: 11px;
 text-decoration: underline; 
-//justify-content: center;
-width: 50%;
 padding: 10px;
 color: var(--grey);
 border: none;
 border-radius: 3px;
-//align-items: center;
+
 cursor: pointer;
 `;
 
@@ -79,9 +77,8 @@ export const LogoConnect = styled.div`
   color: var(--blue);
 `; 
 
-export const UsernameText = styled.label`
-    margin-right: 5;
-    font-weight: 30;
-    font-size: 30px;
+export const LoginText = styled.label`
+    margin-right: 21vw;
+    font-size: 17px;
     color: var(--white);
 `
