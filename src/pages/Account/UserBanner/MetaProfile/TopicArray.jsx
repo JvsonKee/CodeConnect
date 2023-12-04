@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components"
-import TopicBubble from "../../../../components/TopicBubble/TopicBubble";
 
 
 const TopicArrayContainer = styled.div`
@@ -11,12 +10,38 @@ const TopicArrayContainer = styled.div`
     align-self: stretch;
 `
 
+const TopicChipContainer = styled.div`
+    display: flex;
+    padding: 4px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background: #314B7E;
+`
+
+const H4Style = styled.p`
+color: #8CAFF4;
+`
+
+
+function TopicChip({topicName}){
+    return ( 
+        <TopicChipContainer>
+            <H4Style>
+                <h6>{topicName}</h6>
+            </H4Style>
+        </TopicChipContainer>
+    )
+}
+
+
 function TopicArray({interests}){
     return ( 
         <TopicArrayContainer>
             {
             interests.map((it, i) => (
-                    <TopicBubble topicName={it}/>
+                    <TopicChip topicName={it}/>
             ))
             }
         
