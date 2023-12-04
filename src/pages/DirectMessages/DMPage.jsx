@@ -46,7 +46,6 @@ function DMPage() {
                 <ContentContainer>
                     <DMHeaderContainer>
                         <DMHeader>Direct Messages</DMHeader>
-                        <Dropdown setStatus={setStatus}/>
                     </DMHeaderContainer>
                     <Messages>
                         <MessageList user={user1} targetUrl={user1TargetUrl}/>

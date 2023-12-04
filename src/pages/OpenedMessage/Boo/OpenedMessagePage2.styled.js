@@ -1,12 +1,12 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 export const OpenMessageContainer = styled.div`
     margin-left: 20vw;
     display: flex;
     width: 80vw;
     height: 100vh;
-    background-color: var(--black) ;
-    
+    background-color: var(--black) ;  
 `
 export const ChatWrapper = styled.div`
     display: flex;
@@ -84,4 +84,17 @@ export const TextBox = styled.textarea`
     border: 1px solid black;
     background-color: var(--black);
     width: 80%;   
+`
+export const ExitButton = styled(Link)`
+
+    margin-left: 43vw;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: grey;
+    &:hover{
+        color: var(--white);
+    }
 `

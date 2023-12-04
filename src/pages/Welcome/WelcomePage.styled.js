@@ -82,3 +82,4 @@ export const LoginText = styled.label`
     font-size: 17px;
     color: var(--white);
 `
+

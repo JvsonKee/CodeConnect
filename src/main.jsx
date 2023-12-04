@@ -8,6 +8,7 @@ import HomePage from './pages/Home/Homepage';
 import WelcomePage from "./pages/Welcome/WelcomePage"
 import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
+import GuestExplore from "./pages/GuestExplore/GuestExplorePage"
 import DMPage from "./pages/DirectMessages/DMPage"
 import PostThreadPage from "./pages/PostThread/PostThreadPage"
 import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
@@ -68,7 +69,13 @@ const router = createBrowserRouter([
 	{
 		path: '/CodeConnect/:author/:id',
 		element: <PostThreadPage />
+	},
+
+	{
+		path: '/CodeConnect/guest-explore',
+		element: <GuestExplore />
 	}
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
