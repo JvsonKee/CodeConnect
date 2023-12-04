@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import InfoProfile from "./InfoProfile/InfoProfile";
 
 const UserBannerContainer = styled.div`
     display: flex;
@@ -13,7 +14,7 @@ const UserBannerContainer = styled.div`
 function UserBanner({user}){
     return (  
         <UserBannerContainer>
-
+            <InfoProfile user={user}/>
         </UserBannerContainer>
     )
 }
