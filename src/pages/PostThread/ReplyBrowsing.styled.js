@@ -74,10 +74,17 @@ export const ReplyButton = styled.div`
     background-color: var(--blue);
     color: white;
     border-radius: 10px;
-    text-align: center;
+    text-align: center center;
     padding: 7px;
-    height: 40px;
+    height: 35px;
     width: 100px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--blue-low);
+        box-shadow: 0 5px 10px var(--shadow);
+    }
 `
 
 export const EditButton = styled.div`
