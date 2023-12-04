@@ -19,7 +19,7 @@ function InfoProfile({user}){
     return (  
         <InfoProfileContainer>
             <ProfilePicture imageUrl={user.getProfilePicture()}/>
-            <InfoFrame username={user.getUsername()} biography={user.getBiography()} socialLinks={[]}/>
+            <InfoFrame username={user.getUsername()} biography={user.getBiography()} socialLinks={user.getSocialMedia()}/>
         </InfoProfileContainer>
     )
 }
