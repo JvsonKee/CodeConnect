@@ -11,10 +11,9 @@ import profilePic2 from "../../assets/userPfp2.png"
 import profilePic3 from "../../assets/userPfp3.png"
 import { useNavigate } from 'react-router-dom';
 
-//Making user list alphabetical
 const user1 ={
     userName: "Boo",
-    text: "HAAHAHAHHAHHAHAHAHAHHAHHAHHAHHAHHAHA",
+    text: "HAHAHHAHAHAH.",
     profilePic: profilePic2
 }
 
@@ -26,7 +25,7 @@ const user2 ={
 
 const user3 ={
     userName: "Sonic",
-    text: "You just gotta go fast bro",
+    text: "Gotta go fast bro",
     profilePic: profilePic3
 }
 

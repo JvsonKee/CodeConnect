@@ -20,12 +20,11 @@ export const NewDMWrapper = styled.div`
 export const NewDMContainer = styled.div`
     display: flex;
     flex-direction: column;
-    //background-color: grey;
     width: 90%;
     height: 50%;
     border-radius: 10px;
     box-shadow: 0 10px 20px var(--shadow);
-    //border: 1px solid black;
+
 `
 export const ContactsBar = styled.div`
     display: flex;
@@ -67,13 +66,13 @@ export const MessageBoxContainer = styled.div`
     justify-content: center;
 `
 export const SearchButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
     &:hover{
-        background-color: var(--light-blue);
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `
@@ -100,14 +99,14 @@ export const BottomContainer = styled.div`
     border-radius: 0 0 10px 10px;
 `
 export const SendButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 7px 15px;
     border: none;
     border-radius: 50px;
     align-items: center; 
     &:hover{
-        background-color: var(--light-blue);
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `

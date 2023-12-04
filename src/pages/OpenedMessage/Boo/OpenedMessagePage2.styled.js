@@ -48,10 +48,7 @@ export const MessageHeaderContainer = styled.div`
     height: 13%;
     border-radius: 10px 10px 0 0;
     transition: 0.2s ease-in-out;
-    &:hover{
-        background-color: #1B1B1B;
-    }
-    cursor: pointer;
+
 `
 export const ChatBox = styled.div`
     display: flex;
@@ -69,13 +66,13 @@ export const TextBoxContainer = styled.div`
     border-radius: 0 0 10px 10px;
 `
 export const SendButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
     &:hover{
-        background-color: blue;
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `

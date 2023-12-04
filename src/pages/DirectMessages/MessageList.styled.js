@@ -12,7 +12,7 @@ export const MessageContainer = styled.div`
     box-shadow: 0 10px 20px var(--shadow);
     transition: 0.2s ease-in-out;
     &:hover{
-        background-color: black;
+        background-color: var(--shadow);
     }
     cursor: pointer;
 `
@@ -54,6 +54,6 @@ export const MessageMainContent = styled.div`
     gap: 10px;
 `
 export const MessageText = styled.div`
-    font-size: 23px;
+    font-size: 19px;
     color: var(--grey);
 `

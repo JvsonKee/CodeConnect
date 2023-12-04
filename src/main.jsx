@@ -15,6 +15,7 @@ import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
 import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
 import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
 
+
 const router = createBrowserRouter([
 	{
 		path: '/CodeConnect/',
