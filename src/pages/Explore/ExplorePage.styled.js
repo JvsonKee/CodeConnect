@@ -7,7 +7,6 @@ export const ExplorePageContainer = styled.div`
     align-items: center;
     margin-left: 20vw;
     width: 80vw;
-    height: 100vh;
     background-color: var(--black);
 `
 
@@ -15,8 +14,8 @@ export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 100px;
-    padding: 5vh 0;
-    width: 80%;
+    /* padding: 5vh 0; */
+    width: 85%;
     height: 80%;
 `
 
@@ -35,9 +34,8 @@ export const TopicsSection = styled.div`
 
 export const TopicsHeaderContainer = styled.div`
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 `
 
