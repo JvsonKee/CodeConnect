@@ -29,8 +29,8 @@ function ReplyBrowsingFirstLevel ( {user}, i) {
                     <PostDescription>{content}</PostDescription>
                 </PostMainContent>
                 <br></br>
-                {showReplyForm && <GenerateReplyForm close={closeReplyForm} />}
-                <GenerateReplyForm show={showReplyForm} close={closeReplyForm} />
+                {/* {showReplyForm && <GenerateReplyForm close={closeReplyForm} />} */}
+                <GenerateReplyForm close={closeReplyForm} />
             </ReplyWrapper>
         </>
     )

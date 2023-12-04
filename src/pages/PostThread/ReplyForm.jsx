@@ -8,9 +8,10 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 function GenerateReplyForm(i) {
+    const [isOpen, setIsOpen] = useState(false);
     const [formData, setFormData] = useState({
-    reply_desc: ''
-  });
+      reply_desc: ''
+    });
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -26,16 +27,25 @@ function GenerateReplyForm(i) {
     // pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
   };
 
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <CustomAccordion key={i}>
-      <CustomAccordionItem>
-        <ReplyButton type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-            Reply
-        </ReplyButton>
-        <br></br>
-        <CustomAccordionContent id="collapseOne" className="collapse">
-          <Form>
-            <Row>
+    <>
+      <ReplyButton
+        variant="outline-primary"
+        className="btn-sm"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-controls="collapseOne"
+        aria-expanded={isOpen}
+      >
+        Reply
+      </ReplyButton>
+      <br/>
+      {isOpen && (
+        <Form>
+          <Row>
             <Col xs={11}>
               <Form.Group className="mb-3" controlId="replyForm.desc">
                 <Form.Control
@@ -43,7 +53,7 @@ function GenerateReplyForm(i) {
                   rows={5}
                   id="reply_desc"
                   name="reply_desc"
-                  value={formData.reply_desc} 
+                  value={formData.reply_desc}
                   onChange={handleChange}
                   placeholder="I've got some thoughts on this..."
                 />
@@ -51,25 +61,23 @@ function GenerateReplyForm(i) {
             </Col>
             <Col xs={1}>
               <Row>
-                <Button variant="danger" className="btn-sm" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                  Exit  <ReplyIcon icon={faTimes} size = "lg"/>
+                <Button variant="danger" className="btn-sm" onClick={() => setIsOpen(false)}>
+                  Exit <ReplyIcon icon={faTimes} size = "xl"/>
                 </Button>
               </Row>
-              <br></br>
+              <br/>
               <Row>
                 <Button variant="secondary" className="btn-sm" onClick={handleSubmitReply}>
-                  Reply  <ReplyIcon icon={faArrowRight} size = "xl"/>
+                  Reply <ReplyIcon icon={faArrowRight} size = "xl"/>
                 </Button>
               </Row>
             </Col>
-            </Row>
-          </Form>
-        </CustomAccordionContent>
-      </CustomAccordionItem>
-    </CustomAccordion>
-    
+          </Row>
+        </Form>
+      )}
+    </>
   );
-}
+};
 
 
 export default GenerateReplyForm;
