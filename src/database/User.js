@@ -8,6 +8,8 @@ class User {
         this.education = "";
         this.workStatus = "";
         this.socialMedia = []
+        this.interests = []
+        this.role = ""
     }
 
     setUsername(newUsername) {
