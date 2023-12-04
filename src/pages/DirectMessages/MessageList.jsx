@@ -5,7 +5,6 @@ function MessageList({ user, targetUrl }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // Navigate to the specified target URL when a message list item is clicked
     navigate(targetUrl);
   };
 
