@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from "../Home/HomePage.styled";
 import { PageHeader } from "../../styles/PageHeader";
 import NavBar from "../../components/NavBar/NavBar";
@@ -5,12 +6,15 @@ import PostBrowsing from "../../components/PostCards/PostBrowsing";
 import { Container } from "../../styles/Container";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import PostFullView from "./PostFullView";
 import ReplyBrowsing from "./ReplyBrowsing";
 import ReplyBrowsingFirstLevel from "./ReplyBrowsingFirstLevel";
+import ReplyBrowsingLastLevel from "./ReplyBrowsingLastLevel";
 import ReplyPersonalView from "./ReplyPersonalView";
 import profilePicture from '../../assets/placeholder-profile-pic.png'
 import { ReplyContainer, ReplyLevel, ReplyLine } from "./ReplyBrowsing.styled";
+import { postDatabase } from '../../database/db';
 
 const user1 = {
     profilePicture: profilePicture,
@@ -32,9 +36,13 @@ const user2 = {
     comments: "50"
 }
 
-function PostThreadPage() {
+function PostThreadPage( ) {
     const [status, setStatus] =  useState('Recent')
-
+    const { id } = useParams();
+    const post = postDatabase[id];
+    const comments = post.getPostInformation().comments;
+    console.log(comments);
+    
     return (  
         <Container>
             <NavBar />  
@@ -45,18 +53,40 @@ function PostThreadPage() {
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <Feed>
-                        <PostFullView user={user1}/>
-                            <ReplyBrowsingFirstLevel user={user2}/>
-                            <ReplyBrowsingFirstLevel user={user2}/>
-                                <ReplyLevel>
-                                    <ReplyPersonalView user={user2}/>
-                                </ReplyLevel>
-                                <ReplyLevel> 
-                                    <ReplyBrowsing user={user2}/>
-                                </ReplyLevel>
-                            <ReplyBrowsingFirstLevel user={user2}/>
-                        {/* <PostBrowsing />
-                        <PostBrowsing /> */}
+                        <PostFullView/>
+                        {
+                            comments.map((replyLevel1, i) => (
+                                <React.Fragment key={i}>
+                                <ReplyBrowsingFirstLevel user={replyLevel1} />
+
+                                {replyLevel1.comments && replyLevel1.comments.length > 0 && (
+                                    <div>
+                                    <ReplyLevel>    
+                                    
+                                    {/* Level 2 nested comments */}
+                                    {replyLevel1.comments.map((replyLevel2, j) => (
+                                        <React.Fragment key={j}>
+                                        <ReplyBrowsing user={replyLevel2} />
+                                        
+                                        {/* Level 3 nested comments */}
+                                        {replyLevel2.comments && replyLevel2.comments.length > 0 && (
+                                            <div>
+                                            <ReplyLevel> 
+                                            {replyLevel2.comments.map((replyLevel3, k) => (
+                                                <ReplyBrowsingLastLevel key={k} user={replyLevel3} />
+                                            ))}
+                                            </ReplyLevel>
+                                            </div>
+                                        )}
+                                        </React.Fragment>
+                                    ))}
+
+                                    </ReplyLevel>
+                                    </div>
+                                )}
+                                </React.Fragment>
+                            ))
+                        }
                     </Feed>
                 </ContentContainer>
             </HomePageContainer>

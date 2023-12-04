@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion'
 import { CustomAccordion, CustomAccordionContent, CustomAccordionButton, CustomAccordionItem, ReplyButton, ReplyIcon} from "./ReplyBrowsing.styled";
 import { faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons"
@@ -7,11 +7,24 @@ import Form from "react-bootstrap/Form"
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-function GenerateReplyForm({ showForm, closeForm }) {
-  const [show, setShow] = useState(false);
+function GenerateReplyForm() {
+    const [formData, setFormData] = useState({
+    reply_desc: ''
+  });
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  const handleSubmitReply = () => {
+    const {reply_desc} = formData;
+    // close Reply Form
+    // pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
+  };
 
   return (
     <CustomAccordion>
@@ -25,7 +38,15 @@ function GenerateReplyForm({ showForm, closeForm }) {
             <Row>
             <Col xs={11}>
               <Form.Group className="mb-3" controlId="replyForm.desc">
-                <Form.Control as="textarea" rows={5} placeholder="I've got some thoughts on this..."/>
+                <Form.Control
+                  as="textarea"
+                  rows={5}
+                  id="reply_desc"
+                  name="reply_desc"
+                  value={formData.reply_desc} 
+                  onChange={handleChange}
+                  placeholder="I've got some thoughts on this..."
+                />
               </Form.Group>
             </Col>
             <Col xs={1}>
@@ -36,7 +57,7 @@ function GenerateReplyForm({ showForm, closeForm }) {
               </Row>
               <br></br>
               <Row>
-                <Button variant="secondary" className="btn-sm" onClick={handleClose()}>
+                <Button variant="secondary" className="btn-sm" onClick={handleSubmitReply}>
                   Reply  <ReplyIcon icon={faArrowRight} size = "xl"/>
                 </Button>
               </Row>
@@ -48,7 +69,6 @@ function GenerateReplyForm({ showForm, closeForm }) {
     </CustomAccordion>
     
   );
-  
 }
 
 

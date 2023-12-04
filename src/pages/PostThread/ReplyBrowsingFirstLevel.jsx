@@ -1,29 +1,44 @@
 import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "../../components/PostCards/PostBrowsing.styled"
 import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyLevel, ReplyUserInformation, ReplyUserName, ReplyUserProfilePicture, EditButton, EditIcon } from "./ReplyBrowsing.styled"
 import {faPen} from "@fortawesome/free-solid-svg-icons"
+import propTypes from 'prop-types'
+import { useState } from 'react';
+import GenerateReplyForm from "./ReplyForm";
 
-function ReplyBrowsingFirstLevel ( {user} ) {
+function ReplyBrowsingFirstLevel ( {user}, i) {
+    const { author, content, id } = user;
+    const [showReplyForm, setShowReplyForm] = useState(false);
+
+    const openReplyForm = () => {
+    setShowReplyForm(true);
+    };
+
+    const closeReplyForm = () => {
+    setShowReplyForm(false);
+    };
+
     return (
         <>
-            <ReplyWrapper>
+            <ReplyWrapper key={i}>
                 <ReplyUserInformation>
-                    <ReplyUserProfilePicture src={user.profilePicture}></ReplyUserProfilePicture>
-                    <ReplyUserName>{user.userName}</ReplyUserName>
+                    <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
+                    <ReplyUserName>{author.getUsername()}</ReplyUserName>
                 </ReplyUserInformation>
                 <br></br>
                 <PostMainContent>
-                    <PostDescription>{user.description}</PostDescription>
+                    <PostDescription>{content}</PostDescription>
                 </PostMainContent>
                 <br></br>
-                <ReplyButton>Reply</ReplyButton>
+                {showReplyForm && <GenerateReplyForm close={closeReplyForm} />}
+                <GenerateReplyForm show={showReplyForm} close={closeReplyForm} />
             </ReplyWrapper>
         </>
     )
 }
 
-// PostBrowsing.propTypes = {
-//     user : propTypes.object
-// }
+ReplyBrowsingFirstLevel.propTypes = {
+    user : propTypes.object
+}
 
 
 export default ReplyBrowsingFirstLevel;

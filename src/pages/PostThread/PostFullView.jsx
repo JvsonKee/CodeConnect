@@ -3,14 +3,32 @@ import { PostThreadContainer, PostThreadWrapper} from "./PostFullView.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import GenerateReplyForm from "./ReplyForm";
 import propTypes from 'prop-types'
+import { useParams } from "react-router-dom";
+import { useState } from 'react';
+import { postDatabase } from '../../database/db';
 
-function PostFullView( {post} ) {
+function PostFullView( ) {
+    const [showReplyForm, setShowReplyForm] = useState(false);
+    const { id } = useParams();
+
+    const openReplyForm = () => {
+    setShowReplyForm(true);
+    };
+
+    const closeReplyForm = () => {
+    setShowReplyForm(false);
+    };
+
+    const post = postDatabase[id];
+    const profilePic = post.author.getProfilePicture();
+    const username = post.author.getUsername();
+
     return (
         <PostThreadContainer>
             <PostThreadWrapper>
                 <PostUserInformation>
-                    <UserProfilePicture src={post.author.getProfilePicture()}></UserProfilePicture>
-                    <UserName>{post.author.getUsername()}</UserName> 
+                    <UserProfilePicture src={profilePic}></UserProfilePicture>
+                    <UserName>{username}</UserName> 
                 </PostUserInformation>
                 <PostMainContent>
                     <PostTitle>{post.title}</PostTitle>
@@ -28,20 +46,16 @@ function PostFullView( {post} ) {
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{post.comments} comments</div>
+                        <div>{post.comments.length} comments</div>
                     </Analytic>
                     <Analytic>
                         <div>{post.reactions}</div>
                     </Analytic>
                 </PostAnalytics>
-                {/* <GenerateReplyForm />  */}
-            </PostThreadWrapper>  
+                <GenerateReplyForm show={showReplyForm} close={closeReplyForm} />
+            </PostThreadWrapper>
         </PostThreadContainer>
     )
-}
-
-PostFullView.propTypes = {
-    post : propTypes.object
 }
 
 

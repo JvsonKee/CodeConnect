@@ -1,5 +1,6 @@
 import User from "./User"
 import Post from "./Post"
+import Reply from "./Reply"
 import proPic1 from "../assets/MainUserPfp.png"
 import proPic2 from "../assets/profile3.jpg"
 import proPic3 from "../assets/userPfp3.png"
@@ -40,3 +41,30 @@ const user3Post = new Post(user3, "Internship Help", "I'm in my third year of un
 postDatabase.push(user3Post);
 user3.addPost(user3Post);
 user3Post.likes = 18;
+
+// First Post
+const user1PostReply1 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(0).length)
+const user1PostReply2 = new Reply(user2, "This is actually real, I agree with this post", "1 second ago", user1PostReply1.comments.length)
+postDatabase.at(0).addComment(user1PostReply1);
+user1PostReply1.addComment(user1PostReply2);
+
+const user1PostReply3 = new Reply(user1, "hahahahahh well this makes sense", "1 second ago", postDatabase.at(0).length)
+const user1PostReply4 = new Reply(user2, "This is actually real, I agree with this post", "1 second ago", 0)
+const user1PostReply5 = new Reply(user2, "wow! im talking to myself", "1 second ago", 0)
+const user1PostReply6 = new Reply(user2, "blah blah blah", "1 second ago", 1)
+postDatabase.at(0).addComment(user1PostReply3);
+user1PostReply3.addComment(user1PostReply4);
+user1PostReply4.addComment(user1PostReply5);
+user1PostReply4.addComment(user1PostReply6);
+
+// Second Post
+const user2PostReply1 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(1).length)
+postDatabase.at(1).addComment(user2PostReply1);
+const user2PostReply2 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(1).length)
+postDatabase.at(1).addComment(user2PostReply2);
+
+// Third Post
+const user3PostReply1 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(2).length)
+postDatabase.at(2).addComment(user3PostReply1);
+const user3PostReply2 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(2).length)
+postDatabase.at(2).addComment(user3PostReply2);

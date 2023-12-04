@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 
-export const PostContainer = styled.div`  
+export const PostContainer = styled(Link)`  
     display: flex;
     justify-content: center;
     align-items: center;

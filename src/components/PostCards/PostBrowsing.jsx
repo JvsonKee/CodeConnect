@@ -14,8 +14,8 @@ function PostBrowsing( {information} ) {
 
     const [likeCount, setLikeCount] = useState(information.likes);
     return (
-        <PostContainer>
-            <PostWrapper onClick={handleClick}>
+        <PostContainer to={"/CodeConnect/"+information.author.getUsername() + "/" +information.id}>
+            <PostWrapper>
                 <PostInformationWrapper>
                     <PostUserInformation>
                         <UserProfilePicture src={information.author.getProfilePicture()}></UserProfilePicture>
