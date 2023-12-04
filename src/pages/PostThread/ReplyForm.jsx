@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form"
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-function GenerateReplyForm() {
+function GenerateReplyForm(i) {
     const [formData, setFormData] = useState({
     reply_desc: ''
   });
@@ -27,7 +27,7 @@ function GenerateReplyForm() {
   };
 
   return (
-    <CustomAccordion>
+    <CustomAccordion key={i}>
       <CustomAccordionItem>
         <ReplyButton type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
             Reply

@@ -21,7 +21,7 @@ function ReplyBrowsing( {user}, i ) {
             <ReplyContainer>
                 <ReplyLine>
                 </ReplyLine>
-                <ReplyWrapper key={i}>
+                <ReplyWrapper>
                     <ReplyUserInformation>
                         <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
                         <ReplyUserName>{author.getUsername()}</ReplyUserName>
@@ -31,7 +31,6 @@ function ReplyBrowsing( {user}, i ) {
                         <PostDescription>{content}</PostDescription>
                     </PostMainContent>
                     <br></br>
-                    
                     <GenerateReplyForm show={showReplyForm} close={closeReplyForm} />
                 </ReplyWrapper>
             </ReplyContainer>

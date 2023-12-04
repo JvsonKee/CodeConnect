@@ -19,7 +19,7 @@ function ReplyBrowsingFirstLevel ( {user}, i) {
 
     return (
         <>
-            <ReplyWrapper key={i}>
+            <ReplyWrapper>
                 <ReplyUserInformation>
                     <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
                     <ReplyUserName>{author.getUsername()}</ReplyUserName>

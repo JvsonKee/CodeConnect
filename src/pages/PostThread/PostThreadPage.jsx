@@ -13,7 +13,7 @@ import ReplyBrowsingFirstLevel from "./ReplyBrowsingFirstLevel";
 import ReplyBrowsingLastLevel from "./ReplyBrowsingLastLevel";
 import ReplyPersonalView from "./ReplyPersonalView";
 import profilePicture from '../../assets/placeholder-profile-pic.png'
-import { ReplyContainer, ReplyLevel, ReplyLine } from "./ReplyBrowsing.styled";
+import { ReplyFeed, ReplyLevel } from "./ReplyBrowsing.styled";
 import { postDatabase } from '../../database/db';
 import BackButton from '../../components/BackButton/BackButton';
 
@@ -54,7 +54,7 @@ function PostThreadPage( ) {
                         <BackButton></BackButton>
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
-                    <Feed>
+                    <ReplyFeed>
                         <PostFullView/>
                         {
                             comments.map((replyLevel1, i) => (
@@ -62,8 +62,7 @@ function PostThreadPage( ) {
                                 <ReplyBrowsingFirstLevel user={replyLevel1} />
 
                                 {replyLevel1.comments && replyLevel1.comments.length > 0 && (
-                                    <div>
-                                    <ReplyLevel>    
+                                    <div>    
                                     
                                     {/* Level 2 nested comments */}
                                     {replyLevel1.comments.map((replyLevel2, j) => (
@@ -72,24 +71,21 @@ function PostThreadPage( ) {
                                         
                                         {/* Level 3 nested comments */}
                                         {replyLevel2.comments && replyLevel2.comments.length > 0 && (
-                                            <div>
                                             <ReplyLevel> 
                                             {replyLevel2.comments.map((replyLevel3, k) => (
                                                 <ReplyBrowsingLastLevel key={k} user={replyLevel3} />
                                             ))}
                                             </ReplyLevel>
-                                            </div>
                                         )}
                                         </React.Fragment>
                                     ))}
 
-                                    </ReplyLevel>
                                     </div>
                                 )}
                                 </React.Fragment>
                             ))
                         }
-                    </Feed>
+                    </ReplyFeed>
                 </ContentContainer>
             </HomePageContainer>
         </Container>
