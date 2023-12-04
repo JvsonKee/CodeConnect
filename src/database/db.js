@@ -4,6 +4,8 @@ import Reply from "./Reply"
 import proPic1 from "../assets/MainUserPfp.png"
 import proPic2 from "../assets/profile3.jpg"
 import proPic3 from "../assets/userPfp3.png"
+import Post from "./Post";
+import SocialMediaLink from "./SocialLink";
 
 export const userDatabase = [];
 export const postDatabase = [];
@@ -16,6 +18,10 @@ function pushPostToDatabase(title, topic, description, timeStamp) {
 
 const user1 = new User("PixelPioneer", "123");
 user1.setProfilePicture(proPic1);
+user1.setBiography("Lörem ipsum besans epirat jag bal vårdskuld. Alol mavis. Plall valiga vibarade, till fonofaktisk tedonde. ")
+const ghLink = new SocialMediaLink("Github", "PixelPioneer")
+const twitterLink = new SocialMediaLink("Twitter", "PixelPioneer")
+user1.setSocialMedia([twitterLink, ghLink])
 
 const user2 = new User("madscientist", "password");
 user2.setProfilePicture(proPic2);
