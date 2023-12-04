@@ -4,7 +4,6 @@ import Reply from "./Reply"
 import proPic1 from "../assets/MainUserPfp.png"
 import proPic2 from "../assets/profile3.jpg"
 import proPic3 from "../assets/userPfp3.png"
-import Post from "./Post";
 import SocialMediaLink from "./SocialLink";
 
 export const userDatabase = [];
