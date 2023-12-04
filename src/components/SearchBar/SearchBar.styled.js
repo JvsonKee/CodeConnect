@@ -19,6 +19,11 @@ export const Search = styled.input`
     background-color: var(--light-black);
     color: var(--white);
     box-shadow: 0 5px 10px var(--shadow);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
 
     &::placeholder {
         color: var(--grey);
@@ -38,6 +43,11 @@ export const SearchButton = styled.button`
     border-radius: 100px;
     border: 0px;
     background-color: var(--blue);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateX(3px);
+    }
 `
 
 export const ArrowIcon = styled(FontAwesomeIcon)`
