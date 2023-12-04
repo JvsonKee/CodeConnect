@@ -17,6 +17,7 @@ const TextStyle = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    background: #3a3d4b;
 `
 const BigButtonShape = styled.div`
     display: flex;
@@ -59,7 +60,7 @@ const MoreIcon = (props) => (
 
 function EditProfileButton(){
     const Usercolour = {
-        backgroundColor: "##3A3D4B",
+        backgroundColor: "#3A3D4B",
         borderRadius: "8px",
         border: '1.5px solid #45484F'
       };

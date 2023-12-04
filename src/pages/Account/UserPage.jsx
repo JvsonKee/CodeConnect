@@ -22,7 +22,7 @@ function UserPage({user}){
             <NavBar />  
             <UserPageContainer>
                 <UserBanner user = {user}></UserBanner>
-                <BackgroundBase post = {user}></BackgroundBase> {/* make it user.posts */}
+                <BackgroundBase posts = {user.getPosts()}></BackgroundBase>
             </UserPageContainer>
         </Container>
     )

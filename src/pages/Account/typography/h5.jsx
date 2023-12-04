@@ -9,6 +9,7 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 text-decoration-line: underline;
+background: #3a3d4b
 `
 
 
