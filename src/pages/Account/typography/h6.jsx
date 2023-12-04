@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const H6Style = styled.p`
 color: #8F8F8F;
 font-family: Inter;
+background-color: #353845;
 font-size: 20px;
 font-style: normal;
 font-weight: 500;
