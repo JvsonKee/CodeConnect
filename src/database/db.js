@@ -17,7 +17,7 @@ function pushPostToDatabase(title, topic, description, timeStamp) {
 
 const user1 = new User("PixelPioneer", "123");
 user1.setProfilePicture(proPic1);
-user1.setBiography("Lörem ipsum besans epirat jag bal vårdskuld. Alol mavis. Plall valiga vibarade, till fonofaktisk tedonde. ")
+user1.setBiography("OMG this is my bio!!")
 const ghLink = new SocialMediaLink("github", "PixelPioneer")
 const twitterLink = new SocialMediaLink("twitter", "PixelPioneer")
 user1.setSocialMedia([twitterLink, ghLink])
