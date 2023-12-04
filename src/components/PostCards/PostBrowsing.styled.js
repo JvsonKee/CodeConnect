@@ -14,7 +14,8 @@ export const PostContainer = styled(Link)`
     padding: 30px 0;
     box-shadow: 0 10px 20px var(--shadow);
     &:hover{
-        background-color: black;
+        background-color: var(--blue-low);
+        color: var(--black);
     }
 `
 

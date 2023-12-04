@@ -15,6 +15,7 @@ import ReplyPersonalView from "./ReplyPersonalView";
 import profilePicture from '../../assets/placeholder-profile-pic.png'
 import { ReplyContainer, ReplyLevel, ReplyLine } from "./ReplyBrowsing.styled";
 import { postDatabase } from '../../database/db';
+import BackButton from '../../components/BackButton/BackButton';
 
 const user1 = {
     profilePicture: profilePicture,
@@ -50,6 +51,7 @@ function PostThreadPage( ) {
                 <ContentContainer>
                     <HeaderContainer>
                         <PageHeader></PageHeader>
+                        <BackButton></BackButton>
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <Feed>
