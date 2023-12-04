@@ -7,11 +7,11 @@ import AccountInteractionButton from "./AccountInteractionButton";
 
 const MetaProfileContainer = styled.div`
     display: flex;
-    height: 300px;
     padding: 35px 22px;
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
+    gap: 10px;
+    
 `
 
 function MetaProfile({user}){

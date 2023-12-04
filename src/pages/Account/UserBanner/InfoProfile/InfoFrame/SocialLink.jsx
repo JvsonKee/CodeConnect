@@ -11,38 +11,52 @@ const SocialLinkContainer = styled.div`
 `
 
 const GithubIcon = (props) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={36}
-      height={36}
-      fill="none"
-      {...props}
-    >
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={25}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <g clipPath="url(#a)">
       <path
         stroke="#fff"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M13.5 28.5C6 30.75 6 24.75 3 24m21 9v-5.805a5.055 5.055 0 0 0-1.41-3.915c4.71-.525 9.66-2.31 9.66-10.5A8.16 8.16 0 0 0 30 7.155a7.605 7.605 0 0 0-.135-5.655S28.095.975 24 3.72a20.07 20.07 0 0 0-10.5 0C9.405.975 7.635 1.5 7.635 1.5A7.605 7.605 0 0 0 7.5 7.155a8.16 8.16 0 0 0-2.25 5.67c0 8.13 4.95 9.915 9.66 10.5a5.055 5.055 0 0 0-1.41 3.87V33"
+        d="M9.5 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 0 0-1.5-3.75A5.07 5.07 0 0 0 20.41 1S19.23.65 16.5 2.48a13.38 13.38 0 0 0-7 0C6.77.65 5.59 1 5.59 1a5.07 5.07 0 0 0-.09 3.77A5.44 5.44 0 0 0 4 8.55c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 0 0-.94 2.58V22"
       />
-    </svg>
-  )
+    </g>
+    <defs>
+      <clipPath id="a">
+        <path fill="#fff" d="M.5 0h24v24H.5z" />
+      </clipPath>
+    </defs>
+  </svg>
+)
 
   const TwitterIcon = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={36}
-      height={36}
+      width={25}
+      height={24}
       fill="none"
       {...props}
     >
-      <path
-        stroke="#fff"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M34.5 4.5a16.35 16.35 0 0 1-4.71 2.295 6.72 6.72 0 0 0-11.79 4.5v1.5A15.99 15.99 0 0 1 4.5 6s-6 13.5 7.5 19.5a17.46 17.46 0 0 1-10.5 3c13.5 7.5 30 0 30-17.25a6.756 6.756 0 0 0-.12-1.245A11.58 11.58 0 0 0 34.5 4.5Z"
-      />
+      <g clipPath="url(#a)">
+        <path
+          stroke="#fff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M23.5 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3.5 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.279-.028-.556-.08-.83A7.72 7.72 0 0 0 23.5 3Z"
+        />
+      </g>
+      <defs>
+        <clipPath id="a">
+          <path fill="#fff" d="M.5 0h24v24H.5z" />
+        </clipPath>
+      </defs>
     </svg>
   )
   

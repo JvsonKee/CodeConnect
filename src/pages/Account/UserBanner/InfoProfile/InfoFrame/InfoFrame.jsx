@@ -7,7 +7,7 @@ import SocialLink from "./SocialLink";
 
 const InfoFrameContainer = styled.div`
     display: flex;
-    padding: 10px 16px 10px 10px;
+    padding: 10px;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;

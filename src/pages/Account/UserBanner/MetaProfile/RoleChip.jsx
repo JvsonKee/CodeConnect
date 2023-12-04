@@ -14,7 +14,7 @@ const RoleChipContainer = styled.div`
 const H4Style = styled.p`
 color: #FFF;
 font-family: Inter;
-font-size: 33px;
+font-size: 14px;
 font-style: normal;
 background: #558FFF;
 font-weight: 400;

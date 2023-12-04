@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const AccountInteractionButtonContainer = styled.div`
     display: flex;
-    padding: 10px;
+    padding: 10px 4px;;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -13,27 +13,28 @@ const AccountInteractionButtonContainer = styled.div`
 const TextStyle = styled.p`
     color: #FFF;
     font-family: Inter;
-    font-size: 33px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 `
 const BigButtonShape = styled.div`
     display: flex;
-    padding: 10px;
+    padding: 4px 0px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     flex: 1 0 0;
+    border-radius: 4px;
+    background: #558FFF;
 `
 
 const SmallButtonStyle = styled.div`
     display: flex;
-    padding: 10px;
+    padding: 8px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1.5px solid #35383E;
     background: #252527;
 `
@@ -41,8 +42,8 @@ const SmallButtonStyle = styled.div`
 const MoreIcon = (props) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={36}
-      height={36}
+      width={16}
+      height={16}
       fill="none"
       {...props}
     >
@@ -51,7 +52,7 @@ const MoreIcon = (props) => (
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M18 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM28.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM7.5 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
+        d="M8 8.667a.667.667 0 1 0 0-1.334.667.667 0 0 0 0 1.334ZM12.667 8.667a.667.667 0 1 0 0-1.334.667.667 0 0 0 0 1.334ZM3.333 8.667a.667.667 0 1 0 0-1.334.667.667 0 0 0 0 1.334Z"
       />
     </svg>
   )

@@ -6,9 +6,6 @@ import ProfilePicture from "./ProfilePicture/ProfilePicture";
 
 const InfoProfileContainer = styled.div`
     display: flex;
-    width: 906px;
-    min-height: 150px;
-    max-height: 300px;
     justify-content: center;
     align-items: center;
     gap: 16px;

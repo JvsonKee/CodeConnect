@@ -21,16 +21,21 @@ const TopicChipContainer = styled.div`
 `
 
 const H4Style = styled.p`
-color: #8CAFF4;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #8CAFF4;
+    align-self: stretch;
+    background: #314B7E;
 `
 
 
 function TopicChip({topicName}){
     return ( 
         <TopicChipContainer>
-            <H4Style>
-                <h6>{topicName}</h6>
-            </H4Style>
+            <H4Style>{topicName}</H4Style>
         </TopicChipContainer>
     )
 }
@@ -40,11 +45,10 @@ function TopicArray({interests}){
     return ( 
         <TopicArrayContainer>
             {
-            interests.map((it, i) => (
+            interests.map((it) => (
                     <TopicChip topicName={it}/>
             ))
             }
-        
         </TopicArrayContainer>
     )
 }
