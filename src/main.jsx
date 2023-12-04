@@ -13,6 +13,7 @@ import DMPage from "./pages/DirectMessages/DMPage"
 import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
 import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
 import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
+import { userDatabase } from './database/db';
 
 const router = createBrowserRouter([
 	{
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
 
 	{
 		path: '/CodeConnect/account',
-		element: <UserPage />
+		element: <UserPage user={userDatabase[0]}/>
 	},
 
 	{
