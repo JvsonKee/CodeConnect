@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import RoleChip from "./roleChip";
+import RoleChip from "./RoleChip";
 import TopicArray from "./TopicArray";
 import AccountInteractionButton from "./AccountInteractionButton";
 
