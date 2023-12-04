@@ -57,7 +57,7 @@ function WelcomePage(){
                     {error && <div style={{ color: 'red' }}>{error}</div>}
                     <ContinueLink to="/CodeConnect/guest-home">Continue As Guest</ContinueLink>
                 </LoginForm>
-                <CreateAccountButton>Create Account</CreateAccountButton>
+                <a href = '/CodeConnect/create-account'><CreateAccountButton>Create Account</CreateAccountButton></a>
             </PageContainer>
           
         </Container>

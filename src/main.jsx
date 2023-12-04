@@ -8,6 +8,7 @@ import HomePage from './pages/Home/Homepage';
 import WelcomePage from "./pages/Welcome/WelcomePage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
 import DMPage from "./pages/DirectMessages/DMPage"
+import CreateAccount from "./pages/CreateAccount/CreateAccount"
 
 const router = createBrowserRouter([
 	{
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
 	{
 		path: '/CodeConnect/guest-home',
 		element: <GuestHome />
+	},
+
+	{
+		path: '/CodeConnect/create-account',
+		element: <CreateAccount />
 	}
 
 

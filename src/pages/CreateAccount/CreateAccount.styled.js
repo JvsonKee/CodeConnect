@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Form, FormLabel } from 'react-bootstrap';
 import { Button } from "react-bootstrap";
-// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { Modal } from "react-bootstrap";
 
 export const CreateAccountContainer = styled.div`
@@ -92,10 +92,10 @@ export const CustomButton = styled(Button)`
     border: 0px;
 `
 
-// export const IconContainer = styled(ArrowBackIosNewIcon)`
-//     color: white;
-//     margin-left: -10vw;
-//     margin-top: 1vh;
-//     position: absolute;
+export const IconContainer = styled(ArrowBackIosNewIcon)`
+    color: white;
+    margin-left: -10vw;
+    margin-top: 1vh;
+    position: absolute;
     
-// `
+`
