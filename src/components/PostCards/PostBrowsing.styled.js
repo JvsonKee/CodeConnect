@@ -13,8 +13,11 @@ export const PostContainer = styled(Link)`
     color: var(--white);
     padding: 30px 0;
     box-shadow: 0 10px 20px var(--shadow);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+
     &:hover{
-        background-color: var(--blue-low);
+        transform: translateY(-4px);
         color: var(--black);
     }
 `
@@ -74,6 +77,7 @@ export const PostMainContent = styled.div`
 
 export const PostTitle = styled.div`
     font-size: 30px;
+    color: white;
 `
 
 export const PostDescription = styled.div`
@@ -105,6 +109,7 @@ export const PostAnalytics = styled.div`
     align-items: center;
     width: 30%;
     color: var(--tan);
+    z-index: 1;
 `
 
 export const AnalyticIcon = styled(FontAwesomeIcon)`
