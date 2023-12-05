@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const NavContainer = styled.div`
     display: flex;
@@ -53,10 +54,18 @@ export const NavItems = styled.div`
     }
 `
 
+export const NavIcon = styled(FontAwesomeIcon)`
+    font-size: 22px;
+`
+
 export const NavItem = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    gap: 15px;
     color: var(--grey);
     text-decoration: none;
-
+    transition: 0.3s ease-in-out;
+    
     &:hover {
         color: var(--white);
     }

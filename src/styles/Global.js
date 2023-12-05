@@ -17,8 +17,8 @@ const GlobalStyles = createGlobalStyle`
         // black/blue theme
         --white: #FFFFFF;
         --grey: #9F9F9F;
-        --black: #121212;
-        --light-black: #161616;
+        --black: #2B2D37;
+        --light-black: #31333E;
         --blue: #558FFF;
         --light-blue: #94B8FF;
         --blue-low: rgba(85, 143, 255, 0.4);

@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
+
 
 export const NewDMPageContainer = styled.div`
     margin-left: 20vw;
@@ -22,7 +24,7 @@ export const NewDMContainer = styled.div`
     height: 50%;
     border-radius: 10px;
     box-shadow: 0 10px 20px var(--shadow);
-    //border: 1px solid black;
+
 `
 export const ContactsBar = styled.div`
     display: flex;
@@ -59,19 +61,18 @@ export const HeaderContainer = styled.div`
 export const MessageBoxContainer = styled.div`
     display: flex;
     align-items: center; 
-
     height: 77%;
     overflow-y: scroll;
     justify-content: center;
 `
 export const SearchButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
     &:hover{
-        background-color: var(--light-blue);
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `
@@ -98,14 +99,30 @@ export const BottomContainer = styled.div`
     border-radius: 0 0 10px 10px;
 `
 export const SendButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 7px 15px;
     border: none;
     border-radius: 50px;
     align-items: center; 
     &:hover{
-        background-color: var(--light-blue);
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `
+
+export const ExitButton = styled(Link)`
+
+    margin-left: 35vw;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: grey;
+    &:hover{
+        color: var(--white);
+    }
+`
+
+  

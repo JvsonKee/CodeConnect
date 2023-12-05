@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 export const MessageContainer = styled.div`  
     display: flex;
@@ -11,7 +12,7 @@ export const MessageContainer = styled.div`
     box-shadow: 0 10px 20px var(--shadow);
     transition: 0.2s ease-in-out;
     &:hover{
-        background-color: black;
+        background-color: var(--shadow);
     }
     cursor: pointer;
 `
@@ -36,9 +37,16 @@ export const DMUserProfilePicture = styled.img`
     border-radius: 100px;
 `
 
-export const DMUserName = styled.div`
+export const DMUserName = styled(Link)`
     font-size: 25px;
     color: var(--white);
+    text-decoration: none;
+    background-color: transparent; 
+
+    &:hover {
+        text-decoration: underline; 
+        text-decoration-thickness: 2px;
+    }
 `
 export const MessageMainContent = styled.div`
     display: flex;
@@ -46,6 +54,6 @@ export const MessageMainContent = styled.div`
     gap: 10px;
 `
 export const MessageText = styled.div`
-    font-size: 23px;
+    font-size: 19px;
     color: var(--grey);
 `

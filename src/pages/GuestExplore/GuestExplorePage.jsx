@@ -2,7 +2,7 @@ import Dropdown from "../../components/Dropdown/Dropdown"
 import GuestNavBar from "../../components/GuestNavBar/GuestNavBar"
 import SearchBar from "../../components/SearchBar/SearchBar"
 import { Container } from "../../styles/Container"
-import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav, TopicsContainer, SelectContainer, CheckBox } from "./GuestExplorePage.styled"
+import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav, TopicsContainer, SelectContainer, CheckBox, PopupContainer, PopupContent, CreateAccountText, CreateAccountButton, CloseButton  } from "./GuestExplorePage.styled"
 import { useState } from "react"
 import { PageHeader } from "../../styles/PageHeader"
 import TopicBubble from "../../components/TopicBubble/TopicBubble"
@@ -12,8 +12,9 @@ import gameDevPicture from "../../assets/game-dev.png" // source: https://itchro
 import programmingPicture from "../../assets/programming.png" // source: https://www.google.com/search?q=java&tbm=isch&hl=en&chips=q:java,g_1:programming:R3yWj66rrrk%3D&rlz=1C5CHFA_enCA1022CA1022&sa=X&ved=2ahUKEwjSgKaQ8qWCAxWUFTQIHWfNDnkQ4lYoAXoECAEQMQ&biw=1800&bih=986#imgrc=3VOAR5G6kgBfrM&imgdii=c3KSenntr082qM
 
 function GuestExplorePage() {
+
     const [status, setStatus] = useState('Recent');
-    const [popupVisible, setPopupVisible] = useState(false);
+    const [isPopupVisible, setPopupVisible] = useState(false);
   
     const handleItemClick = (itemName) => {
       if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
@@ -86,12 +87,18 @@ function GuestExplorePage() {
                     </TopicsSection>
                 </ContentContainer>
             </ExplorePageContainer>
-            {popupVisible && (
-            <div className="popup">
-                <p>Please create an account to access this feature.</p>
-                <button onClick={handleClosePopup}>Close</button>
-            </div>
-            )}
+        {/* Popup */}
+        {isPopupVisible && (
+            <PopupContainer>
+            <PopupContent>
+                <CreateAccountText>Please create an account to access this feature </CreateAccountText>
+                <div></div>
+                <div></div>
+                <CreateAccountButton>Create Account</CreateAccountButton>
+                <CloseButton  onClick={handleClosePopup}>Close</CloseButton >
+            </PopupContent>
+            </PopupContainer>
+        )}
         </Container>
     )
 }

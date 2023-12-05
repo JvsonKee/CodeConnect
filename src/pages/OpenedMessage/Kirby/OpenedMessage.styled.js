@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
 
 export const OpenMessageContainer = styled.div`
     margin-left: 20vw;
@@ -48,10 +49,7 @@ export const MessageHeaderContainer = styled.div`
     height: 13%;
     border-radius: 10px 10px 0 0;
     transition: 0.2s ease-in-out;
-    &:hover{
-        background-color: #1B1B1B;
-    }
-    cursor: pointer;
+
 `
 export const ChatBox = styled.div`
     display: flex;
@@ -69,13 +67,13 @@ export const TextBoxContainer = styled.div`
     border-radius: 0 0 10px 10px;
 `
 export const SendButton = styled.button`
-    background-color: var(--blue-low); 
+    background-color: var(--blue); 
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
     &:hover{
-        background-color: blue;
+        background-color: var(--blue-low);
     }
     cursor: pointer;
 `
@@ -84,5 +82,18 @@ export const TextBox = styled.textarea`
     border: 1px solid black;
     background-color: var(--black);
     width: 80%;   
+`
+export const ExitButton = styled(Link)`
+
+    margin-left: 40.7vw;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: grey;
+    &:hover{
+        color: var(--white);
+    }
 `
 

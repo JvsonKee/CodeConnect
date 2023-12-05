@@ -6,8 +6,8 @@ export const ExplorePageContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 20vw;
+    /* width: clamp(500px, 90%, 900px); */
     width: 80vw;
-    height: 100vh;
     background-color: var(--black);
 `
 
@@ -15,8 +15,8 @@ export const ContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 100px;
-    padding: 5vh 0;
-    width: 80%;
+    /* padding: 5vh 0; */
+    width: clamp(500px, 90% 900px);
     height: 80%;
 `
 
@@ -35,9 +35,8 @@ export const TopicsSection = styled.div`
 
 export const TopicsHeaderContainer = styled.div`
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 `
 
@@ -79,6 +78,11 @@ export const CarouselSlide = styled.div`
     position: relative;
     text-align: center;
     color: var(--white);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 export const CarouselImage = styled.img`
@@ -90,12 +94,17 @@ export const CarouselImage = styled.img`
 `
 
 export const CarouselLabel = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 50px;
     font-weight: 600;
+    width: 100%;
+    height: 100%;
 `
 
 export const CarouselNav = styled.div`

@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 
-export const PostContainer = styled.div`  
+export const PostContainer = styled(Link)`  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +13,13 @@ export const PostContainer = styled.div`
     color: var(--white);
     padding: 30px 0;
     box-shadow: 0 10px 20px var(--shadow);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+        transform: translateY(-4px);
+        color: var(--black);
+    }
 `
 
 export const PostWrapper = styled.div`
@@ -21,6 +29,7 @@ export const PostWrapper = styled.div`
     gap: 20px;
     width: 90%;
     height: 80%;
+    cursor: pointer;
 `
 
 export const PostMatrix = styled.div`
@@ -45,6 +54,12 @@ export const PostReaction = styled.div`
     font-size: 30px;
 `
 
+export const ProfileContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+`
+
 export const UserProfilePicture = styled.img`
     width: 60px;
     height: 60px;
@@ -53,7 +68,9 @@ export const UserProfilePicture = styled.img`
 `
 
 export const UserName = styled.div`
-
+    &:hover {
+        color: var(--white);
+    }
 `
 
 export const TimePosted = styled.div`
@@ -68,6 +85,7 @@ export const PostMainContent = styled.div`
 
 export const PostTitle = styled.div`
     font-size: 30px;
+    color: white;
 `
 
 export const PostDescription = styled.div`
@@ -102,7 +120,13 @@ export const PostAnalytics = styled.div`
 `
 
 export const AnalyticIcon = styled(FontAwesomeIcon)`
+    &:hover {
+        color: var(--white);
+    }
+`
 
+export const LikedHeart = styled(FontAwesomeIcon)`
+    color: #F45151;
 `
 
 export const Analytic = styled.div`

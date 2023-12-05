@@ -8,14 +8,25 @@ class Post {
         this.id = id;
         this.likes = 0;
         this.comments = [];
+        this.url = "/CodeConnect/".concat(String(author.getUsername()),"/",String(id));
     }
 
     like() {
         this.likes++;
     }
 
+    dislike() {
+        this.likes--;
+    }
+
     addComment(comment) {
         this.comments.push(comment);
+    }
+
+    getAuthor() {
+        return {
+            author: this.author
+        }
     }
 
     getPostInformation() {
@@ -28,6 +39,12 @@ class Post {
             id: this.id,
             likes: this.likes,
             comments: this.comments
+        }
+    }
+
+    getPostURL(){
+        return { 
+            url: this.url
         }
     }
 }

@@ -6,9 +6,12 @@ import UserPage from './pages/Account/UserPage';
 import GlobalStyles from './styles/Global';
 import HomePage from './pages/Home/Homepage';
 import WelcomePage from "./pages/Welcome/WelcomePage"
+import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
+import GuestExplore from "./pages/GuestExplore/GuestExplorePage"
 import DMPage from "./pages/DirectMessages/DMPage"
 import CreateAccount from "./pages/CreateAccount/CreateAccount"
+import PostThreadPage from "./pages/PostThread/PostThreadPage"
 
 const router = createBrowserRouter([
 	{
@@ -32,8 +35,28 @@ const router = createBrowserRouter([
 	},
 
 	{
+		path: '/CodeConnect/dm-kirby',
+		element: <OpenedMessage />
+	},
+
+	{
+		path: '/CodeConnect/dm-boo',
+		element: <OpenedMessage2 />
+	},
+
+	{
+		path: '/CodeConnect/dm-sonic',
+		element: <OpenedMessage3 />
+	},
+
+	{
+		path: '/CodeConnect/new-direct-message',
+		element: <NewDMPage />
+	},
+
+	{
 		path: '/CodeConnect/account',
-		element: <UserPage />
+		element: <UserPage user={userDatabase[0]}/>
 	},
 
 	{
@@ -46,6 +69,21 @@ const router = createBrowserRouter([
 		element: <CreateAccount />
 	}
 
+	{
+		path: '/CodeConnect/:author/:id',
+		element: <PostThreadPage />
+	},
+
+
+	{
+		path: '/CodeConnect/guest-explore',
+		element: <GuestExplore />
+	},
+
+	{
+		path: '/CodeConnect/explore-results',
+		element: <ExploreResults />
+	}
 
 ])
 
