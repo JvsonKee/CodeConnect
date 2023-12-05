@@ -10,8 +10,11 @@ export const postDatabase = [];
 
 function pushPostToDatabase(title, topic, description, timeStamp) {
   let id = postDatabase.length;
-  const postToAdd = new Post("JasonSucksAtCoding69",title,description,topic,timeStamp,id);
+  const userKey = localStorage.getItem("userDatabaseKey");
+  const user = userDatabase[userKey];
+  const postToAdd = new Post(user,title,description,topic,timeStamp,id);
   postDatabase.push(postToAdd);
+  alert("done");
 };
 
 const user1 = new User("PixelPioneer", "123");
@@ -68,3 +71,5 @@ const user3PostReply1 = new Reply(user1, "no this is fake", "1 second ago", post
 postDatabase.at(2).addComment(user3PostReply1);
 const user3PostReply2 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(2).length)
 postDatabase.at(2).addComment(user3PostReply2);
+
+export default pushPostToDatabase;
