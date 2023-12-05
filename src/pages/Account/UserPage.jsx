@@ -9,7 +9,6 @@ import { userDatabase } from "../../database/db";
 
 const UserPageContainer = styled.div`
     width: 80vw;
-    height: 100vh;  
     margin-left: 20vw;
     background-color: #2B2D37;
     display: flex;
@@ -21,7 +20,6 @@ const UserPageContainer = styled.div`
 function UserPage(){
     const { userName } = useParams();
     const user = userDatabase.find(it => it.username == userName);
-    console.log(user)
     return (  
         <Container>
             <NavBar />  

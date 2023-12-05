@@ -15,7 +15,6 @@ const MetaProfileContainer = styled.div`
 `
 
 function MetaProfile({user}){
-    console.log(user.userName)
     return (
         <MetaProfileContainer>
             <RoleChip role={user.role}/>

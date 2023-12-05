@@ -5,10 +5,10 @@ import MetaProfile from "./MetaProfile/MetaProfile";
 
 const UserBannerContainer = styled.div`
     display: flex;
-    padding: 36px 32px;
+    padding: 32px 32px;
     justify-content: center;
     align-items: center;
-    gap: 36px;
+    gap: 32px;
     align-self: stretch;
     background-color: #353845;
 `
