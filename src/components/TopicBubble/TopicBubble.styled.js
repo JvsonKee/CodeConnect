@@ -8,9 +8,9 @@ export const Topic = styled.button`
     height: 30px;
     padding: 0 15px;
     background-color: var(--blue-low);
-    color: var(--white);
+    color: var(--light-blue);
     font-size: 14px;
-    box-shadow: 0 10px 10px var(--shadow);
+    box-shadow: 0 7px 10px var(--shadow);
     text-decoration: none;
     border: none;
     transition: 0.3s ease-in-out;
