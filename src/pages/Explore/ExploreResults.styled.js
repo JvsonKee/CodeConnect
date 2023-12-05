@@ -26,7 +26,7 @@ export const BackButton = styled(Link)`
     justify-content: center;
     width: 50px;
     height: 50px;
-    border-radius: 100px;
+    border-radius: 50%;
     border: 0px;
     /* background-color: var(--blue); */
     transition: 0.3s ease-in-out;
