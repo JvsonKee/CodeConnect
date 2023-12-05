@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components"
 
 const BackgroundGutterStyle = styled.div`
-    width: 100px;
+    width: 150px;
     align-self: stretch;
     background: #2B2D37;
 `
