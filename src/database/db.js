@@ -8,6 +8,10 @@ import SocialMediaLink from "./SocialLink";
 
 export const userDatabase = [];
 export const postDatabase = [];
+export const topicDatabase = ["React", "Game Development", "Career", "Embedded Development",
+                              "Web Development","Python", "Dynamic Programming","JavaScript",
+                              "Full-Stack Development","Data Structures","Networks","Cybersecurity",
+                              "HTML","CSS","Data Science"];
 
 function pushPostToDatabase(title, topic, description, timeStamp) {
   let id = postDatabase.length;
@@ -15,7 +19,6 @@ function pushPostToDatabase(title, topic, description, timeStamp) {
   const user = userDatabase[userKey];
   const postToAdd = new Post(user,title,description,topic,timeStamp,id);
   postDatabase.push(postToAdd);
-  alert("done");
 };
 
 const user1 = new User("PixelPioneer", "123");
@@ -37,17 +40,17 @@ userDatabase.push(user1);
 userDatabase.push(user2);
 userDatabase.push(user3);
 
-const user1Post = new Post(user1, "Learning React", "I am learning React for a school project, what are the best resources to learn from?", "React", "12 minutes ago", postDatabase.length);
+const user1Post = new Post(user1, "Learning React", "I am learning React for a school project, what are the best resources to learn from?", topicDatabase[0], "12 minutes ago", postDatabase.length);
 postDatabase.push(user1Post);
 user1.addPost(user1Post);
 user1Post.likes = 1;
 
-const user2Post = new Post(user2, "Growtopia - My new game!", "I've been developing my farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!", "Game Development", "1 hour ago", postDatabase.length);
+const user2Post = new Post(user2, "Growtopia - My new game!", "I've been developing my farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!", topicDatabase[1], "1 hour ago", postDatabase.length);
 postDatabase.push(user2Post);
 user2.addPost(user2Post);
 user2Post.likes = 93
 
-const user3Post = new Post(user3, "Internship Help", "I'm in my third year of university and I'm want to start applying to internships. I've never had an interview before and I was wondering what the process is normally like?", "Career", "2 hours ago", postDatabase.length);
+const user3Post = new Post(user3, "Internship Help", "I'm in my third year of university and I'm want to start applying to internships. I've never had an interview before and I was wondering what the process is normally like?", topicDatabase[2], "2 hours ago", postDatabase.length);
 postDatabase.push(user3Post);
 user3.addPost(user3Post);
 user3Post.likes = 18;

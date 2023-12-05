@@ -41,7 +41,7 @@ function NavBar({onPost}) {
                         <span>Profile</span>
                     </NavItem>
                     <PostButton onClick={openPostForm}>Post</PostButton>
-                    <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} onPostSuccess={onPost} />
+                    {showPostForm && <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} onPostSuccess={onPost} />}
                 </NavItems>
             </Nav>
         </NavContainer>

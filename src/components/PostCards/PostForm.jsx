@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -8,6 +8,7 @@ import { GeneratePostModal, GeneratePostModalHeader, CustomPostInputField, Arrow
 import pushPostToDatabase from '../../database/db'
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { topicDatabase } from '../../database/db';
 
 function CharLimitProgressBar(charWritten) {
   // TODO
@@ -21,6 +22,9 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
     post_topic: '',
     post_desc: ''
   });
+  const [defaultTitle, setDefaultTitle] = useState('');
+  const [defaultTopic, setDefaultTopic] = useState('');
+  const [defaultDesc, setDefaultDesc] = useState('');
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -31,11 +35,54 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
   }
 
   const handleSubmitPost = () => {
+    localStorage.setItem("savedTitle", "");
+    localStorage.setItem("savedDesc", "");
+    localStorage.setItem("savedTopic", "");
     const {post_title, post_topic, post_desc} = formData;
     pushPostToDatabase(post_title, post_topic, post_desc, "1 second ago");
     closeForm();
     onPostSuccess();
   };
+
+  const handleSavePostInfo = () => {
+    const {post_title, post_topic, post_desc} = formData;
+    localStorage.setItem("savedTitle", post_title);
+    localStorage.setItem("savedTopic", post_topic);
+    localStorage.setItem("savedDesc", post_desc);
+    // TODO: replace this with heba's cool warnings :)
+    alert("saved");
+  }
+
+  const checkSavedPostInfo = () => {
+    const savedTitle = localStorage.getItem('savedTitle');
+    if (savedTitle != "") {
+      setDefaultTitle(savedTitle);
+      setFormData((prevData) => ({
+        ...prevData,
+        post_title: savedTitle,
+      }));
+    }
+    const savedTopic = localStorage.getItem('savedTopic');
+    if (savedTopic != "") {
+      setDefaultTopic(savedTopic);
+      setFormData((prevData) => ({
+        ...prevData,
+        post_topic: savedTopic,
+      }));
+    }
+    const savedDesc = localStorage.getItem('savedDesc');
+    if (savedDesc != "") {
+      setDefaultDesc(savedDesc);
+      setFormData((prevData) => ({
+        ...prevData,
+        post_desc: savedDesc,
+      }));
+    }
+  }
+
+  useEffect(() => {
+    checkSavedPostInfo();
+  }, []); 
 
   return (
     <GeneratePostModal centered size="lg" show = {showForm} animation = {true} scrollable>
@@ -51,11 +98,12 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                   <Form.Label>Title</Form.Label>
                   <br></br>
                   <CustomPostInputField
-                    type="textarea"
-                    placeholder="So I've been thinking..."
+                    as="textarea"
+                    rows={1}
                     id="post_title"
                     name="post_title"
                     value={formData.post_title}
+                    defaultValue={defaultTitle}
                     onChange={handleChange}
                   />
                 </Form.Group>
@@ -67,11 +115,14 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                     id="post_topic"
                     name="post_topic"
                     value={formData.post_topic}
+                    defaultValue={defaultTopic}
                     onChange={handleChange}
                   >
-                    <option value="Web Dev">Web Development</option>
-                    <option value="Game">Embedded Development</option>
-                    <option value="Career">Career</option>
+                    {topicDatabase.map((topic, i) => (
+                      <option key={i} value={topic}>
+                        {topic}
+                      </option>
+                    ))}
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -84,6 +135,7 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                 id="post_desc"
                 name="post_desc"
                 value={formData.post_desc} 
+                defaultValue={defaultDesc}
                 onChange={handleChange}
               />
             </Form.Group>
@@ -94,8 +146,8 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                   <input className="form-control form-control" id="formFile" type="file"></input>
                 </Col>
                 <Col xs={4}>
-                  <Button variant="secondary" onClick={closeForm}>
-                    Save Entered Text
+                  <Button variant="secondary" onClick={handleSavePostInfo}>
+                    Save Form for Later
                   </Button>
                 </Col>
                 <Col xs={2}>
