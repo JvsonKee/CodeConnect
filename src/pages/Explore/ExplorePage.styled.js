@@ -6,6 +6,7 @@ export const ExplorePageContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-left: 20vw;
+    /* width: clamp(500px, 90%, 900px); */
     width: 80vw;
     background-color: var(--black);
 `
@@ -15,7 +16,7 @@ export const ContentContainer = styled.div`
     flex-direction: column;
     gap: 100px;
     /* padding: 5vh 0; */
-    width: 85%;
+    width: clamp(500px, 90% 900px);
     height: 80%;
 `
 

@@ -1,25 +1,50 @@
-import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted, PostInformationWrapper, PostReaction } from "./PostBrowsing.styled"
+import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, TimePosted, PostInformationWrapper, PostReaction, ProfileContainer, LikedHeart } from "./PostBrowsing.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
+import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons"
 import propTypes from 'prop-types'
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 
 function PostBrowsing( {information} ) {
     const navigate = useNavigate();
-
-    const handleClick = () => {
-        let posturl = information.getPostURL().url;
-        navigate(posturl);
-    };
-
     const [likeCount, setLikeCount] = useState(information.likes);
+    const [liked, setLiked] = useState(false);
+
+    const openPost = () => {
+        let postURL = information.getPostURL().url;
+        navigate(postURL);
+    }
+
+    const likePost = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        if (!liked) {
+            information.like();
+            setLiked(true);
+        } else {
+            information.dislike();
+            setLiked(false);
+        }
+        setLikeCount(information.likes);
+    }
+
+    const openUserProfile = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        // implement logic here : eyram
+    }
+
     return (
-        <PostContainer to={"/CodeConnect/"+information.author.getUsername() + "/" +information.id}>
+        <PostContainer onClick={openPost}> 
             <PostWrapper>
                 <PostInformationWrapper>
                     <PostUserInformation>
-                        <UserProfilePicture src={information.author.getProfilePicture()}></UserProfilePicture>
-                        <UserName>{information.author.getUsername()}</UserName>
+                        <ProfileContainer onClick={openUserProfile}>
+                            <UserProfilePicture src={information.author.getProfilePicture()}></UserProfilePicture>
+                            <UserName>{information.author.getUsername()}</UserName>
+                        </ProfileContainer>
                         <TimePosted>{information.timestamp}</TimePosted>
                     </PostUserInformation>
                     <PostReaction>{information.reaction}</PostReaction>
@@ -35,11 +60,10 @@ function PostBrowsing( {information} ) {
                 </TopicsContainer>
                 <PostAnalytics>
                     <Analytic>
-                        <div onClick={() => {
-                            information.like();
-                            setLikeCount(information.likes);
-                        }}>
-                            <AnalyticIcon icon={faHeart}/>
+                        <div onClick={likePost}>
+                            {
+                                liked ? <LikedHeart icon={solidHeart}/> : <AnalyticIcon icon={faHeart}/>
+                            }
                         </div>
                         <div>{likeCount} likes</div>
                     </Analytic>

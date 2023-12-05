@@ -11,7 +11,7 @@ export const ContentContainer = styled.div`
     flex-direction: column;
     gap: 50px;
     padding: 5vh 0;
-    width: 80%;
+    width: clamp(500px, 90%, 900px);
 `
 
 export const Matrix = styled.div`
@@ -28,11 +28,12 @@ export const BackButton = styled(Link)`
     height: 50px;
     border-radius: 100px;
     border: 0px;
-    background-color: var(--blue);
+    /* background-color: var(--blue); */
     transition: 0.3s ease-in-out;
 
     &:hover {
         transform: translateX(-3px);
+        background-color: var(--blue);
     }
 `
 
