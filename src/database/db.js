@@ -5,15 +5,11 @@ import proPic1 from "../assets/MainUserPfp.png"
 import proPic2 from "../assets/profile3.jpg"
 import proPic3 from "../assets/userPfp3.png"
 import SocialMediaLink from "./SocialLink";
+import Topic from "./Topic"
 
 export const userDatabase = [];
 export const postDatabase = [];
-
-function pushPostToDatabase(title, topic, description, timeStamp) {
-  let id = postDatabase.length;
-  const postToAdd = new Post("JasonSucksAtCoding69",title,description,topic,timeStamp,id);
-  postDatabase.push(postToAdd);
-};
+export const topicDatabase = [];
 
 const user1 = new User("PixelPioneer", "123");
 user1.setProfilePicture(proPic1);
@@ -49,6 +45,17 @@ postDatabase.push(user3Post);
 user3.addPost(user3Post);
 user3Post.likes = 18;
 
+const user1Post2 = new Post(user1, "IDE for python", "What are the best IDE's for learning python?", "Python", "3 hours ago", postDatabase.length);
+postDatabase.push(user1Post2);
+user1.addPost(user1Post2);
+user1Post2.likes = 30
+
+const user2Post2 = new Post(user2, "New project", "Checkout my project. Done in all python", "Python", "4 hours ago", postDatabase.length);
+postDatabase.push(user2Post2);
+user2.addPost(user2Post2);
+user2Post2.likes = 136
+
+
 // First Post
 const user1PostReply1 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(0).length)
 const user1PostReply2 = new Reply(user2, "This is actually real, I agree with this post", "1 second ago", user1PostReply1.comments.length)
@@ -75,3 +82,35 @@ const user3PostReply1 = new Reply(user1, "no this is fake", "1 second ago", post
 postDatabase.at(2).addComment(user3PostReply1);
 const user3PostReply2 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(2).length)
 postDatabase.at(2).addComment(user3PostReply2);
+
+
+// Topics
+const t1 = new Topic("Web Development");
+const t2 = new Topic("React");
+const t3 = new Topic("Python");
+const t4 = new Topic("JavaScript");
+const t5 = new Topic("Data Structures");
+const t6 = new Topic("Networks");
+const t7 = new Topic("Game Development");
+const t8 = new Topic("HTML");
+const t9 = new Topic("CSS");
+const t11 = new Topic("Career");
+
+topicDatabase.push(t1);
+topicDatabase.push(t2);
+topicDatabase.push(t3);
+topicDatabase.push(t4);
+topicDatabase.push(t5);
+topicDatabase.push(t6);
+topicDatabase.push(t7);
+topicDatabase.push(t8);
+topicDatabase.push(t9);
+topicDatabase.push(t11);
+
+postDatabase.forEach((post) => {
+    topicDatabase.forEach((topic) => {
+        if (post.topic === topic.name) {
+            topic.posts.push(post)
+        }
+    })
+})

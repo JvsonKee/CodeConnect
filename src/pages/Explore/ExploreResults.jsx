@@ -5,8 +5,10 @@ import { Feed } from "../Home/HomePage.styled";
 import PostBrowsing from "../../components/PostCards/PostBrowsing";
 import { ExplorePageContainer } from "./ExplorePage.styled";
 import { postDatabase } from "../../database/db";
-import { ContentContainer, Matrix, PostCountContent } from "./ExploreResults.styled";
+import { ArrowLeft, BackButton, ContentContainer, Matrix, PostCountContent, SearchContainer } from "./ExploreResults.styled";
 import { useLocation } from "react-router-dom";
+import { SearchBarContainer } from "../../components/SearchBar/SearchBar.styled";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function ExploreResults() {
     const { state } = useLocation();
@@ -18,7 +20,14 @@ function ExploreResults() {
             <NavBar/>
             <ExplorePageContainer>
                 <ContentContainer>
-                    <SearchBar data={postDatabase}/>
+                    <SearchBarContainer>
+                        <BackButton to="/CodeConnect/explore">
+                            <ArrowLeft icon={faArrowLeft}/>
+                        </BackButton>
+                        <SearchContainer>
+                            <SearchBar data={postDatabase}/>
+                        </SearchContainer>
+                    </SearchBarContainer>
                     <Matrix>
                         {
                             results.length > 2 || results.length == 0
