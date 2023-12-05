@@ -15,7 +15,7 @@ class Post {
         this.likes++;
     }
 
-    unlike() {
+    dislike() {
         this.likes--;
     }
 

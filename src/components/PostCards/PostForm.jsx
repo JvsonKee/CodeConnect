@@ -120,7 +120,7 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                   >
                     {topicDatabase.map((topic, i) => (
                       <option key={i} value={topic}>
-                        {topic}
+                        {topic.getName()}
                       </option>
                     ))}
                   </Form.Select>

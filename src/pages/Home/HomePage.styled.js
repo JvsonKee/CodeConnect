@@ -14,7 +14,7 @@ export const ContentContainer = styled.div`
     flex-direction: column;
     padding: 5vh 0;
     gap: 40px;
-    width: 80%;
+    width: clamp(500px, 90%, 900px);
 `
 
 export const HeaderContainer = styled.div`

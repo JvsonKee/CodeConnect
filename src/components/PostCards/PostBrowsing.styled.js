@@ -54,6 +54,12 @@ export const PostReaction = styled.div`
     font-size: 30px;
 `
 
+export const ProfileContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+`
+
 export const UserProfilePicture = styled.img`
     width: 60px;
     height: 60px;
@@ -62,7 +68,9 @@ export const UserProfilePicture = styled.img`
 `
 
 export const UserName = styled.div`
-
+    &:hover {
+        color: var(--white);
+    }
 `
 
 export const TimePosted = styled.div`
@@ -109,11 +117,16 @@ export const PostAnalytics = styled.div`
     align-items: center;
     width: 30%;
     color: var(--tan);
-    z-index: 1;
 `
 
 export const AnalyticIcon = styled(FontAwesomeIcon)`
+    &:hover {
+        color: var(--white);
+    }
+`
 
+export const LikedHeart = styled(FontAwesomeIcon)`
+    color: #F45151;
 `
 
 export const Analytic = styled.div`

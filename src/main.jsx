@@ -10,12 +10,8 @@ import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
 import GuestExplore from "./pages/GuestExplore/GuestExplorePage"
 import DMPage from "./pages/DirectMessages/DMPage"
+import CreateAccount from "./pages/CreateAccount/CreateAccount"
 import PostThreadPage from "./pages/PostThread/PostThreadPage"
-import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
-import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
-import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
-import { userDatabase } from './database/db';
-import ExploreResults from "./pages/Explore/ExploreResults"
 
 const router = createBrowserRouter([
 	{
@@ -67,11 +63,17 @@ const router = createBrowserRouter([
 		path: '/CodeConnect/guest-home',
 		element: <GuestHome />
 	},
-	
+
+	{
+		path: '/CodeConnect/create-account',
+		element: <CreateAccount />
+	},
+
 	{
 		path: '/CodeConnect/:author/:id',
 		element: <PostThreadPage />
 	},
+
 
 	{
 		path: '/CodeConnect/guest-explore',

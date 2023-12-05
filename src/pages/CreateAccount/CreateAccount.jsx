@@ -1,20 +1,54 @@
-import { CreateAccountContainer, FormContainer, CustomForm, H1, CustomButton, CustomModal, CustomFormControl } from "./CreateAccount.styled";
+import { CreateAccountContainer, FormContainer, CustomForm, H1, CustomButton, CustomModal, CustomFormControl, IconContainer } from "./CreateAccount.styled";
 import { Container } from "../../styles/Container";
 
-// import 'bootstrap/dist/css/bootstrap.css'; 
+import 'bootstrap/dist/css/bootstrap.css'; 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 //import { Modal } from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { Modal } from "react-bootstrap";
 
+import { useNavigate } from 'react-router-dom';
+import AccountValidation from './AccountValidation';
+
 
 
 function CreateAccount() {
+
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
+    const [isChecked, setIsChecked] = useState('');
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const handleCreateAccount = async () => {
+        try {
+          const response = await AccountValidation.createAccount(email, username, password, confirmPassword, isChecked);
+    
+          if (response.success) {
+            // Successful login
+            console.log('Login successful:', response.user);
+    
+            // Redirect to the Home page
+            navigate('/CodeConnect/home');
+          } else if(!response.success) {
+            // Display an error message for unsuccessful login
+            setError(response.error);
+            console.log('failed.');
+          }
+        } catch (error) {
+          console.error('Login error:', error);
+          // Display a generic error message for unexpected errors
+          setError('Unknown error has occured. Please try again.');
+        }
+      };
 
     return (  
         <Container>
@@ -22,7 +56,7 @@ function CreateAccount() {
             <CreateAccountContainer>
             
                 <H1>
-                    {/* <a href = "./components/HomePage"><IconContainer/></a> */}
+                    <a href = "./"><IconContainer/></a>
                     Create Account
                 </H1>
 
@@ -32,7 +66,7 @@ function CreateAccount() {
                         <Form.Group className = "createAcct" controlId = "email">
                             <Form.Label> Email address </Form.Label>
                             <br/>
-                            <CustomFormControl type = "email" placeholder = "Enter email" size = "md" />
+                            <CustomFormControl type = "email" placeholder = "Enter email" size = "md" value = {email} onChange = {(e)=> setEmail(e.target.value)} />
                         </Form.Group>
                     </CustomForm>
 
@@ -40,7 +74,7 @@ function CreateAccount() {
                         <Form.Group className = "createAcct" controlId = "username">
                             <Form.Label> Username </Form.Label>
                             <br/>
-                            <CustomFormControl type = "text" placeholder = "Enter username" size = "md" />
+                            <CustomFormControl type = "text" placeholder = "Enter username" size = "md" value = {username} onChange = {(e)=> setUsername(e.target.value)} />
                         </Form.Group>
                     </CustomForm>
 
@@ -48,7 +82,7 @@ function CreateAccount() {
                         <Form.Group className = "createAcct" controlId = "password">
                             <Form.Label> Password </Form.Label>
                             <br/>
-                            <CustomFormControl type = "password" placeholder = "Enter password" size = "md" />
+                            <CustomFormControl type = "password" placeholder = "Enter password" size = "md" value = {password} onChange = {(e)=> setPassword(e.target.value)}/>
                         </Form.Group>
                     </CustomForm>
 
@@ -56,13 +90,13 @@ function CreateAccount() {
                         <Form.Group className = "createAcct" controlId = "confirmPassword">
                             <Form.Label> Confirm Password </Form.Label>
                             <br/>
-                            <CustomFormControl type = "password" placeholder = "Confirm password" size = "md" />
+                            <CustomFormControl type = "password" placeholder = "Confirm password" size = "md" value = {confirmPassword} onChange = {(e)=> setConfirmPassword(e.target.value)}/>
                         </Form.Group>
                     </CustomForm>
 
                     <CustomForm>
                         
-                        <span class = 'spanCheckbox'><Form.Check type = "checkbox" id = "terms"/></span>
+                        <span class = 'spanCheckbox'><Form.Check type = "checkbox" id = "terms" value = {isChecked} onChange = {(e)=> setIsChecked(e.target.checked)}/></span>
                         <span class = 'spanLabel'>
                             <p>Agree to <a onClick = {handleShow}>Terms and Conditions</a> </p>
                         </span>
@@ -136,9 +170,13 @@ function CreateAccount() {
                         </Modal.Body>
                     </CustomModal>
 
-                    <CustomButton variant = "outline-light">
+                    
+                    {error && <div style={{ color: 'red' }}>{error}</div>}
+
+                    <CustomButton variant = "outline-light" onClick = {handleCreateAccount}>
                         Create
                     </CustomButton>
+                    
 
                 </FormContainer>
             </CreateAccountContainer>

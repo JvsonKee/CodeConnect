@@ -19,13 +19,19 @@ function SearchBar( {data} ) {
         navigate("/CodeConnect/explore-results", {state: { results: filtered, searchTerm: searchTerm}})
     }
 
+    const handleKeydown = (e) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    }
+
     return (
         <SearchBarContainer>
             {/* <Dropdown setStatus={setStatus} /> */}
-            <Search input="text" placeholder="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
-            <SearchButton onClick={handleSearch}>
+            <Search input="text" placeholder="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={handleKeydown}/>
+            {/* <SearchButton onClick={handleSearch}>
                 <ArrowIcon icon={faArrowRight} />
-            </SearchButton>
+            </SearchButton> */}
         </SearchBarContainer>
     )
 }
