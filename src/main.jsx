@@ -5,13 +5,17 @@ import ExplorePage from './pages/Explore/ExplorePage';
 import UserPage from './pages/Account/UserPage';
 import GlobalStyles from './styles/Global';
 import HomePage from './pages/Home/Homepage';
-import WelcomePage from "./pages/Welcome/WelcomePage"
 import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
 import GuestExplore from "./pages/GuestExplore/GuestExplorePage"
 import DMPage from "./pages/DirectMessages/DMPage"
 import CreateAccount from "./pages/CreateAccount/CreateAccount"
 import PostThreadPage from "./pages/PostThread/PostThreadPage"
+import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
+import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
+import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
+import ExploreResults from './pages/Explore/ExploreResults';
+import { userDatabase } from './database/db';
 
 const router = createBrowserRouter([
 	{
