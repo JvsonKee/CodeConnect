@@ -45,7 +45,6 @@ function PostThreadPage( ) {
 
     const [rerender, setRerenderFlag] =  useState(false);
     const handleRerenderThread = () => {
-        alert("wow! it tried to rerender");
         setRerenderFlag((prev) => !prev);
     };
 
