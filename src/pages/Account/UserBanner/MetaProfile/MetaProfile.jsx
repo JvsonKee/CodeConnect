@@ -15,11 +15,12 @@ const MetaProfileContainer = styled.div`
 `
 
 function MetaProfile({user}){
+    console.log(user.userName)
     return (
         <MetaProfileContainer>
             <RoleChip role={user.role}/>
             <TopicArray interests={user.interests}/>
-            <AccountInteractionButton loggedInUser={true}/>
+            <AccountInteractionButton loggedInUser={user.username === "PixelPioneer"}/>
         </MetaProfileContainer>
     )
 }
