@@ -57,10 +57,9 @@ const router = createBrowserRouter([
 		path: '/CodeConnect/new-direct-message',
 		element: <NewDMPage />
 	},
-
 	{
-		path: '/CodeConnect/account',
-		element: <UserPage user={userDatabase[0]}/>
+		path: '/CodeConnect/profile/:userName',
+		element: <UserPage/>
 	},
 
 	{

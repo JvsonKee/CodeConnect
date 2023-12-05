@@ -4,10 +4,11 @@ import React from "react";
 import UserBanner from "./UserBanner/UserBanner";
 import styled from "styled-components"
 import BackgroundBase from "./BackgroundBase/BackgroundBase";
+import { useParams } from "react-router-dom";
+import { userDatabase } from "../../database/db";
 
 const UserPageContainer = styled.div`
     width: 80vw;
-    height: 100vh;  
     margin-left: 20vw;
     background-color: #2B2D37;
     display: flex;
@@ -16,7 +17,9 @@ const UserPageContainer = styled.div`
     align-items: center;
 `
 
-function UserPage({user}){
+function UserPage(){
+    const { userName } = useParams();
+    const user = userDatabase.find(it => it.username == userName);
     return (  
         <Container>
             <NavBar />  

@@ -11,7 +11,7 @@ const MiddleSurfaceStyle = styled.div`
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
-    background: #353845;
+    background: #2a2d37;
 `
 
 const HeaderStyle  = styled.p`
@@ -22,7 +22,6 @@ const HeaderStyle  = styled.p`
     font-weight: 400;
     line-height: normal;
     align-self: stretch;
-    background: #353845;
 `
 
 

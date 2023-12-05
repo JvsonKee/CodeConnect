@@ -82,7 +82,7 @@ function UserInteractionButton(){
 
     return (
         <BigButtonShape style={Usercolour}>
-            <TextStyle style={TColor}>Follow</TextStyle>
+            <TextStyle style={TColor}>Message</TextStyle>
         </BigButtonShape>
     )
 }

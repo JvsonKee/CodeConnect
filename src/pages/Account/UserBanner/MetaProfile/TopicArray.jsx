@@ -45,8 +45,8 @@ function TopicArray({interests}){
     return ( 
         <TopicArrayContainer>
             {
-            interests.map((it) => (
-                    <TopicChip topicName={it}/>
+            interests.map((it, i) => (
+                    <TopicChip key = {i} topicName={it}/>
             ))
             }
         </TopicArrayContainer>
