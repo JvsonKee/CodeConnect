@@ -46,7 +46,7 @@ function PostFullView({handleRerenderThread}) {
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{post.comments.length} comments</div>
+                        <div>{post.getCommentsTotal()} comments</div>
                     </Analytic>
                     <Analytic>
                         <div>{post.reactions}</div>

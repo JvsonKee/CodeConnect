@@ -58,17 +58,17 @@ userDatabase.push(user1);
 userDatabase.push(user2);
 userDatabase.push(user3);
 
-const user1Post = new Post(user1, "Learning React", "I am learning React for a school project, what are the best resources to learn from?", topicDatabase[0], "3 months ago", postDatabase.length);
+const user1Post = new Post(user1, "Learning React", "I am learning React for a school project, what are the best resources to learn from?", "React", "3 months ago", postDatabase.length);
 postDatabase.push(user1Post);
 user1.addPost(user1Post);
 user1Post.likes = 1;
 
-const user2Post = new Post(user2, "Growtopia - My new game!", "I've been developing my farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!", topicDatabase[1], "1 month ago", postDatabase.length);
+const user2Post = new Post(user2, "Growtopia - My new game!", "I've been developing my farming game, Growtopia, for the last 2 years. I am excited to finally announce a public beta. I would appreciate if you guys checked it out!", "Game Development", "1 month ago", postDatabase.length);
 postDatabase.push(user2Post);
 user2.addPost(user2Post);
 user2Post.likes = 93
 
-const user3Post = new Post(user3, "Internship Help", "I'm in my third year of university and I'm want to start applying to internships. I've never had an interview before and I was wondering what the process is normally like?", topicDatabase[2], "2 hours ago", postDatabase.length);
+const user3Post = new Post(user3, "Internship Help", "I'm in my third year of university and I'm want to start applying to internships. I've never had an interview before and I was wondering what the process is normally like?", "Career", "2 hours ago", postDatabase.length);
 postDatabase.push(user3Post);
 user3.addPost(user3Post);
 user3Post.likes = 18;

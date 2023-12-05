@@ -69,7 +69,7 @@ function PostBrowsing( {information} ) {
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{information.comments.length} comments</div>
+                        <div>{information.getCommentsTotal()} comments</div>
                     </Analytic>
                     <Analytic>. . .</Analytic>
                 </PostAnalytics>

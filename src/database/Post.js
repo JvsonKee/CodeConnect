@@ -23,6 +23,22 @@ class Post {
         this.comments.push(comment);
     }
 
+    getCommentsTotal() {
+        let total = 0;
+        // basic nested for loop
+        for (const comment of this.comments) {
+            total++;
+            for (const reply of comment.comments) {
+                total++;
+                for (const nestedReply of reply.comments) {
+                    total++;
+                }
+            }
+        }
+
+        return total;
+    }
+
     getAuthor() {
         return {
             author: this.author

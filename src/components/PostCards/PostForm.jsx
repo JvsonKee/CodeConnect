@@ -50,7 +50,7 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
     localStorage.setItem("savedTopic", post_topic);
     localStorage.setItem("savedDesc", post_desc);
     // TODO: replace this with heba's cool warnings :)
-    alert("saved");
+    alert("Saved draft for later! Come back to this screen when you're ready to continue");
   }
 
   const checkSavedPostInfo = () => {
@@ -119,7 +119,7 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                     onChange={handleChange}
                   >
                     {topicDatabase.map((topic, i) => (
-                      <option key={i} value={topic}>
+                      <option key={i} value={topic.getName()}>
                         {topic.getName()}
                       </option>
                     ))}
