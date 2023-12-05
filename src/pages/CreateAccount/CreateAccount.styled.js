@@ -51,6 +51,11 @@ export const CustomForm = styled(Form)`
         cursor: pointer;
     }
 
+    .spanLabel:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--white);
+    }
+
     .spanCheckbox {
         display: inline-block;
     }
@@ -99,3 +104,4 @@ export const IconContainer = styled(ArrowBackIosNewIcon)`
     position: absolute;
     
 `
+

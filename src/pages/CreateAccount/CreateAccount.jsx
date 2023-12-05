@@ -1,4 +1,4 @@
-import { CreateAccountContainer, FormContainer, CustomForm, H1, CustomButton, CustomModal, CustomFormControl } from "./CreateAccount.styled";
+import { CreateAccountContainer, FormContainer, CustomForm, H1, CustomButton, CustomModal, CustomFormControl, IconContainer } from "./CreateAccount.styled";
 import { Container } from "../../styles/Container";
 
 import 'bootstrap/dist/css/bootstrap.css'; 
@@ -56,7 +56,7 @@ function CreateAccount() {
             <CreateAccountContainer>
             
                 <H1>
-                    {/*<a href = "./components/HomePage"><IconContainer/></a>*/}
+                    <a href = "./"><IconContainer/></a>
                     Create Account
                 </H1>
 
