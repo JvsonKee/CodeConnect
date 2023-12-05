@@ -7,6 +7,9 @@ class User {
         this.biography = "";
         this.education = "";
         this.workStatus = "";
+        this.socialMedia = []
+        this.interests = []
+        this.role = ""
     }
 
     setUsername(newUsername) {
@@ -55,6 +58,14 @@ class User {
 
     getWorkStatus() {
         return this.workStatus;
+    }
+
+    setSocialMedia(socialMedia) {
+        this.socialMedia = socialMedia;
+    }
+
+    getSocialMedia() {
+        return this.socialMedia;
     }
 }
 

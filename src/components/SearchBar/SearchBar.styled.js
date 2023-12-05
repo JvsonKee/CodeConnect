@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from "react-router-dom"
 
 export const SearchBarContainer = styled.div`
     display: flex;
@@ -8,7 +9,7 @@ export const SearchBarContainer = styled.div`
 `
 
 export const Search = styled.input`
-    width: 75%;
+    width: 92%;
     height: 70px;
     border-radius: 50px; 
     border: 0px;
@@ -29,6 +30,9 @@ export const SearchIcon = styled(FontAwesomeIcon)`
 `
 
 export const SearchButton = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
     border-radius: 100px;
