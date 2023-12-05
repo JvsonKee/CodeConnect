@@ -28,7 +28,7 @@ function HomePage() {
                     <Feed>
                         {
                             latestPosts.map((post, i) => (
-                                <PostBrowsing key={i} information={post}/>
+                                <PostBrowsing key={i} information={post} />
                             ))
                         }
                     </Feed>
