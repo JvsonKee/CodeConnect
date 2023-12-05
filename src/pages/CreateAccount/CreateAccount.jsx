@@ -22,6 +22,7 @@ function CreateAccount() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const [isChecked, setIsChecked] = useState('');
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -29,7 +30,7 @@ function CreateAccount() {
 
     const handleCreateAccount = async () => {
         try {
-          const response = await AccountValidation.createAccount(email, username, password, confirmPassword);
+          const response = await AccountValidation.createAccount(email, username, password, confirmPassword, isChecked);
     
           if (response.success) {
             // Successful login
@@ -95,7 +96,7 @@ function CreateAccount() {
 
                     <CustomForm>
                         
-                        <span class = 'spanCheckbox'><Form.Check type = "checkbox" id = "terms"/></span>
+                        <span class = 'spanCheckbox'><Form.Check type = "checkbox" id = "terms" value = {isChecked} onChange = {(e)=> setIsChecked(e.target.checked)}/></span>
                         <span class = 'spanLabel'>
                             <p>Agree to <a onClick = {handleShow}>Terms and Conditions</a> </p>
                         </span>
