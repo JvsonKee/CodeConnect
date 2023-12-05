@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import { postDatabase } from '../../database/db';
 
-function PostFullView( ) {
+function PostFullView({handleRerenderThread}) {
     const [showReplyForm, setShowReplyForm] = useState(false);
     const { id } = useParams();
 
@@ -52,7 +52,7 @@ function PostFullView( ) {
                         <div>{post.reactions}</div>
                     </Analytic>
                 </PostAnalytics>
-                <GenerateReplyForm show={showReplyForm} close={closeReplyForm} />
+                <GenerateReplyForm id={id} level1={-1} level2={-1} onReplySuccess={handleRerenderThread} closeForm={closeReplyForm} />
             </PostThreadWrapper>
         </PostThreadContainer>
     )

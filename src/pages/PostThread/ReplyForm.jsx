@@ -6,8 +6,9 @@ import { faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons"
 import Form from "react-bootstrap/Form"
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { postDatabase, pushReplyToDatabase } from '../../database/db'
 
-function GenerateReplyForm(i) {
+function GenerateReplyForm( {id, level1, level2, closeForm, onReplySuccess}, i) {
     const [isOpen, setIsOpen] = useState(false);
     const [formData, setFormData] = useState({
       reply_desc: ''
@@ -19,17 +20,20 @@ function GenerateReplyForm(i) {
       ...formData,
       [name]: value,
     });
-  }
-
-  const handleSubmitReply = () => {
-    const {reply_desc} = formData;
-    // close Reply Form
-    // pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
   };
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleSubmitReply = () => {
+    const post = postDatabase[id];
+    const {reply_desc} = formData;
+
+    pushReplyToDatabase(post, level1, level2, reply_desc);
+    onReplySuccess();
+    handleToggle();
+ };
 
   return (
     <>

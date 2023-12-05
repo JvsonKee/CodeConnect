@@ -42,8 +42,13 @@ function PostThreadPage( ) {
     const { id } = useParams();
     const post = postDatabase[id];
     const comments = post.getPostInformation().comments;
-    console.log(comments);
-    
+
+    const [rerender, setRerenderFlag] =  useState(false);
+    const handleRerenderThread = () => {
+        alert("wow! it tried to rerender");
+        setRerenderFlag((prev) => !prev);
+    };
+
     return (  
         <Container>
             <NavBar />  
@@ -55,11 +60,11 @@ function PostThreadPage( ) {
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <ReplyFeed>
-                        <PostFullView/>
+                        <PostFullView handleRerenderThread={handleRerenderThread}/>
                         {
                             comments.map((replyLevel1, i) => (
                                 <React.Fragment key={i}>
-                                <ReplyBrowsingFirstLevel user={replyLevel1} />
+                                <ReplyBrowsingFirstLevel level1={i} user={replyLevel1} handleRerenderThread={handleRerenderThread} />
 
                                 {replyLevel1.comments && replyLevel1.comments.length > 0 && (
                                     <div>    
@@ -67,13 +72,13 @@ function PostThreadPage( ) {
                                     {/* Level 2 nested comments */}
                                     {replyLevel1.comments.map((replyLevel2, j) => (
                                         <React.Fragment key={j}>
-                                        <ReplyBrowsing user={replyLevel2} />
+                                        <ReplyBrowsing level1={i} level2={j} user={replyLevel2} handleRerenderThread={handleRerenderThread}/>
                                         
                                         {/* Level 3 nested comments */}
                                         {replyLevel2.comments && replyLevel2.comments.length > 0 && (
                                             <ReplyLevel> 
                                             {replyLevel2.comments.map((replyLevel3, k) => (
-                                                <ReplyBrowsingLastLevel key={k} user={replyLevel3} />
+                                                <ReplyBrowsingLastLevel user={replyLevel3} />
                                             ))}
                                             </ReplyLevel>
                                         )}

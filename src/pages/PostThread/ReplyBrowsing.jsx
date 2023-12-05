@@ -2,11 +2,13 @@ import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainConten
 import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyUserInformation, ReplyUserName, ReplyUserProfilePicture } from "./ReplyBrowsing.styled"
 import {faPen} from "@fortawesome/free-solid-svg-icons"
 import { useState } from 'react';
+import { useParams } from "react-router-dom";
 import GenerateReplyForm from "./ReplyForm";
 
-function ReplyBrowsing( {user}, i ) {
+function ReplyBrowsing( {user, level1, level2, handleRerenderThread}, i ) {
     const { author, content } = user;
     const [showReplyForm, setShowReplyForm] = useState(false);
+    const { id } = useParams();
 
     const openReplyForm = () => {
     setShowReplyForm(true);
@@ -31,7 +33,7 @@ function ReplyBrowsing( {user}, i ) {
                         <PostDescription>{content}</PostDescription>
                     </PostMainContent>
                     <br></br>
-                    <GenerateReplyForm show={showReplyForm} close={closeReplyForm} />
+                    <GenerateReplyForm id={id} level1={level1} level2={0} closeForm={closeReplyForm} onReplySuccess={handleRerenderThread} />
                 </ReplyWrapper>
             </ReplyContainer>
         </>

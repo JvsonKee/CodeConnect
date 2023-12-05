@@ -13,12 +13,32 @@ export const topicDatabase = ["React", "Game Development", "Career", "Embedded D
                               "Full-Stack Development","Data Structures","Networks","Cybersecurity",
                               "HTML","CSS","Data Science"];
 
-function pushPostToDatabase(title, topic, description, timeStamp) {
+export function pushPostToDatabase(title, topic, description, timeStamp) {
   let id = postDatabase.length;
   const userKey = localStorage.getItem("userDatabaseKey");
   const user = userDatabase[userKey];
   const postToAdd = new Post(user,title,description,topic,timeStamp,id);
   postDatabase.push(postToAdd);
+};
+
+export function pushReplyToDatabase(post, replyLevel1, replyLevel2, description) {
+  const userKey = localStorage.getItem("userDatabaseKey");
+  const user = userDatabase[userKey];
+  if (replyLevel1 == -1 && replyLevel2 == -1) {
+    // this is a comment on the main thread
+    const replyToAdd = new Reply(user, description, "1 second ago", post.comments.length);
+    post.addComment(replyToAdd);
+  }
+  else if(replyLevel1 >=0 && replyLevel2 == -1) {
+    // this is a comment to a comment
+    const replyToAdd = new Reply(user, description, "1 second ago", post.comments.at(replyLevel1).comments.length);
+    post.comments.at(replyLevel1).addComment(replyToAdd);
+  }
+  else {
+    // this is a comment to a comment to a comment
+    const replyToAdd = new Reply(user, description, "1 second ago", post.comments.at(replyLevel1).comments.at(replyLevel2).comments.length);
+    post.comments.at(replyLevel1).comments.at(replyLevel2).addComment(replyToAdd);
+  }
 };
 
 const user1 = new User("PixelPioneer", "123");
@@ -81,5 +101,3 @@ const user3PostReply1 = new Reply(user1, "no this is fake", "1 second ago", post
 postDatabase.at(2).addComment(user3PostReply1);
 const user3PostReply2 = new Reply(user1, "no this is fake", "1 second ago", postDatabase.at(2).length)
 postDatabase.at(2).addComment(user3PostReply2);
-
-export default pushPostToDatabase;
