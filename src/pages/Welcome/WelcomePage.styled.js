@@ -24,6 +24,7 @@ border-radius: 5px;
 box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 color: var(--white);
 width: 70%;
+//gap: 5px;
 `;
 
 export const InputField = styled.input`
@@ -47,6 +48,7 @@ color: #fff;
 border: none;
 border-radius: 50px;
 align-items: center;
+margin-top: 2px;
 cursor: pointer;
 `;
 
@@ -83,12 +85,13 @@ export const LoginText = styled.label`
     color: var(--white);
 `
 
-export const ForgotPassword = styled.button`
+export const ForgotPassword = styled(Link)`
 font-size: 14px;
   color: var(--blue);
   background: none;
   border: none;
   cursor: pointer;
+  margin-top: 5px;
 `;
 
 export const PopupContainer = styled.div`
