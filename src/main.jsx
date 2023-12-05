@@ -67,7 +67,7 @@ const router = createBrowserRouter([
 	{
 		path: '/CodeConnect/create-account',
 		element: <CreateAccount />
-	}
+	},
 
 	{
 		path: '/CodeConnect/:author/:id',
