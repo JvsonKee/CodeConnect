@@ -1,4 +1,4 @@
-import { PostAnalytics, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, LikedHeart } from "../../components/PostCards/PostBrowsing.styled"
+import { PostAnalytics, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostUserInformationMatrix, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon, LikedHeart } from "../../components/PostCards/PostBrowsing.styled"
 import { PostThreadContainer, PostThreadWrapper} from "./PostFullView.styled"
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons"
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
@@ -6,8 +6,10 @@ import GenerateReplyForm from "./ReplyForm";
 import propTypes from 'prop-types'
 import { useParams } from "react-router-dom";
 import { useState } from 'react';
-import { postDatabase } from '../../database/db';
+import { userDatabase, postDatabase } from '../../database/db';
 import { useNavigate } from "react-router-dom";
+import { EditButton, EditIcon } from "./ReplyBrowsing.styled";
+import {faPen} from "@fortawesome/free-solid-svg-icons"
 
 function PostFullView({handleRerenderThread, isGuestView}) {
     const [showReplyForm, setShowReplyForm] = useState(false);
@@ -18,6 +20,9 @@ function PostFullView({handleRerenderThread, isGuestView}) {
     const post = postDatabase[id];
     const profilePic = post.author.getProfilePicture();
     const username = post.author.getUsername();
+
+    const savedUserKey = localStorage.getItem('userDatabaseKey');
+    const isSameUser = (userDatabase[savedUserKey].username == username);
 
     const openReplyForm = () => {
     setShowReplyForm(true);
@@ -49,9 +54,15 @@ function PostFullView({handleRerenderThread, isGuestView}) {
     return (
         <PostThreadContainer>
             <PostThreadWrapper>
-                <PostUserInformation onClick={openUserProfile}>
-                    <UserProfilePicture src={profilePic}></UserProfilePicture>
-                    <UserName>{username}</UserName> 
+                <PostUserInformation>
+                    <PostUserInformationMatrix onClick={openUserProfile}>
+                        <UserProfilePicture src={profilePic}></UserProfilePicture>
+                        <UserName>{username}</UserName>
+                    </PostUserInformationMatrix> 
+                    {isSameUser && <EditButton>
+                                    <EditIcon icon={faPen}/>
+                                    </EditButton>
+                    }
                 </PostUserInformation>
                 <PostMainContent>
                     <PostTitle>{post.title}</PostTitle>

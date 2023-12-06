@@ -1,10 +1,20 @@
 import { PostAnalytics, PostContainer, PostDescription, Analytic, PostMainContent, PostTitle, PostTopic, TopicOutline, PostUserInformation, PostWrapper, TopicsContainer, UserName, UserProfilePicture, AnalyticIcon } from "../../components/PostCards/PostBrowsing.styled"
-import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyUserInformation, ReplyUserName, ReplyUserProfilePicture } from "./ReplyBrowsing.styled"
+import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyUserInformation, ReplyUserInformationMatrix, ReplyUserName, ReplyUserProfilePicture, EditButton, EditIcon } from "./ReplyBrowsing.styled"
 import {faPen} from "@fortawesome/free-solid-svg-icons"
+import { userDatabase } from "../../database/db"
+import { useNavigate } from "react-router-dom";
 
 function ReplyBrowsing( {user} ) {
     const { author, content } = user;
- 
+    const savedUserKey = localStorage.getItem('userDatabaseKey');
+    const isSameUser = (userDatabase[savedUserKey].username == author.username);
+    const navigate = useNavigate();
+
+    const openUserProfile = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        navigate('/CodeConnect/profile/' + author.getUsername())
+    }
     return (
         <>
             <ReplyContainer>
@@ -12,8 +22,14 @@ function ReplyBrowsing( {user} ) {
                 </ReplyLine>
                 <ReplyWrapper>
                     <ReplyUserInformation>
-                        <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
-                        <ReplyUserName>{author.getUsername()}</ReplyUserName>
+                        <ReplyUserInformationMatrix onClick={openUserProfile}>
+                            <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
+                            <ReplyUserName>{author.getUsername()}</ReplyUserName>
+                        </ReplyUserInformationMatrix>
+                        {isSameUser && <EditButton>
+                                    <EditIcon icon={faPen}/>
+                                    </EditButton>
+                        }
                     </ReplyUserInformation>
                     <br></br>
                     <PostMainContent>
