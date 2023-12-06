@@ -41,6 +41,15 @@ export function pushReplyToDatabase(post, replyLevel1, replyLevel2, description)
   }
 };
 
+export function createNewUser(username, password) {
+  const userToPush = new User(username, password);
+  userToPush.setProfilePicture(kirbyPic);
+  userToPush.role = "Student"
+  userToPush.interests = ["Default"]
+  userDatabase.push(userToPush);
+  console.log(userDatabase);
+}
+
 const user1 = new User("PixelPioneer", "123");
 user1.setProfilePicture(proPic1);
 user1.setBiography("OMG this is my bio!!")

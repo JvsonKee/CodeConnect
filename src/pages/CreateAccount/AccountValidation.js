@@ -1,3 +1,6 @@
+import { createNewUser } from "../../database/db"
+import { validUser } from "../Welcome/util";
+
 const AccountValidation = {
     createAccount: async (email, username, password, confirmPassword, isChecked) => {
       //Make sure account details are valid
@@ -24,7 +27,10 @@ const AccountValidation = {
       else if(!isChecked){//check whether user has agreed to the terms of service
         return {success:false, error: 'Please read and agree to the terms of service before proceeding.'};
       }
-      else {//if no error, proceed to homepage. 
+      else {//if no error, proceed to homepage.
+        createNewUser(username, password);
+        // ignore return value, store user key in local storage
+        validUser(username, password);
         return {success: true};
       }
     },
