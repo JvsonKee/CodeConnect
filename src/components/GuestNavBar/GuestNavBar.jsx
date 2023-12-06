@@ -2,14 +2,21 @@ import { GuestNavContainer , Nav, NavItems, NavLogo, PostButton, NavLogoCode, Na
 import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed, PopupContainer, PopupContent, CreateAccountText, CreateAccountButton, CloseButton  } from '../../pages/GuestHome/GuestHomePage.styled';
 import { faHouseChimney, faMagnifyingGlass, faComment, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 function GuestNavBar() {
     const [isPopupVisible, setPopupVisible] = useState(false);
+    const navigate = useNavigate();
     const handleItemClick = (itemName) => {
       if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
         setPopupVisible(true);
       }
     };
+    
+    const sendToCreateAccount = () => {
+        navigate("/CodeConnect/create-account");
+    }
+
   
     const handleClosePopup = () => {
       setPopupVisible(false);
@@ -30,15 +37,7 @@ function GuestNavBar() {
                         <NavIcon icon={faMagnifyingGlass}/>
                         <span>Explore</span>
                     </NavItem>
-                    <NavItem onClick={() => handleItemClick('Direct Messages')}>
-                        <NavIcon icon={faComment} />
-                        <span>Messages</span>
-                    </NavItem>
-                    <NavItem onClick={() => handleItemClick('Profile')}>
-                        <NavIcon icon={faUser}/>
-                        <span>Profile</span>
-                    </NavItem>
-                    <PostButton onClick={() => handleItemClick('Post')}>Post</PostButton>
+                    <PostButton onClick={sendToCreateAccount}>Create Account</PostButton>
                 </NavItems>
             </Nav>
             {/* Popup */}

@@ -71,11 +71,24 @@ export const NavItem = styled(NavLink)`
     }
 `
 
+export const GuestLink = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color
+`
+
 export const PostButton = styled.div`
     background-color: var(--blue);
     border-radius: 50px;
     text-align: center;
     line-height: 50px;
+    width: 150px;
     height: 50px;
     color: var(--white);
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
