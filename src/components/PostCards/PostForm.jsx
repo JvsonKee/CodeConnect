@@ -25,6 +25,8 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
   const [defaultTitle, setDefaultTitle] = useState('');
   const [defaultTopic, setDefaultTopic] = useState('');
   const [defaultDesc, setDefaultDesc] = useState('');
+  const [postError, setPostError] = useState(false);
+  const errorMessage = "Please enter a title, topic, and description before posting!";
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -35,11 +37,19 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
   }
 
   const handleSubmitPost = () => {
-    localStorage.setItem("savedTitle", "");
-    localStorage.setItem("savedDesc", "");
-    localStorage.setItem("savedTopic", "");
     const {post_title, post_topic, post_desc} = formData;
+    if (post_title.trim() == '' || post_topic.trim() == '' || post_desc.trim() == '') {
+      setPostError(true);   
+      return;
+    }
+
     pushPostToDatabase(post_title, post_topic, post_desc, "1 second ago");
+    
+    localStorage.setItem("savedTitle", '');
+    localStorage.setItem("savedDesc", '');
+    localStorage.setItem("savedTopic", "Web Development");
+    
+    setPostError(false);
     closeForm();
     onPostSuccess();
   };
@@ -118,8 +128,8 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                     defaultValue={defaultTopic}
                     onChange={handleChange}
                   >
-                    {topicDatabase.map((topic, i) => (
-                      <option key={i} value={topic.getName()}>
+                    {topicDatabase.map((topic, index) => (
+                      <option key={index} value={topic.getName()}>
                         {topic.getName()}
                       </option>
                     ))}
@@ -156,6 +166,7 @@ function GeneratePostForm({ showForm, closeForm, onPostSuccess}) {
                   </Button>
                 </Col>
               </Row>
+              {postError && <div style={{ color: 'red' }}>{errorMessage}</div>}
           </Modal.Footer>
         </Form>
     </GeneratePostModal>

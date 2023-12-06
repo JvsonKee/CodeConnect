@@ -12,10 +12,12 @@ import { postDatabase, pushReplyToDatabase } from '../../database/db'
 function GenerateReplyForm( {id, level1, level2, closeForm, onReplySuccess, isGuestView}, i) {
     const [isOpen, setIsOpen] = useState(false);
     const [isPopupVisible, setPopupVisible] = useState(false);
-
     const [formData, setFormData] = useState({
       reply_desc: ''
     });
+    const [replyError, setReplyError] = useState(false);
+    const errorMessage = "Please enter a description before replying!";
+
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -35,10 +37,15 @@ function GenerateReplyForm( {id, level1, level2, closeForm, onReplySuccess, isGu
   };
 
   const handleSubmitReply = () => {
-    const post = postDatabase[id];
     const {reply_desc} = formData;
+    if (reply_desc.trim() == '') {
+      setReplyError(true);   
+      return;
+    }
 
+    const post = postDatabase[id];
     pushReplyToDatabase(post, level1, level2, reply_desc);
+    setReplyError(false);
     onReplySuccess();
     handleToggle();
  };
@@ -100,6 +107,7 @@ function GenerateReplyForm( {id, level1, level2, closeForm, onReplySuccess, isGu
               </Row>
             </Col>
           </Row>
+          {replyError && <div style={{ color: 'red' }}>{errorMessage}</div>}
         </Form>
       )}
     </>
