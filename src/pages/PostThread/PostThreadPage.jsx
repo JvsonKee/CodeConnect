@@ -55,8 +55,7 @@ function PostThreadPage( {isGuestView} ) {
             <HomePageContainer>
                 <ContentContainer>
                     <HeaderContainer>
-                        <PageHeader></PageHeader>
-                        <BackButton></BackButton>
+                        <BackButton />
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <ReplyFeed>

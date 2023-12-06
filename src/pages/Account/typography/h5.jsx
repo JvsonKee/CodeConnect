@@ -3,13 +3,12 @@ import styled from 'styled-components';
 
 const H5Style = styled.p`
 color: #FFF;
-font-family: Inter;
 font-size: 14px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
 text-decoration-line: underline;
-background: #3a3d4b
+background: var(--black)
 `
 
 

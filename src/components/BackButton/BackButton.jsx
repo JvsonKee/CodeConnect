@@ -1,5 +1,6 @@
 import React from 'react';
-import { BackbuttonContainer } from './BackButton.styled';
+import { ArrowLeft, BackbuttonContainer } from './BackButton.styled';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function BackButton() {
   const goBack = () => {
@@ -8,7 +9,7 @@ function BackButton() {
 
   return (
     <BackbuttonContainer onClick={goBack}>
-      Back
+      <ArrowLeft icon={faArrowLeft}/>
     </BackbuttonContainer>
   );
 };

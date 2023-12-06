@@ -19,7 +19,7 @@ const NoPostText = styled.p`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    background:#353845;
+    background: var(--black);
 `
 
 const NoPostIcon = (props) => (

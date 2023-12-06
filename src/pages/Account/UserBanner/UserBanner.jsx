@@ -10,7 +10,7 @@ const UserBannerContainer = styled.div`
     align-items: center;
     gap: 32px;
     align-self: stretch;
-    background-color: #353845;
+    background-color: var(--black);
 `
 
 

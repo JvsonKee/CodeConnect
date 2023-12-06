@@ -12,7 +12,6 @@ const AccountInteractionButtonContainer = styled.div`
 `
 const TextStyle = styled.p`
     color: #FFF;
-    font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -66,7 +65,7 @@ function EditProfileButton(){
       };
     return (
         <BigButtonShape style={Usercolour}>
-            <TextStyle>Edit Profile</TextStyle>
+            <TextStyle>Settings</TextStyle>
         </BigButtonShape>
     )
 }

@@ -78,4 +78,10 @@ export const PostButton = styled.div`
     line-height: 50px;
     height: 50px;
     color: var(--white);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-3px);
+    }
 `

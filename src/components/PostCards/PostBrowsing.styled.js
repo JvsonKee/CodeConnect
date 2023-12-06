@@ -48,6 +48,8 @@ export const PostUserInformation = styled.div`
     align-items: center;
     gap: 20px;
     color: var(--grey);
+
+    cursor: pointer;
 `
 
 export const PostReaction = styled.div`
@@ -122,11 +124,18 @@ export const PostAnalytics = styled.div`
 export const AnalyticIcon = styled(FontAwesomeIcon)`
     &:hover {
         color: var(--white);
+        &:hover {
+            cursor: pointer;
+        }
     }
 `
 
 export const LikedHeart = styled(FontAwesomeIcon)`
     color: #F45151;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
 
 export const Analytic = styled.div`

@@ -18,6 +18,7 @@ console.log({postDatabase})
 
 function ExplorePage({isGuestView}) {
     const [status, setStatus] =  useState('Recent')
+    const [currTopic, setCurrTopic] = useState('');
     const navigate = useNavigate();
 
     const handleClick = (topicName) => {
@@ -30,7 +31,8 @@ function ExplorePage({isGuestView}) {
                 })
             }
         })
-        navigate("/CodeConnect/explore-results", {state: {results: topics, searchTerm: topicName, isGuestView: isGuestView}})
+
+        navigate(`/CodeConnect/explore-results/${topicName}`, {state: {results: topics, searchTerm: topicName, isGuestView: isGuestView}})
     }
     return (
         <Container>
@@ -67,10 +69,6 @@ function ExplorePage({isGuestView}) {
                         </CarouselContainer>
                         <TopicsHeaderContainer>
                             <PageHeader>Topics</PageHeader>
-                            {/* <SelectContainer>
-                                <div>Select</div>
-                                <CheckBox type="checkbox"/>
-                            </SelectContainer> */}
                         </TopicsHeaderContainer>
                         <TopicsContainer>
                             {

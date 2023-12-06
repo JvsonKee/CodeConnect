@@ -14,7 +14,6 @@ import OpenedMessage from "./pages/OpenedMessage/Kirby/OpenedMessagePage"
 import OpenedMessage2 from "./pages/OpenedMessage/Boo/OpenedMessagePage2"
 import OpenedMessage3 from "./pages/OpenedMessage/Sonic/OpenedMessagePage3"
 import ExploreResults from './pages/Explore/ExploreResults';
-import { userDatabase } from './database/db';
 
 const router = createBrowserRouter([
 	{
@@ -87,7 +86,7 @@ const router = createBrowserRouter([
 	},
 
 	{
-		path: '/CodeConnect/explore-results',
+		path: '/CodeConnect/explore-results/:id',
 		element: <ExploreResults />
 	}
 

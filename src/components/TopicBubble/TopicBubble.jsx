@@ -16,7 +16,7 @@ function TopicBubble( {topicName, isGuestView} ) {
                 })
             }
         })
-        navigate("/CodeConnect/explore-results", {state: {results: topics, searchTerm: topicName, isGuestView: isGuestView}});
+        navigate(`/CodeConnect/explore-results/${topicName}`, {state: {results: topics, searchTerm: topicName, isGuestView: isGuestView}});
     }
 
     return (

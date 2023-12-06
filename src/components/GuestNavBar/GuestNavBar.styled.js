@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const GuestNavContainer = styled.div`
@@ -25,9 +25,10 @@ export const Nav = styled.div`
     /* background-color: green; */
 `
 
-export const NavLogo = styled.div`
+export const NavLogo = styled(Link)`
     font-size: 35px;
     font-weight: 600;
+    text-decoration: none;
 `
 
 export const NavLogoCode = styled.div`
@@ -71,11 +72,26 @@ export const NavItem = styled(NavLink)`
     }
 `
 
+export const GuestLink = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color
+`
+
 export const PostButton = styled.div`
     background-color: var(--blue);
     border-radius: 50px;
     text-align: center;
     line-height: 50px;
+    width: 150px;
     height: 50px;
     color: var(--white);
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-3px);
+    }
 `

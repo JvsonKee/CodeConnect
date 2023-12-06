@@ -11,12 +11,11 @@ const MiddleSurfaceStyle = styled.div`
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
-    background: #2a2d37;
+    background: var(--black);
 `
 
 const HeaderStyle  = styled.p`
     color: #FFF;
-    font-family: Inter;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
