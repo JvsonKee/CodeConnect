@@ -12,8 +12,11 @@ function ReplyBrowsingFirstLevel ( {user, level1, handleRerenderThread, isGuestV
     const { author, content } = user;
     const [showReplyForm, setShowReplyForm] = useState(false);
     const { id } = useParams();
+    let isSameUser = 0;
     const savedUserKey = localStorage.getItem('userDatabaseKey');
-    const isSameUser = (userDatabase[savedUserKey].username == author.username);
+    if (savedUserKey) {
+        isSameUser = (userDatabase[savedUserKey].username == author.username);
+    }
     const navigate = useNavigate();
 
     const openReplyForm = () => {
@@ -38,7 +41,7 @@ function ReplyBrowsingFirstLevel ( {user, level1, handleRerenderThread, isGuestV
                         <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
                         <ReplyUserName>{author.getUsername()}</ReplyUserName>
                     </ReplyUserInformationMatrix>
-                    {isSameUser && <EditButton>
+                    {isSameUser !=0 && <EditButton>
                                     <EditIcon icon={faPen}/>
                                     </EditButton>
                     }

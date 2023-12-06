@@ -14,25 +14,30 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 function ExploreResults( ) {
     const { id } = useParams();
     const { state } = useLocation();
-    console.log('state in ExploreResults:', state);
-
     const { results, searchTerm, isGuestView} = state;
+
     const goBack = () => {
         window.history.go(-1);
     };
 
-    console.log({results})
-    let topics = [];
-
+    let postSet = new Set([]);
     topicDatabase.forEach((topic) => {
-        if (topic.name === id) {
+        if (topic.name.toLowerCase() === id.toLowerCase()) {
             topic.posts.forEach((post) => {
-                topics.push(post);
+                postSet.add(post)
             })
         }
     })
 
-    console.log({topics})
+    results.forEach((post) => {
+        postSet.add(post);
+    })
+
+    let posts = [];
+    postSet.forEach((item) => {
+        posts.push(item);
+    })
+
     return (  
         <Container>
             {isGuestView ? <GuestNavBar /> : <NavBar />}
@@ -48,12 +53,12 @@ function ExploreResults( ) {
                     </SearchBarContainer>
                     <Matrix>
                         {
-                            topics.length > 2 || topics.length == 0
-                            ? <PostCountContent>{topics.length} results found matching &quot;{searchTerm}&quot;</PostCountContent>
-                            : <PostCountContent>{topics.length} result found matching &quot;{searchTerm}&quot;</PostCountContent>
+                            posts.length > 2 || posts.length == 0
+                            ? <PostCountContent>{posts.length} results found matching &quot;{searchTerm}&quot;</PostCountContent>
+                            : <PostCountContent>{posts.length} result found matching &quot;{searchTerm}&quot;</PostCountContent>
                         }
                         <Feed>
-                            {topics.map((post, i) => 
+                            {posts.map((post, i) => 
                                 <PostBrowsing key={i} information={post} />
                             )}
                         </Feed>

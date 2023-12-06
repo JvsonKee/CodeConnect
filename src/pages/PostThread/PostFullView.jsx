@@ -21,8 +21,11 @@ function PostFullView({handleRerenderThread, isGuestView}) {
     const profilePic = post.author.getProfilePicture();
     const username = post.author.getUsername();
 
+    let isSameUser = 0;
     const savedUserKey = localStorage.getItem('userDatabaseKey');
-    const isSameUser = (userDatabase[savedUserKey].username == username);
+    if (savedUserKey) {
+        isSameUser = (userDatabase[savedUserKey].username == username);
+    }
 
     const openReplyForm = () => {
     setShowReplyForm(true);
@@ -59,7 +62,7 @@ function PostFullView({handleRerenderThread, isGuestView}) {
                         <UserProfilePicture src={profilePic}></UserProfilePicture>
                         <UserName>{username}</UserName>
                     </PostUserInformationMatrix> 
-                    {isSameUser && <EditButton>
+                    {isSameUser !=0 && <EditButton>
                                     <EditIcon icon={faPen}/>
                                     </EditButton>
                     }

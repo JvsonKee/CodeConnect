@@ -6,8 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 function ReplyBrowsing( {user} ) {
     const { author, content } = user;
+    let isSameUser = 0;
     const savedUserKey = localStorage.getItem('userDatabaseKey');
-    const isSameUser = (userDatabase[savedUserKey].username == author.username);
+    if (savedUserKey) {
+        isSameUser = (userDatabase[savedUserKey].username == author.username);
+    }
     const navigate = useNavigate();
 
     const openUserProfile = (e) => {
@@ -26,9 +29,9 @@ function ReplyBrowsing( {user} ) {
                             <ReplyUserProfilePicture src={author.getProfilePicture()}></ReplyUserProfilePicture>
                             <ReplyUserName>{author.getUsername()}</ReplyUserName>
                         </ReplyUserInformationMatrix>
-                        {isSameUser && <EditButton>
-                                    <EditIcon icon={faPen}/>
-                                    </EditButton>
+                        {isSameUser !=0 && <EditButton>
+                                            <EditIcon icon={faPen}/>
+                                            </EditButton>
                         }
                     </ReplyUserInformation>
                     <br></br>
