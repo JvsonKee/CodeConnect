@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import { useNavigate } from 'react-router-dom';
 
 
 const AccountInteractionButtonContainer = styled.div`
@@ -55,7 +56,7 @@ const MoreIcon = (props) => (
         d="M8 8.667a.667.667 0 1 0 0-1.334.667.667 0 0 0 0 1.334ZM12.667 8.667a.667.667 0 1 0 0-1.334.667.667 0 0 0 0 1.334ZM3.333 8.667a.667.667 0 1 0 0-1.334.667.667 0 0 0 0 1.334Z"
       />
     </svg>
-  )
+)
 
 function EditProfileButton(){
     const Usercolour = {
@@ -79,8 +80,15 @@ function UserInteractionButton(){
         backgroundColor: "#558FFF"
     };
 
+    const navigate = useNavigate();
+
+    const openDMs = () => {
+        let user1TargetUrl = '/CodeConnect/dm-boo'
+        navigate(user1TargetUrl);
+    }
+
     return (
-        <BigButtonShape style={Usercolour}>
+        <BigButtonShape onClick={openDMs} style={Usercolour}>
             <TextStyle style={TColor}>Message</TextStyle>
         </BigButtonShape>
     )
