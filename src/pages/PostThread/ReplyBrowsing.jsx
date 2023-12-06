@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useParams } from "react-router-dom";
 import GenerateReplyForm from "./ReplyForm";
 
-function ReplyBrowsing( {user, level1, level2, handleRerenderThread}, i ) {
+function ReplyBrowsing( {user, level1, level2, handleRerenderThread, isGuestView}, i ) {
     const { author, content } = user;
     const [showReplyForm, setShowReplyForm] = useState(false);
     const { id } = useParams();
@@ -33,7 +33,7 @@ function ReplyBrowsing( {user, level1, level2, handleRerenderThread}, i ) {
                         <PostDescription>{content}</PostDescription>
                     </PostMainContent>
                     <br></br>
-                    <GenerateReplyForm id={id} level1={level1} level2={0} closeForm={closeReplyForm} onReplySuccess={handleRerenderThread} />
+                    <GenerateReplyForm id={id} level1={level1} level2={0} closeForm={closeReplyForm} onReplySuccess={handleRerenderThread} isGuestView={isGuestView}/>
                 </ReplyWrapper>
             </ReplyContainer>
         </>

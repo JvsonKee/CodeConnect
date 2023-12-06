@@ -8,10 +8,13 @@ import PostBrowsing from '../../components/PostCards/PostBrowsing'
 import { postDatabase } from '../../database/db';
 
 function GuestHomePage() {
+    // clear any user key that could have been saved before
+    localStorage.removeItem("userDatabaseKey");
 
     const [status, setStatus] = useState('Recent');
     const [isPopupVisible, setPopupVisible] = useState(false);
-  
+    const latestPosts = postDatabase.slice().reverse();
+
     const handleItemClick = (itemName) => {
       if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
         setPopupVisible(true);
@@ -33,7 +36,7 @@ function GuestHomePage() {
                         </HeaderContainer>
                         <Feed>
                         {
-                            postDatabase.map((post, i) => (
+                            latestPosts.map((post, i) => (
                                 <PostBrowsing key={i} information={post}/>
                             ))
                         } 
@@ -48,7 +51,7 @@ function GuestHomePage() {
             <div></div>
             <div></div>
             <CreateAccountButton>Create Account</CreateAccountButton>
-            <CloseButton  onClick={handleClosePopup}>Close</CloseButton >
+            <CloseButton onClick={handleClosePopup}>Close</CloseButton >
           </PopupContent>
         </PopupContainer>
       )}

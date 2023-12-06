@@ -11,7 +11,13 @@ function PostBrowsing( {information} ) {
     
     const openPost = () => {
         let postURL = information.getPostURL().url;
-        navigate(postURL);
+        const savedUserKey = localStorage.getItem('userDatabaseKey');
+        if (savedUserKey != null){
+            navigate("/CodeConnect".concat(postURL));
+        }
+        else {
+            navigate("/CodeConnect/guest-view".concat(postURL));
+        }
     }
 
     const likePost = (e) => {

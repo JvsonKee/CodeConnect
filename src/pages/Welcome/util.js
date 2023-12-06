@@ -7,5 +7,6 @@ export function validUser(username, password) {
             return true;
         }
     }
+
     return false;
 }

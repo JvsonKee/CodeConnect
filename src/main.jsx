@@ -75,9 +75,13 @@ const router = createBrowserRouter([
 
 	{
 		path: '/CodeConnect/:author/:id',
-		element: <PostThreadPage />
+		element: <PostThreadPage isGuestView={0} />
 	},
 
+	{
+		path: '/CodeConnect/guest-view/:author/:id',
+		element: <PostThreadPage isGuestView={1} />
+	},
 
 	{
 		path: '/CodeConnect/guest-explore',

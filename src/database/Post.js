@@ -8,7 +8,7 @@ class Post {
         this.id = id;
         this.likes = 0;
         this.comments = [];
-        this.url = "/CodeConnect/".concat(String(author.getUsername()),"/",String(id));
+        this.url = "/".concat(String(author.getUsername()),"/",String(id));
     }
 
     like() {
