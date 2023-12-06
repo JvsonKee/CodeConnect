@@ -20,24 +20,21 @@ function ExploreResults( ) {
         window.history.go(-1);
     };
 
-    let postSet = new Set([]);
+    let posts = [];
     topicDatabase.forEach((topic) => {
         if (topic.name.toLowerCase() === id.toLowerCase()) {
             topic.posts.forEach((post) => {
-                postSet.add(post)
+                posts.push(post)
             })
         }
     })
 
-    results.forEach((post) => {
-        postSet.add(post);
-    })
+    console.log({postDatabase})
+    let dt = postDatabase.filter((post) => post.title.toLowerCase().includes(id.toLocaleLowerCase()))
+    posts = posts.concat(dt);
 
-    let posts = [];
-    postSet.forEach((item) => {
-        posts.push(item);
-    })
-
+    posts = posts.filter((item, index) => posts.indexOf(item) === index);
+    console.log({posts})
     return (  
         <Container>
             {isGuestView ? <GuestNavBar /> : <NavBar />}

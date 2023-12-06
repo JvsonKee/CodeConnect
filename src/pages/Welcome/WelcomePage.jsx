@@ -100,7 +100,7 @@ function WelcomePage(){
                     </PopupContent>
                   </PopupContainer>
                 )}
-                <CreateAccountButton>Not a user? Create an account</CreateAccountButton>
+                <CreateAccountButton to="/CodeConnect/create-account">Not a user? Create an account</CreateAccountButton>
             </PageContainer>
         </WelcomeContainer>
     )
