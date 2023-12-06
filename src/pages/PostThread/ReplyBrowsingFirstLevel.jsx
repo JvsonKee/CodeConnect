@@ -3,11 +3,13 @@ import { ReplyContainer, ReplyWrapper, ReplyLine, ReplyButton, ReplyLevel, Reply
 import {faPen} from "@fortawesome/free-solid-svg-icons"
 import propTypes from 'prop-types'
 import { useState } from 'react';
+import { useParams } from "react-router-dom";
 import GenerateReplyForm from "./ReplyForm";
 
-function ReplyBrowsingFirstLevel ( {user}, i) {
-    const { author, content, id } = user;
+function ReplyBrowsingFirstLevel ( {user, level1, handleRerenderThread, isGuestView}, i) {
+    const { author, content } = user;
     const [showReplyForm, setShowReplyForm] = useState(false);
+    const { id } = useParams();
 
     const openReplyForm = () => {
     setShowReplyForm(true);
@@ -29,8 +31,7 @@ function ReplyBrowsingFirstLevel ( {user}, i) {
                     <PostDescription>{content}</PostDescription>
                 </PostMainContent>
                 <br></br>
-                {/* {showReplyForm && <GenerateReplyForm close={closeReplyForm} />} */}
-                <GenerateReplyForm close={closeReplyForm} />
+                <GenerateReplyForm id={id} level1={level1} level2={-1} closeForm={closeReplyForm} onReplySuccess={handleRerenderThread} isGuestView={isGuestView}/>
             </ReplyWrapper>
         </>
     )

@@ -1,7 +1,8 @@
 import React from 'react';
-import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from "../Home/HomePage.styled";
+import { ContentContainer, HeaderContainer, HomePageContainer } from "../Home/HomePage.styled";
 import { PageHeader } from "../../styles/PageHeader";
 import NavBar from "../../components/NavBar/NavBar";
+import GuestNavBar from "../../components/GuestNavBar/GuestNavBar";
 import PostBrowsing from "../../components/PostCards/PostBrowsing";
 import { Container } from "../../styles/Container";
 import Dropdown from "../../components/Dropdown/Dropdown";
@@ -37,16 +38,20 @@ const user2 = {
     comments: "50"
 }
 
-function PostThreadPage( ) {
+function PostThreadPage( {isGuestView} ) {
     const [status, setStatus] =  useState('Recent')
     const { id } = useParams();
     const post = postDatabase[id];
     const comments = post.getPostInformation().comments;
-    console.log(comments);
-    
+
+    const [rerender, setRerenderFlag] =  useState(false);
+    const handleRerenderThread = () => {
+        setRerenderFlag((prev) => !prev);
+    };
+
     return (  
         <Container>
-            <NavBar />  
+            {isGuestView ? <GuestNavBar /> : <NavBar />}
             <HomePageContainer>
                 <ContentContainer>
                     <HeaderContainer>
@@ -55,11 +60,11 @@ function PostThreadPage( ) {
                         <Dropdown setStatus={setStatus}/>
                     </HeaderContainer>
                     <ReplyFeed>
-                        <PostFullView/>
+                        <PostFullView handleRerenderThread={handleRerenderThread} isGuestView={isGuestView}/>
                         {
                             comments.map((replyLevel1, i) => (
                                 <React.Fragment key={i}>
-                                <ReplyBrowsingFirstLevel user={replyLevel1} />
+                                <ReplyBrowsingFirstLevel level1={i} user={replyLevel1} handleRerenderThread={handleRerenderThread} isGuestView={isGuestView}/>
 
                                 {replyLevel1.comments && replyLevel1.comments.length > 0 && (
                                     <div>    
@@ -67,13 +72,13 @@ function PostThreadPage( ) {
                                     {/* Level 2 nested comments */}
                                     {replyLevel1.comments.map((replyLevel2, j) => (
                                         <React.Fragment key={j}>
-                                        <ReplyBrowsing user={replyLevel2} />
+                                        <ReplyBrowsing level1={i} level2={j} user={replyLevel2} handleRerenderThread={handleRerenderThread} isGuestView={isGuestView}/>
                                         
                                         {/* Level 3 nested comments */}
                                         {replyLevel2.comments && replyLevel2.comments.length > 0 && (
                                             <ReplyLevel> 
                                             {replyLevel2.comments.map((replyLevel3, k) => (
-                                                <ReplyBrowsingLastLevel key={k} user={replyLevel3} />
+                                                <ReplyBrowsingLastLevel user={replyLevel3} />
                                             ))}
                                             </ReplyLevel>
                                         )}

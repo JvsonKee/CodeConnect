@@ -7,7 +7,6 @@ import GlobalStyles from './styles/Global';
 import HomePage from './pages/Home/Homepage';
 import NewDMPage from "./pages/NewDM/NewDMPage"
 import GuestHome from "./pages/GuestHome/GuestHomePage"
-import GuestExplore from "./pages/GuestExplore/GuestExplorePage"
 import DMPage from "./pages/DirectMessages/DMPage"
 import CreateAccount from "./pages/CreateAccount/CreateAccount"
 import PostThreadPage from "./pages/PostThread/PostThreadPage"
@@ -30,7 +29,12 @@ const router = createBrowserRouter([
 
 	{
 		path: '/CodeConnect/explore',
-		element: <ExplorePage />
+		element: <ExplorePage isGuestView={0} />
+	},
+
+	{
+		path: '/CodeConnect/guest-explore',
+		element: <ExplorePage isGuestView={1}/>
 	},
 
 	{
@@ -74,13 +78,12 @@ const router = createBrowserRouter([
 
 	{
 		path: '/CodeConnect/:author/:id',
-		element: <PostThreadPage />
+		element: <PostThreadPage isGuestView={0} />
 	},
 
-
 	{
-		path: '/CodeConnect/guest-explore',
-		element: <GuestExplore />
+		path: '/CodeConnect/guest-view/:author/:id',
+		element: <PostThreadPage isGuestView={1} />
 	},
 
 	{

@@ -8,51 +8,31 @@ import PostBrowsing from '../../components/PostCards/PostBrowsing'
 import { postDatabase } from '../../database/db';
 
 function GuestHomePage() {
-
+    // **SKETCHY WAY TO HANDLE GUESTS**
+    // clear any user key that could have been saved before
+    localStorage.removeItem("userDatabaseKey");
+  
     const [status, setStatus] = useState('Recent');
-    const [isPopupVisible, setPopupVisible] = useState(false);
-  
-    const handleItemClick = (itemName) => {
-      if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
-        setPopupVisible(true);
-      }
-    };
-  
-    const handleClosePopup = () => {
-      setPopupVisible(false);
-    };
+    const latestPosts = postDatabase.slice().reverse();
 
     return (  
-        <Container>
-            <GuestNavBar handleItemClick={handleItemClick}/> 
-                <GuestHomePageContainer>
-                    <ContentContainer>
-                        <HeaderContainer>
-                            <PageHeader>Home</PageHeader>
-                            <Dropdown setStatus={setStatus}/>
-                        </HeaderContainer>
-                        <Feed>
-                        {
-                            postDatabase.map((post, i) => (
-                                <PostBrowsing key={i} information={post}/>
-                            ))
-                        } 
-                        </Feed>
-                    </ContentContainer>
-                </GuestHomePageContainer>
-      {/* Popup */}
-      {isPopupVisible && (
-        <PopupContainer>
-          <PopupContent>
-            <CreateAccountText>Please create an account to access this feature </CreateAccountText>
-            <div></div>
-            <div></div>
-            <CreateAccountButton>Create Account</CreateAccountButton>
-            <CloseButton  onClick={handleClosePopup}>Close</CloseButton >
-          </PopupContent>
-        </PopupContainer>
-      )}
-
+      <Container>
+          <GuestNavBar /> 
+              <GuestHomePageContainer>
+                  <ContentContainer>
+                      <HeaderContainer>
+                          <PageHeader>Home</PageHeader>
+                          <Dropdown setStatus={setStatus}/>
+                      </HeaderContainer>
+                      <Feed>
+                      {
+                          latestPosts.map((post, i) => (
+                              <PostBrowsing key={i} information={post}/>
+                          ))
+                      } 
+                      </Feed>
+                  </ContentContainer>
+              </GuestHomePageContainer>
       </Container>
     );
   }

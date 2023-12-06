@@ -1,17 +1,23 @@
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion'
+import { PopupContainer, PopupContent, CreateAccountText, CreateAccountButton, CloseButton  } from '../GuestHome/GuestHomePage.styled';
 import { CustomAccordion, CustomAccordionContent, CustomAccordionButton, CustomAccordionItem, ReplyButton, ReplyIcon} from "./ReplyBrowsing.styled";
 import { faArrowRight, faTimes } from "@fortawesome/free-solid-svg-icons"
 import Form from "react-bootstrap/Form"
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { postDatabase, pushReplyToDatabase } from '../../database/db'
 
-function GenerateReplyForm(i) {
+function GenerateReplyForm( {id, level1, level2, closeForm, onReplySuccess, isGuestView}, i) {
     const [isOpen, setIsOpen] = useState(false);
+    const [isPopupVisible, setPopupVisible] = useState(false);
     const [formData, setFormData] = useState({
       reply_desc: ''
     });
+    const [replyError, setReplyError] = useState(false);
+    const errorMessage = "Please enter a description before replying!";
+
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -19,16 +25,33 @@ function GenerateReplyForm(i) {
       ...formData,
       [name]: value,
     });
-  }
-
-  const handleSubmitReply = () => {
-    const {reply_desc} = formData;
-    // close Reply Form
-    // pushPostToDatabase(post_title, post_topic, post_desc, "ADD");
   };
 
   const handleToggle = () => {
-    setIsOpen(!isOpen);
+    if (isGuestView){
+      setPopupVisible(true);
+    }
+    else {
+      setIsOpen(!isOpen);
+    }
+  };
+
+  const handleSubmitReply = () => {
+    const {reply_desc} = formData;
+    if (reply_desc.trim() == '') {
+      setReplyError(true);   
+      return;
+    }
+
+    const post = postDatabase[id];
+    pushReplyToDatabase(post, level1, level2, reply_desc);
+    setReplyError(false);
+    onReplySuccess();
+    handleToggle();
+ };
+
+  const handleClosePopup = () => {
+      setPopupVisible(false);
   };
 
   return (
@@ -36,13 +59,24 @@ function GenerateReplyForm(i) {
       <ReplyButton
         variant="outline-primary"
         className="btn-sm"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => handleToggle()}
         aria-controls="collapseOne"
         aria-expanded={isOpen}
       >
         Reply
       </ReplyButton>
       <br/>
+      {isPopupVisible && (
+        <PopupContainer>
+          <PopupContent>
+            <CreateAccountText>Please create an account to access this feature </CreateAccountText>
+            <div></div>
+            <div></div>
+            <CreateAccountButton>Create Account</CreateAccountButton>
+            <CloseButton onClick={handleClosePopup}>Close</CloseButton >
+          </PopupContent>
+        </PopupContainer>
+      )}
       {isOpen && (
         <Form>
           <Row>
@@ -73,6 +107,7 @@ function GenerateReplyForm(i) {
               </Row>
             </Col>
           </Row>
+          {replyError && <div style={{ color: 'red' }}>{errorMessage}</div>}
         </Form>
       )}
     </>

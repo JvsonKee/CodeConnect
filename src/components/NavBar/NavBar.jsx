@@ -3,7 +3,7 @@ import { faHouseChimney, faMagnifyingGlass, faComment, faUser } from "@fortaweso
 import { useState } from 'react';
 import GeneratePostForm from "../PostCards/PostForm";
 
-function NavBar() {
+function NavBar({onPost}) {
     const [showPostForm, setShowPostForm] = useState(false);
 
     const openPostForm = () => {
@@ -41,7 +41,7 @@ function NavBar() {
                         <span>Profile</span>
                     </NavItem>
                     <PostButton onClick={openPostForm}>Post</PostButton>
-                    <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} />
+                    {showPostForm && <GeneratePostForm showForm={showPostForm} closeForm={closePostForm} onPostSuccess={onPost} />}
                 </NavItems>
             </Nav>
         </NavContainer>

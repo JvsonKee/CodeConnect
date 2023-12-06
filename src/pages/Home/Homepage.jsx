@@ -8,11 +8,17 @@ import PostBrowsing from '../../components/PostCards/PostBrowsing'
 import { postDatabase } from '../../database/db';
 
 function HomePage() {
-    const [status, setStatus] =  useState('Recent')
+    const [status, setStatus] =  useState('Recent');
+    const [rerender, setRerenderFlag] =  useState(false);
+
+    const handleRerenderHomepage = () => {
+        setRerenderFlag((prev) => !prev);
+    };
+    const latestPosts = postDatabase.slice().reverse();
 
     return (  
         <Container>
-            <NavBar />  
+            <NavBar onPost={handleRerenderHomepage}/>  
             <HomePageContainer>
                 <ContentContainer>
                     <HeaderContainer>
@@ -21,8 +27,8 @@ function HomePage() {
                     </HeaderContainer>
                     <Feed>
                         {
-                            postDatabase.map((post, i) => (
-                                <PostBrowsing key={i} information={post}/>
+                            latestPosts.map((post, i) => (
+                                <PostBrowsing key={i} information={post} />
                             ))
                         }
                     </Feed>

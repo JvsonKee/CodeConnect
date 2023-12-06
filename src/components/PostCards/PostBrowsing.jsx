@@ -7,12 +7,17 @@ import { useNavigate } from 'react-router-dom';
 
 function PostBrowsing( {information} ) {
     const navigate = useNavigate();
-    const [likeCount, setLikeCount] = useState(information.likes);
     const [liked, setLiked] = useState(false);
-
+    
     const openPost = () => {
         let postURL = information.getPostURL().url;
-        navigate(postURL);
+        const savedUserKey = localStorage.getItem('userDatabaseKey');
+        if (savedUserKey != null){
+            navigate("/CodeConnect".concat(postURL));
+        }
+        else {
+            navigate("/CodeConnect/guest-view".concat(postURL));
+        }
     }
 
     const likePost = (e) => {
@@ -26,7 +31,6 @@ function PostBrowsing( {information} ) {
             information.dislike();
             setLiked(false);
         }
-        setLikeCount(information.likes);
     }
 
     const openUserProfile = (e) => {
@@ -64,11 +68,11 @@ function PostBrowsing( {information} ) {
                                 liked ? <LikedHeart icon={solidHeart}/> : <AnalyticIcon icon={faHeart}/>
                             }
                         </div>
-                        <div>{likeCount} likes</div>
+                        <div>{information.likes} likes</div>
                     </Analytic>
                     <Analytic>
                         <AnalyticIcon icon={faComment}/>
-                        <div>{information.comments.length} comments</div>
+                        <div>{information.getCommentsTotal()} comments</div>
                     </Analytic>
                     <Analytic>. . .</Analytic>
                 </PostAnalytics>

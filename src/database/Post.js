@@ -8,7 +8,7 @@ class Post {
         this.id = id;
         this.likes = 0;
         this.comments = [];
-        this.url = "/CodeConnect/".concat(String(author.getUsername()),"/",String(id));
+        this.url = "/".concat(String(author.getUsername()),"/",String(id));
     }
 
     like() {
@@ -21,6 +21,22 @@ class Post {
 
     addComment(comment) {
         this.comments.push(comment);
+    }
+
+    getCommentsTotal() {
+        let total = 0;
+        // basic nested for loop
+        for (const comment of this.comments) {
+            total++;
+            for (const reply of comment.comments) {
+                total++;
+                for (const nestedReply of reply.comments) {
+                    total++;
+                }
+            }
+        }
+
+        return total;
     }
 
     getAuthor() {

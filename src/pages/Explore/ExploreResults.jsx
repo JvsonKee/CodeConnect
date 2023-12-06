@@ -1,5 +1,6 @@
 import { Container } from "../../styles/Container";
 import NavBar from "../../components/NavBar/NavBar";
+import GuestNavBar from "../../components/GuestNavBar/GuestNavBar"
 import SearchBar from "../../components/SearchBar/SearchBar"
 import { Feed } from "../Home/HomePage.styled";
 import PostBrowsing from "../../components/PostCards/PostBrowsing";
@@ -10,18 +11,21 @@ import { useLocation } from "react-router-dom";
 import { SearchBarContainer } from "../../components/SearchBar/SearchBar.styled";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function ExploreResults() {
+function ExploreResults({isGuestView}) {
     const { state } = useLocation();
     const { results, searchTerm } = state;
+    const goBack = () => {
+        window.history.go(-1);
+    };
     console.log({results}); 
     console.log({searchTerm})
     return (  
         <Container>
-            <NavBar/>
+            {isGuestView ? <GuestNavBar /> : <NavBar />}
             <ExplorePageContainer>
                 <ContentContainer>
                     <SearchBarContainer>
-                        <BackButton to="/CodeConnect/explore">
+                        <BackButton onClick={goBack}>
                             <ArrowLeft icon={faArrowLeft}/>
                         </BackButton>
                         <SearchContainer>
