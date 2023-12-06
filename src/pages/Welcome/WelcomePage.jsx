@@ -92,6 +92,14 @@ function WelcomePage(){
                     )}
                     <ContinueLink to="/CodeConnect/guest-home">Continue As Guest</ContinueLink>
                 </LoginForm>
+                {isEmailSent && (
+                  <PopupContainer>
+                    <PopupContent>
+                      <ForgotPasswordText>Email successfully sent!</ForgotPasswordText>
+                      <CloseButton onClick={closeSuccessMessage}>Close</CloseButton>
+                    </PopupContent>
+                  </PopupContainer>
+                )}
                 <CreateAccountButton>Not a user? Create an account</CreateAccountButton>
             </PageContainer>
         </WelcomeContainer>
