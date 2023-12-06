@@ -1685,6 +1685,10 @@ line-height: normal;
     display: flex;
     align-items: center;
     gap: 20px;
+
+    &:hover {
+        color: var(--white);
+    }
 `,Hy=y.img`
     width: 60px;
     height: 60px;
