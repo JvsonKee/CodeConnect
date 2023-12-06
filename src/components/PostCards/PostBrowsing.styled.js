@@ -60,6 +60,10 @@ export const ProfileContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
+
+    &:hover {
+        color: var(--white);
+    }
 `
 
 export const UserProfilePicture = styled.img`
