@@ -5,16 +5,17 @@ export const MessageBoxContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: var(--light-black);
-    border: 1px solid black;
+    border: 5px solid var(--black);
     height: 150px;
     transition: 0.1s ease-in-out;
 `
 export const MessageBoxWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 20px 10px;
     gap: 10px;
     width: 90%;
-    height: 80%;
+    height: 150px;
 `
 export const UserInformation = styled.div`
     display: flex;

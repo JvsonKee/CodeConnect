@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export const OpenMessageContainer = styled.div`
     margin-left: 20vw;
@@ -97,3 +98,25 @@ export const ExitButton = styled(Link)`
     }
 `
 
+export const ReplyIcon = styled(FontAwesomeIcon)`
+    color: var(--white);
+`;
+
+export const ReplyButton = styled.div`
+    display: flex;
+    justify-content: center;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 10px;
+    text-align: center center;
+    padding: 7px;
+    height: 35px;
+    width: 100px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--blue-low);
+        box-shadow: 0 5px 10px var(--shadow);
+    }
+`
