@@ -36,8 +36,7 @@ function PostBrowsing( {information} ) {
     const openUserProfile = (e) => {
         e.stopPropagation();
         e.preventDefault();
-
-        // implement logic here : eyram
+        navigate('/CodeConnect/profile/' + information.author.getUsername())
     }
 
     return (

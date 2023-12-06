@@ -1,16 +1,13 @@
-import { CreateAccountContainer, FormContainer, CustomForm, H1, CustomButton, CustomModal, CustomFormControl, IconContainer } from "./CreateAccount.styled";
+import { CreateAccountContainer, FormContainer, CustomForm, CustomButton, CustomModal, CustomFormControl, CreateHeader, CreateContainer, CreateBackButton, TermsTitle, TermHolder } from "./CreateAccount.styled";
 import { Container } from "../../styles/Container";
-
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import 'bootstrap/dist/css/bootstrap.css'; 
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-//import { Modal } from 'react-bootstrap/Modal';
 import { useState } from 'react';
 import { Modal } from "react-bootstrap";
-
 import { useNavigate } from 'react-router-dom';
 import AccountValidation from './AccountValidation';
+import { ArrowLeft, BackButton } from "../Explore/ExploreResults.styled";
 
 
 
@@ -51,17 +48,16 @@ function CreateAccount() {
       };
 
     return (  
-        <Container>
-            
+        <CreateContainer>
+
             <CreateAccountContainer>
-            
-                <H1>
-                    <a href = "./"><IconContainer/></a>
-                    Create Account
-                </H1>
+
+                <CreateHeader>Create Account</CreateHeader>
 
                 <FormContainer>
-
+                    <CreateBackButton to="/CodeConnect/">
+                        <ArrowLeft icon={faArrowLeft}/>
+                    </CreateBackButton>
                     <CustomForm>
                         <Form.Group className = "createAcct" controlId = "email">
                             <Form.Label> Email address </Form.Label>
@@ -98,7 +94,7 @@ function CreateAccount() {
                         
                         <span class = 'spanCheckbox'><Form.Check type = "checkbox" id = "terms" value = {isChecked} onChange = {(e)=> setIsChecked(e.target.checked)}/></span>
                         <span class = 'spanLabel'>
-                            <p>Agree to <a onClick = {handleShow}>Terms and Conditions</a> </p>
+                            <TermHolder><TermsTitle onClick = {handleShow}>Agree to Terms and Conditions</TermsTitle> </TermHolder>
                         </span>
                         
                     </CustomForm>
@@ -173,8 +169,8 @@ function CreateAccount() {
                     
                     {error && <div style={{ color: 'red' }}>{error}</div>}
 
-                    <CustomButton variant = "outline-light" onClick = {handleCreateAccount}>
-                        Create
+                    <CustomButton onClick = {handleCreateAccount}>
+                        Create Account
                     </CustomButton>
                     
 
@@ -182,7 +178,7 @@ function CreateAccount() {
             </CreateAccountContainer>
 
             
-        </Container>
+        </CreateContainer>
     )
 }
 

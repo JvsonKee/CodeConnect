@@ -1,6 +1,5 @@
-import {PageContainer, LoginForm, InputField, LogInButton, ContinueLink, LogoText, LogoCode, LogoConnect, LoginText, ForgotPassword, PopupContainer, PopupContent,ForgotPasswordText, CloseButton, SubmitButton} from "./WelcomePage.styled"
+import {PageContainer, LoginForm, InputField, LogInButton, WelcomeContainer, ContinueLink, LogoText, LogoCode, LogoConnect, LoginText, ForgotPassword, PopupContainer, PopupContent,ForgotPasswordText, CloseButton, SubmitButton} from "./WelcomePage.styled"
 import{ CreateAccountButton } from "./CreateAccountButton.styled"
-import { Container } from "../../styles/Container"
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Authorization from './Authorization';
@@ -9,7 +8,7 @@ function WelcomePage(){
 
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');;
+    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [showForgotPasswordPopup, setShowForgotPasswordPopup] = useState(false);
     const [isEmailSent, setIsEmailSent] = useState(false);
@@ -51,26 +50,30 @@ function WelcomePage(){
 
 
     return (
-        <Container>
+        <WelcomeContainer>
             <PageContainer>     
                 <LogoText>
                     <LogoCode>Code</LogoCode><LogoConnect>Connect</LogoConnect>
                 </LogoText>
                 <LoginForm>
-                   <LoginText>Username:</LoginText>
-                    <InputField 
-                        type="text"
-                        id="username"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)} />
-                    <LoginText>Password:</LoginText>
-                    <InputField 
-                        type="password"
-                        id="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)} />
+                  <div>
+                    <LoginText></LoginText>
+                      <InputField 
+                          type="text"
+                          id="username"
+                          placeholder="Username"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)} />
+                  </div>
+                    <div>
+                      <LoginText></LoginText>
+                      <InputField 
+                          type="password"
+                          id="password"
+                          placeholder="Password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)} />
+                    </div>
                     <LogInButton type="button" onClick={handleLogin} >Login</LogInButton>
                     {error && <div style={{ color: 'red' }}>{error}</div>}
                     <ForgotPassword onClick={event => openForgotPasswordPopup(event)}>Forgot Password?</ForgotPassword>
@@ -89,9 +92,9 @@ function WelcomePage(){
                     )}
                     <ContinueLink to="/CodeConnect/guest-home">Continue As Guest</ContinueLink>
                 </LoginForm>
-                <a href = '/CodeConnect/create-account'><CreateAccountButton>Create Account</CreateAccountButton></a>
+                <CreateAccountButton>Not a user? Create an account</CreateAccountButton>
             </PageContainer>
-        </Container>
+        </WelcomeContainer>
     )
 }
 

@@ -50,9 +50,17 @@ user1.interests = ["Web Development", "React", "UX Design"]
 
 const user2 = new User("madscientist", "password");
 user2.setProfilePicture(proPic2);
+const twitterLink2 = new SocialMediaLink("twitter", "madscientist123")
+user2.setSocialMedia([twitterLink2])
+user2.role = "Student"
+user2.interests = ["Game Development", "C++"]
 
 const user3 = new User("supasonic", "password");
 user3.setProfilePicture(proPic3);
+const twitterLink3 = new SocialMediaLink("github", "supasupasonicc")
+user3.setSocialMedia([twitterLink3])
+user3.role = "Student"
+user3.interests = ["Machine Learning", "C++", "Mobile Dev"]
 
 userDatabase.push(user1);
 userDatabase.push(user2);

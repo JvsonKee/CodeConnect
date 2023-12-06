@@ -19,7 +19,7 @@ function MetaProfile({user}){
         <MetaProfileContainer>
             <RoleChip role={user.role}/>
             <TopicArray interests={user.interests}/>
-            <AccountInteractionButton loggedInUser={true}/>
+            <AccountInteractionButton loggedInUser={user.username === "PixelPioneer"}/>
         </MetaProfileContainer>
     )
 }

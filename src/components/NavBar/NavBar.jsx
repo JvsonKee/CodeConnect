@@ -36,7 +36,7 @@ function NavBar({onPost}) {
                         <NavIcon icon={faComment} />
                         <span>Messages</span>
                     </NavItem>
-                    <NavItem to="/CodeConnect/account">
+                    <NavItem to="/CodeConnect/profile/PixelPioneer">
                         <NavIcon icon={faUser}/>
                         <span>Profile</span>
                     </NavItem>
