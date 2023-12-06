@@ -17,6 +17,7 @@ export function pushPostToDatabase(title, topic, description, timeStamp) {
   let id = postDatabase.length;
   const userKey = localStorage.getItem("userDatabaseKey");
   const user = userDatabase[userKey];
+  console.log(user);
   const postToAdd = new Post(user,title,description,topic,timeStamp,id);
   postDatabase.push(postToAdd);
 };
@@ -40,6 +41,15 @@ export function pushReplyToDatabase(post, replyLevel1, replyLevel2, description)
     post.comments.at(replyLevel1).comments.at(replyLevel2).addComment(replyToAdd);
   }
 };
+
+export function createNewUser(username, password) {
+  const userToPush = new User(username, password);
+  userToPush.setProfilePicture(kirbyPic);
+  userToPush.role = "Student"
+  userToPush.interests = ["Default"]
+  userDatabase.push(userToPush);
+  console.log(userDatabase);
+}
 
 const user1 = new User("PixelPioneer", "123");
 user1.setProfilePicture(proPic1);

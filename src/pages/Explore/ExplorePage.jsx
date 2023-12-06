@@ -32,7 +32,7 @@ function ExplorePage({isGuestView}) {
             }
         })
 
-        navigate(`/CodeConnect/explore-results/${topicName}`, {isGuestView, state: {results: topics, searchTerm: topicName}})
+        navigate(`/CodeConnect/explore-results/${topicName}`, {state: {results: topics, searchTerm: topicName, isGuestView: isGuestView}})
     }
     return (
         <Container>
@@ -73,7 +73,7 @@ function ExplorePage({isGuestView}) {
                         <TopicsContainer>
                             {
                                 topicDatabase.map((topic, i) => (
-                                    <TopicBubble key={i} topicName={topic.name}/>
+                                    <TopicBubble key={i} topicName={topic.name} isGuestView={isGuestView}/>
                                 ))
                             }
                         </TopicsContainer>

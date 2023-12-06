@@ -13,19 +13,19 @@ import { useNavigate } from 'react-router-dom';
 
 const user1 ={
     userName: "Boo",
-    text: "HAHAHHAHAHAH.",
+    text: "well it's been 2 weeks and i've heard nothing. should i follow up?",
     profilePic: profilePic2
 }
 
 const user2 ={
     userName: "Kirby",
-    text: "Words words words words. Words words words.",
+    text: "Thanks! I'll experiment with sleep modes. Have you worked on any embedded projects recently?",
     profilePic: profilePic1
 }
 
 const user3 ={
     userName: "Sonic",
-    text: "Gotta go fast bro",
+    text: "Ah no wayyyyy? I thought cover letters were obsolete",
     profilePic: profilePic3
 }
 
