@@ -96,8 +96,8 @@ export const EditButton = styled.div`
     align-items: center;
     padding: 7px;
     border-radius: 50%;
-    background-color: white;
-    color: var(--blue);
+    background-color: --var(black);
+    color: var(--light-grey);
 `
 
 export const EditIcon = styled(FontAwesomeIcon)`
@@ -110,6 +110,13 @@ export const ReplyUserInformation = styled.div`
     align-items: center;
     gap: 20px;
     color: var(--grey);
+`
+
+export const ReplyUserInformationMatrix = styled.div`
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
 `
 
 export const ReplyUserProfilePicture = styled.img`

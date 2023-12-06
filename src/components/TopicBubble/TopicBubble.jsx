@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { useNavigate } from "react-router-dom"
 import { topicDatabase } from "../../database/db";
 
-function TopicBubble( {topicName} ) {
+function TopicBubble( {topicName, isGuestView} ) {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -16,7 +16,7 @@ function TopicBubble( {topicName} ) {
                 })
             }
         })
-        navigate(`/CodeConnect/explore-results/${topicName}`, {state: {results: topics, searchTerm: topicName}});
+        navigate(`/CodeConnect/explore-results/${topicName}`, {state: {results: topics, searchTerm: topicName, isGuestView: isGuestView}});
     }
 
     return (
