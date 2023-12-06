@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 const H1Style = styled.p`
 color: #FFF;
-background-color: #353845;
-font-family: Inter;
+background-color: var(--black);
 font-size: 60px;
 font-style: normal;
 font-weight: 300;

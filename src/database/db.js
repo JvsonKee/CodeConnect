@@ -47,7 +47,7 @@ user1.setBiography("OMG this is my bio!!")
 const ghLink = new SocialMediaLink("github", "PixelPioneer")
 const twitterLink = new SocialMediaLink("twitter", "PixelPioneer")
 user1.setSocialMedia([twitterLink, ghLink])
-user1.role = "Teacher"
+user1.role = "Mentor"
 user1.interests = ["Web Development", "React", "UX Design"]
 
 const user2 = new User("madscientist", "password");
@@ -75,7 +75,7 @@ const user5 = new User("Boo", "password");
 user5.setProfilePicture(booPic);
 const twitterLink5 = new SocialMediaLink("twitter", "hahaScaredYou")
 user5.setSocialMedia([twitterLink5])
-user5.role = "Teacher"
+user5.role = "Mentor"
 user5.interests = ["Assembly", "Binary"]
 
 userDatabase.push(user1);

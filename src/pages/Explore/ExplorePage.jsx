@@ -38,7 +38,7 @@ function ExplorePage({isGuestView}) {
             {isGuestView ? <GuestNavBar /> : <NavBar />}
             <ExplorePageContainer>
                 <ContentContainer>
-                    <SearchBar data={postDatabase} />
+                    <SearchBar data={postDatabase} isGuest={isGuestView} />
                     <TopicsSection>
                         <TopicsHeaderContainer>
                             <PageHeader>
