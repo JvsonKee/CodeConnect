@@ -1,7 +1,18 @@
 import { GuestNavContainer , Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect, NavItem } from "./GuestNavBar.styled";
+import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed, PopupContainer, PopupContent, CreateAccountText, CreateAccountButton, CloseButton  } from '../../pages/GuestHome/GuestHomePage.styled';
+import { useState } from "react"
 
-function GuestNavBar({ handleItemClick }) {
-    
+function GuestNavBar() {
+    const [isPopupVisible, setPopupVisible] = useState(false);
+    const handleItemClick = (itemName) => {
+      if (itemName === 'Direct Messages' || itemName === 'Profile' || itemName === 'Post') {
+        setPopupVisible(true);
+      }
+    };
+  
+    const handleClosePopup = () => {
+      setPopupVisible(false);
+    };
     return (
         <GuestNavContainer>
             <Nav>
@@ -17,7 +28,20 @@ function GuestNavBar({ handleItemClick }) {
                     <PostButton onClick={() => handleItemClick('Post')}>Post</PostButton>
                 </NavItems>
             </Nav>
+            {/* Popup */}
+            {isPopupVisible && (
+                <PopupContainer>
+                <PopupContent>
+                    <CreateAccountText>Please create an account to access this feature </CreateAccountText>
+                    <div></div>
+                    <div></div>
+                    <CreateAccountButton>Create Account</CreateAccountButton>
+                    <CloseButton onClick={handleClosePopup}>Close</CloseButton >
+                </PopupContent>
+                </PopupContainer>
+            )}
         </GuestNavContainer >
+        
     )
 }
 
