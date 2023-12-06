@@ -43,6 +43,11 @@ function OpenedMessagePage() {
     const user2TargetUrl = '/CodeConnect/dm-kirby';
     const user3TargetUrl = '/CodeConnect/dm-sonic';
 
+    const openProfile = () => {
+        let postURL = '/CodeConnect/profile/Kirby'
+        navigate(postURL);
+    }
+
     return (
         <Container>
             <NavBar />
@@ -51,7 +56,7 @@ function OpenedMessagePage() {
                     <ChatContainer>
                         <MessageHeaderContainer>
                             <UserProfilePicture src={profilePic1}></UserProfilePicture>
-                            <UsersNameHeader>Kirby</UsersNameHeader>
+                            <UsersNameHeader onClick={openProfile} >Kirby</UsersNameHeader>
                             <ExitButton to='/CodeConnect/direct-messages'>X</ExitButton>
                         </MessageHeaderContainer>
                         <ChatBox>

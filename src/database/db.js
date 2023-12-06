@@ -4,6 +4,8 @@ import Reply from "./Reply"
 import proPic1 from "../assets/MainUserPfp.png"
 import proPic2 from "../assets/profile3.jpg"
 import proPic3 from "../assets/userPfp3.png"
+import kirbyPic from "../assets/userPfp.png"
+import booPic from "../assets/userPfp2.png"
 import SocialMediaLink from "./SocialLink";
 import Topic from "./Topic"
 
@@ -34,9 +36,25 @@ user3.setSocialMedia([twitterLink3])
 user3.role = "Student"
 user3.interests = ["Machine Learning", "C++", "Mobile Dev"]
 
+const user4 = new User("Kirby", "password");
+user4.setProfilePicture(kirbyPic);
+const twitterLink4 = new SocialMediaLink("twitter", "bottomLessStomach1")
+user4.setSocialMedia([twitterLink4])
+user4.role = "Student"
+user4.interests = ["Desktop Development", "C++", "Embedded Devices"]
+
+const user5 = new User("Boo", "password");
+user5.setProfilePicture(booPic);
+const twitterLink5 = new SocialMediaLink("twitter", "hahaScaredYou")
+user5.setSocialMedia([twitterLink5])
+user5.role = "Teacher"
+user5.interests = ["Assembly", "Binary"]
+
 userDatabase.push(user1);
 userDatabase.push(user2);
 userDatabase.push(user3);
+userDatabase.push(user4);
+userDatabase.push(user5);
 
 const user1Post = new Post(user1, "Learning React", "I am learning React for a school project, what are the best resources to learn from?", "React", "12 minutes ago", postDatabase.length);
 postDatabase.push(user1Post);
