@@ -16,7 +16,7 @@ function SearchBar( {data} ) {
             item.title.toLowerCase().includes(searchTerm.toLowerCase())
         ) 
     
-        navigate("/CodeConnect/explore-results", {state: { results: filtered, searchTerm: searchTerm}})
+        navigate(`/CodeConnect/explore-results/${searchTerm}`, {state: { results: filtered, searchTerm: searchTerm}})
     }
 
     const handleKeydown = (e) => {
@@ -27,7 +27,6 @@ function SearchBar( {data} ) {
 
     return (
         <SearchBarContainer>
-            {/* <Dropdown setStatus={setStatus} /> */}
             <Search input="text" placeholder="Search" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={handleKeydown}/>
             {/* <SearchButton onClick={handleSearch}>
                 <ArrowIcon icon={faArrowRight} />

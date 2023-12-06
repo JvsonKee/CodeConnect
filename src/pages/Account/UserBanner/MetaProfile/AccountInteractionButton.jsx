@@ -65,7 +65,7 @@ function EditProfileButton(){
       };
     return (
         <BigButtonShape style={Usercolour}>
-            <TextStyle>Edit Profile</TextStyle>
+            <TextStyle>Settings</TextStyle>
         </BigButtonShape>
     )
 }

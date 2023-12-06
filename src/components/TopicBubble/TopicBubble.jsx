@@ -16,7 +16,7 @@ function TopicBubble( {topicName} ) {
                 })
             }
         })
-        navigate("/CodeConnect/explore-results", {state: {results: topics, searchTerm: topicName}});
+        navigate(`/CodeConnect/explore-results/${topicName}`, {state: {results: topics, searchTerm: topicName}});
     }
 
     return (

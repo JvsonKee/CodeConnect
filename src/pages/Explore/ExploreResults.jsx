@@ -5,20 +5,33 @@ import SearchBar from "../../components/SearchBar/SearchBar"
 import { Feed } from "../Home/HomePage.styled";
 import PostBrowsing from "../../components/PostCards/PostBrowsing";
 import { ExplorePageContainer } from "./ExplorePage.styled";
-import { postDatabase } from "../../database/db";
+import { postDatabase, topicDatabase } from "../../database/db";
 import { ArrowLeft, BackButton, ContentContainer, Matrix, PostCountContent, SearchContainer } from "./ExploreResults.styled";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { SearchBarContainer } from "../../components/SearchBar/SearchBar.styled";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function ExploreResults({isGuestView}) {
+    const { id } = useParams();
     const { state } = useLocation();
     const { results, searchTerm } = state;
     const goBack = () => {
         window.history.go(-1);
     };
-    console.log({results}); 
-    console.log({searchTerm})
+
+    console.log({results})
+    let topics = [];
+
+    topicDatabase.forEach((topic) => {
+        if (topic.name === id) {
+            topic.posts.forEach((post) => {
+                topics.push(post);
+            })
+        }
+    })
+
+    console.log({topics})
+
     return (  
         <Container>
             {isGuestView ? <GuestNavBar /> : <NavBar />}
@@ -34,12 +47,12 @@ function ExploreResults({isGuestView}) {
                     </SearchBarContainer>
                     <Matrix>
                         {
-                            results.length > 2 || results.length == 0
-                            ? <PostCountContent>{results.length} results found matching &quot;{searchTerm}&quot;</PostCountContent>
-                            : <PostCountContent>{results.length} result found matching &quot;{searchTerm}&quot;</PostCountContent>
+                            topics.length > 2 || topics.length == 0
+                            ? <PostCountContent>{topics.length} results found matching &quot;{searchTerm}&quot;</PostCountContent>
+                            : <PostCountContent>{topics.length} result found matching &quot;{searchTerm}&quot;</PostCountContent>
                         }
                         <Feed>
-                            {results.map((post, i) => 
+                            {topics.map((post, i) => 
                                 <PostBrowsing key={i} information={post} />
                             )}
                         </Feed>

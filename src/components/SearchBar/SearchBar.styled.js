@@ -24,7 +24,7 @@ export const Search = styled.input`
     transition: 0.3s ease-in-out;
 
     &:hover {
-        transform: translateX(3px);
+        transform: translateY(-3px);
     }
 
     &::placeholder {

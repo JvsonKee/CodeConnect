@@ -24,7 +24,7 @@ function GuestNavBar() {
     return (
         <GuestNavContainer>
             <Nav>
-                <NavLogo>
+                <NavLogo to="/CodeConnect/home">  
                     <NavLogoCode>Code</NavLogoCode>
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
