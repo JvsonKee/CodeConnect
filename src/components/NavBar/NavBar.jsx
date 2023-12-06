@@ -8,7 +8,7 @@ function NavBar({onPost}) {
     const [showPostForm, setShowPostForm] = useState(false);
     const userKey = localStorage.getItem("userDatabaseKey");
     let userProfile = "/CodeConnect/profile/PixelPioneer";
-    if (userKey >= 0) {
+    if (userKey >= 100) {
         const user = userDatabase[userKey];
         const userName = user.username;
         userProfile = "/CodeConnect/profile/".concat(userName);
