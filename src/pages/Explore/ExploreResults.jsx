@@ -11,14 +11,15 @@ import { useLocation } from "react-router-dom";
 import { SearchBarContainer } from "../../components/SearchBar/SearchBar.styled";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-function ExploreResults({isGuestView}) {
+function ExploreResults( ) {
     const { state } = useLocation();
-    const { results, searchTerm } = state;
+    const { results, searchTerm, isGuestView} = state;
     const goBack = () => {
         window.history.go(-1);
     };
     console.log({results}); 
     console.log({searchTerm})
+
     return (  
         <Container>
             {isGuestView ? <GuestNavBar /> : <NavBar />}
