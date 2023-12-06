@@ -1,5 +1,6 @@
 import Dropdown from "../../components/Dropdown/Dropdown"
 import NavBar from "../../components/NavBar/NavBar"
+import GuestNavBar from "../../components/GuestNavBar/GuestNavBar"
 import SearchBar from "../../components/SearchBar/SearchBar"
 import { Container } from "../../styles/Container"
 import { ContentContainer, ExplorePageContainer, FireIcon, CarouselContainer, TopicsHeaderContainer, TopicsSection, CarouselImage, CarouselSlide, CarouselLabel, Carousel, CarouselNav, TopicsContainer, SelectContainer, CheckBox } from "./ExplorePage.styled"
@@ -15,7 +16,7 @@ import { useNavigate } from "react-router-dom"
 
 console.log({postDatabase})
 
-function ExplorePage() {
+function ExplorePage({isGuestView}) {
     const [status, setStatus] =  useState('Recent')
     const navigate = useNavigate();
 
@@ -30,11 +31,11 @@ function ExplorePage() {
             }
         })
 
-        navigate("/CodeConnect/explore-results", {state: {results: topics, searchTerm: topicName}})
+        navigate("/CodeConnect/explore-results", {isGuestView, state: {results: topics, searchTerm: topicName}})
     }
     return (
         <Container>
-            <NavBar />
+            {isGuestView ? <GuestNavBar /> : <NavBar />}
             <ExplorePageContainer>
                 <ContentContainer>
                     <SearchBar data={postDatabase} />

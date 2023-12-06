@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentContainer, HeaderContainer, HomePageContainer, Feed } from "../Home/HomePage.styled";
+import { ContentContainer, HeaderContainer, HomePageContainer } from "../Home/HomePage.styled";
 import { PageHeader } from "../../styles/PageHeader";
 import NavBar from "../../components/NavBar/NavBar";
 import GuestNavBar from "../../components/GuestNavBar/GuestNavBar";

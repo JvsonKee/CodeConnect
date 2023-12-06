@@ -1,5 +1,6 @@
-import { GuestNavContainer , Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect, NavItem } from "./GuestNavBar.styled";
+import { GuestNavContainer , Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect, NavItem, NavIcon } from "./GuestNavBar.styled";
 import { ContentContainer, HeaderContainer, GuestHomePageContainer, Feed, PopupContainer, PopupContent, CreateAccountText, CreateAccountButton, CloseButton  } from '../../pages/GuestHome/GuestHomePage.styled';
+import { faHouseChimney, faMagnifyingGlass, faComment, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react"
 
 function GuestNavBar() {
@@ -21,10 +22,22 @@ function GuestNavBar() {
                     <NavLogoConnect>Connect</NavLogoConnect>
                 </NavLogo>  
                 <NavItems>
-                    <NavItem to='/CodeConnect/guest-home'>Home</NavItem>
-                    <NavItem to='/CodeConnect/guest-explore'>Explore</NavItem>
-                    <NavItem onClick={() => handleItemClick('Direct Messages')}>Direct Messages</NavItem>
-                    <NavItem onClick={() => handleItemClick('Profile')}>Profile</NavItem>
+                    <NavItem to="/CodeConnect/guest-home">
+                        <NavIcon icon={faHouseChimney}/>
+                        <span>Home</span>
+                    </NavItem>
+                    <NavItem to="/CodeConnect/guest-explore">
+                        <NavIcon icon={faMagnifyingGlass}/>
+                        <span>Explore</span>
+                    </NavItem>
+                    <NavItem onClick={() => handleItemClick('Direct Messages')}>
+                        <NavIcon icon={faComment} />
+                        <span>Messages</span>
+                    </NavItem>
+                    <NavItem onClick={() => handleItemClick('Profile')}>
+                        <NavIcon icon={faUser}/>
+                        <span>Profile</span>
+                    </NavItem>
                     <PostButton onClick={() => handleItemClick('Post')}>Post</PostButton>
                 </NavItems>
             </Nav>
