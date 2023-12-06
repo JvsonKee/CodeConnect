@@ -17,6 +17,7 @@ export function pushPostToDatabase(title, topic, description, timeStamp) {
   let id = postDatabase.length;
   const userKey = localStorage.getItem("userDatabaseKey");
   const user = userDatabase[userKey];
+  console.log(user);
   const postToAdd = new Post(user,title,description,topic,timeStamp,id);
   postDatabase.push(postToAdd);
 };

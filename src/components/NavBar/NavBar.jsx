@@ -1,10 +1,18 @@
 import { NavContainer, Nav, NavItems, NavLogo, PostButton, NavLogoCode, NavLogoConnect, NavItem, NavIcon } from "./NavBar.styled";
 import { faHouseChimney, faMagnifyingGlass, faComment, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
+import { userDatabase } from "../../database/db";
 import GeneratePostForm from "../PostCards/PostForm";
 
 function NavBar({onPost}) {
     const [showPostForm, setShowPostForm] = useState(false);
+    const userKey = localStorage.getItem("userDatabaseKey");
+    let userProfile = "/CodeConnect/profile/PixelPioneer";
+    if (userKey >= 0) {
+        const user = userDatabase[userKey];
+        const userName = user.username;
+        userProfile = "/CodeConnect/profile/".concat(userName);
+    }
 
     const openPostForm = () => {
     setShowPostForm(true);
@@ -36,7 +44,7 @@ function NavBar({onPost}) {
                         <NavIcon icon={faComment} />
                         <span>Messages</span>
                     </NavItem>
-                    <NavItem to="/CodeConnect/profile/PixelPioneer">
+                    <NavItem to={userProfile}>
                         <NavIcon icon={faUser}/>
                         <span>Profile</span>
                     </NavItem>
